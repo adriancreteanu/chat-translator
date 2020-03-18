@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2D277B78241E6082004335F2 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D277B77241E6082004335F2 /* BaseController.swift */; };
+		2DA534F52422CE400000E9F9 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA534F42422CE400000E9F9 /* APIRouter.swift */; };
 		2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F87B2413D6990097B013 /* AppDelegate.swift */; };
 		2DC6F87E2413D6990097B013 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F87D2413D6990097B013 /* SceneDelegate.swift */; };
 		2DC6F8802413D6990097B013 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F87F2413D6990097B013 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		1E78301AEB54148F146B8E12 /* Pods_Disertatie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disertatie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D277B77241E6082004335F2 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		2DA534F42422CE400000E9F9 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		2DC6F8782413D6990097B013 /* Disertatie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disertatie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC6F87B2413D6990097B013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DC6F87D2413D6990097B013 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,13 +69,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		2D277B75241E56DF004335F2 /* Resources */ = {
+		2D277B75241E56DF004335F2 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				2DC6F8892413D69D0097B013 /* Info.plist */,
 				2DC6F8842413D69D0097B013 /* Assets.xcassets */,
 			);
-			path = Resources;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		2D277B76241E5717004335F2 /* Views */ = {
@@ -82,6 +84,66 @@
 				2DC6F8862413D69D0097B013 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2DA534F32422CE150000E9F9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2DA534F42422CE400000E9F9 /* APIRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2DA534F62422CF4C0000E9F9 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2D277B72241E56CE004335F2 /* AppDelegate */,
+				2DA534F72422CFA00000E9F9 /* Constants */,
+				2D277B73241E56D6004335F2 /* Controllers */,
+				2DA534FA2422CFB80000E9F9 /* Extensions */,
+				2DA534FB2422CFBE0000E9F9 /* Helpers */,
+				2D277B74241E56DD004335F2 /* Models */,
+				2DA534F32422CE150000E9F9 /* Network */,
+				2DA534F82422CFA80000E9F9 /* Protocols */,
+				2DA534F92422CFB20000E9F9 /* Services */,
+				2D277B76241E5717004335F2 /* Views */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		2DA534F72422CFA00000E9F9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		2DA534F82422CFA80000E9F9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2DA534F92422CFB20000E9F9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2DA534FA2422CFB80000E9F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2DA534FB2422CFBE0000E9F9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		2DC6F86F2413D6990097B013 = {
@@ -105,11 +167,8 @@
 		2DC6F87A2413D6990097B013 /* Disertatie */ = {
 			isa = PBXGroup;
 			children = (
-				2D277B72241E56CE004335F2 /* AppDelegate */,
-				2D277B73241E56D6004335F2 /* Controllers */,
-				2D277B74241E56DD004335F2 /* Models */,
-				2D277B75241E56DF004335F2 /* Resources */,
-				2D277B76241E5717004335F2 /* Views */,
+				2D277B75241E56DF004335F2 /* Assets */,
+				2DA534F62422CF4C0000E9F9 /* Source */,
 			);
 			path = Disertatie;
 			sourceTree = "<group>";
@@ -128,7 +187,6 @@
 				A4B4847B5D66A6DBDD8712D3 /* Pods-Disertatie.debug.xcconfig */,
 				C35C21BBBEB85CD1A3C1A380 /* Pods-Disertatie.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -247,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DC6F8802413D6990097B013 /* ViewController.swift in Sources */,
+				2DA534F52422CE400000E9F9 /* APIRouter.swift in Sources */,
 				2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */,
 				2D277B78241E6082004335F2 /* BaseController.swift in Sources */,
 				2DC6F87E2413D6990097B013 /* SceneDelegate.swift in Sources */,

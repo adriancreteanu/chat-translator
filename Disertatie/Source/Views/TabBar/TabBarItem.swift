@@ -47,9 +47,9 @@ extension TabBarItem {
                 let navigationController = UINavigationController(rootViewController: chatsVC)
                 return navigationController
             case .settings:
-                let chatsVC = ViewController()
-                chatsVC.tabBarItem = tabBarItem
-                let navigationController = UINavigationController(rootViewController: chatsVC)
+                let controller2 = ViewController2()
+                controller2.tabBarItem = tabBarItem
+                let navigationController = UINavigationController(rootViewController: controller2)
                 return navigationController
             }
         }

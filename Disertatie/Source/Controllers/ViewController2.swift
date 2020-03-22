@@ -9,14 +9,14 @@
 import SnapKit
 import UIKit
 
-class ViewController: BaseController {
+class ViewController2: BaseController {
     lazy var box = UIView()
     lazy var label = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .pineGreen
+        view.backgroundColor = .red
         view.addSubview(box)
         box.backgroundColor = .green
         box.snp.makeConstraints { (make) -> Void in

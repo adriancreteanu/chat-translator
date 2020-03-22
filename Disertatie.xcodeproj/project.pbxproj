@@ -14,6 +14,9 @@
 		2DC6F8802413D6990097B013 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F87F2413D6990097B013 /* ViewController.swift */; };
 		2DC6F8852413D69D0097B013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC6F8842413D69D0097B013 /* Assets.xcassets */; };
 		2DC6F8882413D69D0097B013 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC6F8862413D69D0097B013 /* LaunchScreen.storyboard */; };
+		BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030A242787DE00C082F1 /* TabBarController.swift */; };
+		BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030D2427889800C082F1 /* TabBarItem.swift */; };
+		BCBB031024278C2400C082F1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBB030F24278C2400C082F1 /* Default-568h@2x.png */; };
 		F91FA32A7F51B3B2EEFEB5CF /* Pods_Disertatie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E78301AEB54148F146B8E12 /* Pods_Disertatie.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		2DC6F8872413D69D0097B013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DC6F8892413D69D0097B013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4B4847B5D66A6DBDD8712D3 /* Pods-Disertatie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.debug.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.debug.xcconfig"; sourceTree = "<group>"; };
+		BCBB030A242787DE00C082F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BCBB030D2427889800C082F1 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		BCBB030F24278C2400C082F1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C35C21BBBEB85CD1A3C1A380 /* Pods-Disertatie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.release.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +64,7 @@
 			children = (
 				2DC6F87F2413D6990097B013 /* ViewController.swift */,
 				2D277B77241E6082004335F2 /* BaseController.swift */,
+				BCBB030A242787DE00C082F1 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -81,6 +88,7 @@
 		2D277B76241E5717004335F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BCBB030C2427888A00C082F1 /* TabBar */,
 				2DC6F8862413D69D0097B013 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -149,6 +157,7 @@
 		2DC6F86F2413D6990097B013 = {
 			isa = PBXGroup;
 			children = (
+				BCBB030F24278C2400C082F1 /* Default-568h@2x.png */,
 				2DC6F87A2413D6990097B013 /* Disertatie */,
 				2DC6F8792413D6990097B013 /* Products */,
 				D627D618941C05B8B9E52F0F /* Pods */,
@@ -179,6 +188,14 @@
 				1E78301AEB54148F146B8E12 /* Pods_Disertatie.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCBB030C2427888A00C082F1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BCBB030D2427889800C082F1 /* TabBarItem.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		D627D618941C05B8B9E52F0F /* Pods */ = {
@@ -252,6 +269,7 @@
 			files = (
 				2DC6F8882413D69D0097B013 /* LaunchScreen.storyboard in Resources */,
 				2DC6F8852413D69D0097B013 /* Assets.xcassets in Resources */,
+				BCBB031024278C2400C082F1 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +325,8 @@
 				2DC6F8802413D6990097B013 /* ViewController.swift in Sources */,
 				2DA534FD2422D0E00000E9F9 /* APIConfiguration.swift in Sources */,
 				2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */,
+				BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */,
+				BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */,
 				2D277B78241E6082004335F2 /* BaseController.swift in Sources */,
 				2DC6F87E2413D6990097B013 /* SceneDelegate.swift in Sources */,
 			);
@@ -447,7 +467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78FDB4XPKP;
-				INFOPLIST_FILE = Disertatie/Resources/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Disertatie/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,7 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78FDB4XPKP;
-				INFOPLIST_FILE = Disertatie/Resources/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Disertatie/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

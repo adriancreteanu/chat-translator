@@ -45,9 +45,24 @@ extension ChatsController: Base {
             make.trailing.equalTo(view.snp.trailing).inset(20)
             make.centerY.equalTo(box)
         }
+        
+        // Add action to the box
+        let tap = UITapGestureRecognizer(target: self, action: .boxAction)
+        box.addGestureRecognizer(tap)
     }
     
     func updateTexts() {
         navigationItem.title = "Chats"
     }
+    
+    @objc
+    func boxAction(_ sender: UITapGestureRecognizer) {
+        let chatVC = ChatController()
+        chatVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(chatVC, animated: true)
+    }
+}
+
+fileprivate extension Selector {
+    static let boxAction = #selector(ChatsController.boxAction)
 }

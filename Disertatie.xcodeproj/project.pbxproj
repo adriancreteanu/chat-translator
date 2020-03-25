@@ -17,6 +17,7 @@
 		BC33D819242BE4C6007BF615 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D818242BE4C6007BF615 /* Title.swift */; };
 		BC33D81B242BE593007BF615 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D81A242BE593007BF615 /* Base.swift */; };
 		BC33D81D242BFED0007BF615 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D81C242BFED0007BF615 /* Images.swift */; };
+		BC33D820242C11FC007BF615 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D81F242C11FC007BF615 /* ChatController.swift */; };
 		BC7328442427A575008D05EF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328432427A575008D05EF /* Colors.swift */; };
 		BC7328462427A605008D05EF /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328452427A605008D05EF /* SettingsController.swift */; };
 		BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030A242787DE00C082F1 /* TabBarController.swift */; };
@@ -40,6 +41,7 @@
 		BC33D818242BE4C6007BF615 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		BC33D81A242BE593007BF615 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base.swift; path = Disertatie/Source/Views/Base.swift; sourceTree = SOURCE_ROOT; };
 		BC33D81C242BFED0007BF615 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Images.swift; path = Disertatie/Source/Views/Images.swift; sourceTree = SOURCE_ROOT; };
+		BC33D81F242C11FC007BF615 /* ChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatController.swift; path = Disertatie/Source/Controllers/ChatController.swift; sourceTree = SOURCE_ROOT; };
 		BC7328432427A575008D05EF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Disertatie/Source/Controllers/Colors.swift; sourceTree = SOURCE_ROOT; };
 		BC7328452427A605008D05EF /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		BCBB030A242787DE00C082F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		2D277B73241E56D6004335F2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC33D81F242C11FC007BF615 /* ChatController.swift */,
 				BC33D81E242C1072007BF615 /* Main */,
 				2D277B77241E6082004335F2 /* BaseController.swift */,
 				BCBB030A242787DE00C082F1 /* TabBarController.swift */,
@@ -352,6 +355,7 @@
 				BC7328462427A605008D05EF /* SettingsController.swift in Sources */,
 				2DA534FD2422D0E00000E9F9 /* APIConfiguration.swift in Sources */,
 				2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */,
+				BC33D820242C11FC007BF615 /* ChatController.swift in Sources */,
 				BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */,
 				BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */,
 				2D277B78241E6082004335F2 /* BaseController.swift in Sources */,

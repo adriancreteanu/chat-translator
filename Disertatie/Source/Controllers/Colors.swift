@@ -11,3 +11,7 @@ import UIKit.UIColor
 extension UIColor {
     static let pineGreen = UIColor(named: "Pine Green")!
 }
+
+extension UIColor {
+    static let primary = pineGreen
+}

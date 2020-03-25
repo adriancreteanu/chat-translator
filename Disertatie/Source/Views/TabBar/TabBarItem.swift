@@ -15,6 +15,10 @@ class TabBarItem: UITabBarItem {
         self.init(title: item.title, image: item.image, selectedImage: item.image)
         
         self.item = item
+        
+        titlePositionAdjustment = .init(horizontal: 0, vertical: -5)
+        setTitleTextAttributes([.font: UIFont.preferredFont(forTextStyle: .footnote)], for: .normal)
+        setTitleTextAttributes([.font: UIFont.preferredFont(forTextStyle: .footnote)], for: .selected)
     }
 }
 
@@ -42,14 +46,14 @@ extension TabBarItem {
             
             switch self {
             case .chats:
-                let chatsVC = ViewController()
+                let chatsVC = ChatsController()
                 chatsVC.tabBarItem = tabBarItem
                 let navigationController = UINavigationController(rootViewController: chatsVC)
                 return navigationController
             case .settings:
-                let controller2 = ViewController2()
-                controller2.tabBarItem = tabBarItem
-                let navigationController = UINavigationController(rootViewController: controller2)
+                let settingsVC = SettingsController()
+                settingsVC.tabBarItem = tabBarItem
+                let navigationController = UINavigationController(rootViewController: settingsVC)
                 return navigationController
             }
         }

@@ -12,5 +12,12 @@ class BaseController: UIViewController {
     
     // TODO - Add common methods
     
+    override func viewDidLoad() {
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = .primary
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.white
+        ]
+    }
     
 }

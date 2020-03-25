@@ -12,10 +12,20 @@ import UIKit
 class ViewController: BaseController {
     lazy var box = UIView()
     lazy var label = UILabel()
+    
+    @Title(text: "My string")
+    var titleLabel: UILabel
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initializeUI()
+        updateTexts()
+    }
+}
 
+extension ViewController: Base {
+    func initializeUI() {
         view.backgroundColor = .pineGreen
         view.addSubview(box)
         box.backgroundColor = .green
@@ -26,13 +36,16 @@ class ViewController: BaseController {
             make.width.height.equalTo(50)
         }
         
-        view.addSubview(label)
-        label.text = "Hello"
+        view.addSubview(titleLabel)
         
-        label.snp.makeConstraints { (make) in
+        titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(box.snp.right).offset(20)
             make.trailing.equalTo(view.snp.trailing).inset(20)
             make.centerY.equalTo(box)
         }
+    }
+    
+    func updateTexts() {
+        navigationItem.title = "Chats"
     }
 }

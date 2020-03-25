@@ -28,9 +28,9 @@ extension TabBarItem {
         private var tuple: Tuple {
             switch self {
             case .chats:
-                return (title: "Chats", image: UIImage.init()) // tODO
+                return (title: "Chats", image: .chats)
             case .settings:
-                return (title: "Settings", image: UIImage.init()) // tODO
+                return (title: "Settings", image: .settings)
             }
         }
         

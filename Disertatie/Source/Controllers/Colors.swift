@@ -9,5 +9,5 @@
 import UIKit.UIColor
 
 extension UIColor {
-    static var pineGreen = UIColor(named: "Pine Green")!
+    static let pineGreen = UIColor(named: "Pine Green")!
 }

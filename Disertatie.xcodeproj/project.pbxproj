@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D18FCDA242FF54400939080 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D18FCD9242FF54400939080 /* GoogleService-Info.plist */; };
 		2D277B78241E6082004335F2 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D277B77241E6082004335F2 /* BaseController.swift */; };
 		2DA534FD2422D0E00000E9F9 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA534FC2422D0E00000E9F9 /* APIConfiguration.swift */; };
 		2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F87B2413D6990097B013 /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		1E78301AEB54148F146B8E12 /* Pods_Disertatie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disertatie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D18FCD9242FF54400939080 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D277B77241E6082004335F2 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		2DA534FC2422D0E00000E9F9 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		2DC6F8782413D6990097B013 /* Disertatie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disertatie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D18FCDB2430D59E00939080 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		2D277B72241E56CE004335F2 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +101,8 @@
 		2D277B75241E56DF004335F2 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2D18FCDB2430D59E00939080 /* Fonts */,
+				2D18FCD9242FF54400939080 /* GoogleService-Info.plist */,
 				2DC6F8892413D69D0097B013 /* Info.plist */,
 				2DC6F8842413D69D0097B013 /* Assets.xcassets */,
 				BCBB03122427A27A00C082F1 /* Colors.xcassets */,
@@ -294,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DC6F8882413D69D0097B013 /* LaunchScreen.storyboard in Resources */,
+				2D18FCDA242FF54400939080 /* GoogleService-Info.plist in Resources */,
 				BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */,
 				2DC6F8852413D69D0097B013 /* Assets.xcassets in Resources */,
 			);
@@ -504,7 +516,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.adriancreteanu.Disertatie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chattranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,7 +535,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.adriancreteanu.Disertatie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chattranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

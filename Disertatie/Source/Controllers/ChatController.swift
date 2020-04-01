@@ -41,6 +41,7 @@ extension ChatController: Base {
         })
         
         messageBarView = MessageBarView()
+        messageBarView.delegate = self
         messageBarView.backgroundColor = .white
         view.add(messageBarView, then: {
             $0.layout(using: [
@@ -68,5 +69,11 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension ChatController: MessageBarViewDelegate {
+    func didTapSend(forText text: String?) {
+        print("Text: \(text!)")
     }
 }

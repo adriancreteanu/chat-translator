@@ -11,6 +11,8 @@ import UIKit
 class MessageBarView: UIView {
     private var typeField: UITextField!
     private var sendButton: UIButton!
+    
+    weak var delegate: MessageBarViewDelegate?
 
     convenience init() {
         self.init(frame: .zero)
@@ -37,6 +39,7 @@ class MessageBarView: UIView {
         sendButton = UIButton(type: .system)
         sendButton.setTitle("Send", for: [])
         sendButton.tintColor = .primary
+        sendButton.addTarget(self, action: #selector(sendButtonAction), for: .touchUpInside)
         self.add(sendButton, then: {
             $0.layout(using: [
                 $0.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
@@ -48,5 +51,13 @@ class MessageBarView: UIView {
         })
     }
     
+    @objc
+    func sendButtonAction(_ sender: UIButton) {
+        delegate?.didTapSend(forText: typeField.text)
+        typeField.text = ""
+    }
+}
 
+protocol MessageBarViewDelegate: class {
+    func didTapSend(forText text: String?)
 }

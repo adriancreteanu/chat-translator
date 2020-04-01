@@ -12,6 +12,11 @@
 		2D18FCEC2430F64B00939080 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18FCEB2430F64B00939080 /* Strings.swift */; };
 		2D18FCEE2430FC5100939080 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18FCED2430FC5100939080 /* UITableViewExtension.swift */; };
 		2D18FCF024310EAF00939080 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18FCEF24310EAF00939080 /* UIViewExtension.swift */; };
+		2D18FCF3243121C800939080 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18FCF2243121C800939080 /* ChatTableViewCell.swift */; };
+		2D2020BD2435066E006BAE99 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2020BC2435066E006BAE99 /* Constants.swift */; };
+		2D2020BF24350845006BAE99 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2020BE24350845006BAE99 /* UIImageViewExtension.swift */; };
+		2D2020C124351F4E006BAE99 /* MessageBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2020C024351F4E006BAE99 /* MessageBarView.swift */; };
+		2D2020C324351FB5006BAE99 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2020C224351FB5006BAE99 /* UITextFieldExtension.swift */; };
 		2D277B78241E6082004335F2 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D277B77241E6082004335F2 /* BaseController.swift */; };
 		2DA534FD2422D0E00000E9F9 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA534FC2422D0E00000E9F9 /* APIConfiguration.swift */; };
 		2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F87B2413D6990097B013 /* AppDelegate.swift */; };
@@ -38,6 +43,11 @@
 		2D18FCEB2430F64B00939080 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		2D18FCED2430FC5100939080 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		2D18FCEF24310EAF00939080 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		2D18FCF2243121C800939080 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		2D2020BC2435066E006BAE99 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2D2020BE24350845006BAE99 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		2D2020C024351F4E006BAE99 /* MessageBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBarView.swift; sourceTree = "<group>"; };
+		2D2020C224351FB5006BAE99 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		2D277B77241E6082004335F2 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		2DA534FC2422D0E00000E9F9 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		2DC6F8782413D6990097B013 /* Disertatie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disertatie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +87,14 @@
 			children = (
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2D18FCF1243117E600939080 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2D18FCF2243121C800939080 /* ChatTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		2D277B72241E56CE004335F2 /* AppDelegate */ = {
@@ -121,9 +139,11 @@
 		2D277B76241E5717004335F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D18FCF1243117E600939080 /* TableViewCells */,
 				BCBB030C2427888A00C082F1 /* TabBar */,
 				2DC6F8862413D69D0097B013 /* LaunchScreen.storyboard */,
 				BC33D818242BE4C6007BF615 /* Title.swift */,
+				2D2020C024351F4E006BAE99 /* MessageBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +180,7 @@
 				BC33D81C242BFED0007BF615 /* Images.swift */,
 				2D18FCE92430F41800939080 /* Fonts.swift */,
 				2D18FCEB2430F64B00939080 /* Strings.swift */,
+				2D2020BC2435066E006BAE99 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -184,6 +205,8 @@
 			children = (
 				2D18FCED2430FC5100939080 /* UITableViewExtension.swift */,
 				2D18FCEF24310EAF00939080 /* UIViewExtension.swift */,
+				2D2020BE24350845006BAE99 /* UIImageViewExtension.swift */,
+				2D2020C224351FB5006BAE99 /* UITextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -373,17 +396,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D18FCEA2430F41800939080 /* Fonts.swift in Sources */,
+				2D2020BD2435066E006BAE99 /* Constants.swift in Sources */,
 				BC33D819242BE4C6007BF615 /* Title.swift in Sources */,
 				BC33D81D242BFED0007BF615 /* Images.swift in Sources */,
+				2D18FCF3243121C800939080 /* ChatTableViewCell.swift in Sources */,
+				2D2020C324351FB5006BAE99 /* UITextFieldExtension.swift in Sources */,
 				2D18FCEE2430FC5100939080 /* UITableViewExtension.swift in Sources */,
 				BC7328442427A575008D05EF /* Colors.swift in Sources */,
 				2DC6F8802413D6990097B013 /* ChatsController.swift in Sources */,
 				BC7328462427A605008D05EF /* SettingsController.swift in Sources */,
 				2DA534FD2422D0E00000E9F9 /* APIConfiguration.swift in Sources */,
+				2D2020BF24350845006BAE99 /* UIImageViewExtension.swift in Sources */,
 				2D18FCF024310EAF00939080 /* UIViewExtension.swift in Sources */,
 				2D18FCEC2430F64B00939080 /* Strings.swift in Sources */,
 				2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */,
 				BC33D820242C11FC007BF615 /* ChatController.swift in Sources */,
+				2D2020C124351F4E006BAE99 /* MessageBarView.swift in Sources */,
 				BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */,
 				BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */,
 				2D277B78241E6082004335F2 /* BaseController.swift in Sources */,

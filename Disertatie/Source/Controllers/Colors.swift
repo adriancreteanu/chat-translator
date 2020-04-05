@@ -10,8 +10,10 @@ import UIKit.UIColor
 
 extension UIColor {
     static let pineGreen = UIColor(named: "Pine Green")!
+    static let trout = UIColor(named: "Trout")!
 }
 
 extension UIColor {
     static let primary = pineGreen
+    static let navigationTitle = trout
 }

@@ -14,10 +14,10 @@ class BaseController: UIViewController {
     
     override func viewDidLoad() {
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = .primary
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.tintColor = .primary
         navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.white,
+            .foregroundColor: UIColor.navigationTitle,
             .font: UIFont.primary(ofSize: .headline)
         ]
     }

@@ -18,6 +18,7 @@
 		2D2020C124351F4E006BAE99 /* MessageBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2020C024351F4E006BAE99 /* MessageBarView.swift */; };
 		2D2020C324351FB5006BAE99 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2020C224351FB5006BAE99 /* UITextFieldExtension.swift */; };
 		2D277B78241E6082004335F2 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D277B77241E6082004335F2 /* BaseController.swift */; };
+		2D9CD076243A50A700E62FC7 /* ChatsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9CD075243A50A700E62FC7 /* ChatsListTableViewCell.swift */; };
 		2DA534FD2422D0E00000E9F9 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA534FC2422D0E00000E9F9 /* APIConfiguration.swift */; };
 		2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F87B2413D6990097B013 /* AppDelegate.swift */; };
 		2DC6F87E2413D6990097B013 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F87D2413D6990097B013 /* SceneDelegate.swift */; };
@@ -49,6 +50,7 @@
 		2D2020C024351F4E006BAE99 /* MessageBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBarView.swift; sourceTree = "<group>"; };
 		2D2020C224351FB5006BAE99 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		2D277B77241E6082004335F2 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		2D9CD075243A50A700E62FC7 /* ChatsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsListTableViewCell.swift; sourceTree = "<group>"; };
 		2DA534FC2422D0E00000E9F9 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		2DC6F8782413D6990097B013 /* Disertatie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disertatie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC6F87B2413D6990097B013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				2D18FCF2243121C800939080 /* ChatTableViewCell.swift */,
+				2D9CD075243A50A700E62FC7 /* ChatsListTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				2D18FCEC2430F64B00939080 /* Strings.swift in Sources */,
 				2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */,
 				BC33D820242C11FC007BF615 /* ChatController.swift in Sources */,
+				2D9CD076243A50A700E62FC7 /* ChatsListTableViewCell.swift in Sources */,
 				2D2020C124351F4E006BAE99 /* MessageBarView.swift in Sources */,
 				BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */,
 				BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */,

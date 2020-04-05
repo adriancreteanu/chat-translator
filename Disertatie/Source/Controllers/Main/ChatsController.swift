@@ -10,11 +10,7 @@ import SnapKit
 import UIKit
 
 class ChatsController: BaseController {
-    lazy var box = UIView()
-    lazy var label = UILabel()
-    
-    @Title(text: "My string")
-    var titleLabel: UILabel
+    private var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,42 +23,40 @@ class ChatsController: BaseController {
 extension ChatsController: Base {
     func initializeUI() {
         
+        tableView = UITableView.make(hasSeparators: true)
+        tableView.addDelegates(self)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        tableView.register(ChatsListTableViewCell.self, forCellReuseIdentifier: "MyCell") // Create method for this
         
-        view.backgroundColor = .white
-        view.addSubview(box)
-        box.backgroundColor = .green
-        box.snp.makeConstraints { (make) -> Void in
-            //make.edges.equalTo(view).inset(UIEdgeInsets(top: 20, left: 40, bottom: 20, right: 20))
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(50)
-        }
-        
-        view.addSubview(titleLabel)
-        
-        titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(box.snp.right).offset(20)
-            make.trailing.equalTo(view.snp.trailing).inset(20)
-            make.centerY.equalTo(box)
-        }
-        
-        // Add action to the box
-        let tap = UITapGestureRecognizer(target: self, action: .boxAction)
-        box.addGestureRecognizer(tap)
+        view.add(tableView, then: {
+            $0.layout(using: [
+                $0.topAnchor.constraint(equalTo: view.topAnchor),
+                $0.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                $0.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                $0.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        })
     }
     
     func updateTexts() {
         navigationItem.title = "Chats"
     }
+}
+
+extension ChatsController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 7
+    }
     
-    @objc
-    func boxAction(_ sender: UITapGestureRecognizer) {
-        let chatVC = ChatController()
-        chatVC.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(chatVC, animated: true)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as? ChatsListTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        return cell
     }
 }
 
 fileprivate extension Selector {
-    static let boxAction = #selector(ChatsController.boxAction)
+ //   static let boxAction = #selector(ChatsController.boxAction)
 }

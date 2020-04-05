@@ -9,9 +9,12 @@
 
 import Alamofire
 
+//typealias Headers = [String: String]
+
 protocol APIConfiguration: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }
     var parameters: Parameters? { get }
+    var headers: [HTTPHeader] { get }
 }
 

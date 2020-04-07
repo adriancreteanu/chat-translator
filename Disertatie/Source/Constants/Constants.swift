@@ -9,10 +9,15 @@
 import UIKit
 
 struct Constants {
+    struct API {}
     struct Design {}
 }
 
 extension Constants.Design {
     static let chatBubbleRadius: CGFloat = 16.0
     static let ovalRadius: CGFloat = 16.0
+}
+
+extension Constants.API {
+    static let baseURL = "http://www.test.com:8080"
 }

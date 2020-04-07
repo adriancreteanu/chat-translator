@@ -29,6 +29,7 @@
 		BC33D81B242BE593007BF615 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D81A242BE593007BF615 /* Base.swift */; };
 		BC33D81D242BFED0007BF615 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D81C242BFED0007BF615 /* Images.swift */; };
 		BC33D820242C11FC007BF615 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D81F242C11FC007BF615 /* ChatController.swift */; };
+		BC554905243CCEA900764306 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC554904243CCEA900764306 /* UITableViewCellExtension.swift */; };
 		BC7328442427A575008D05EF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328432427A575008D05EF /* Colors.swift */; };
 		BC7328462427A605008D05EF /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328452427A605008D05EF /* SettingsController.swift */; };
 		BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030A242787DE00C082F1 /* TabBarController.swift */; };
@@ -64,6 +65,7 @@
 		BC33D81A242BE593007BF615 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base.swift; path = Disertatie/Source/Views/Base.swift; sourceTree = SOURCE_ROOT; };
 		BC33D81C242BFED0007BF615 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Images.swift; path = Disertatie/Source/Views/Images.swift; sourceTree = SOURCE_ROOT; };
 		BC33D81F242C11FC007BF615 /* ChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatController.swift; path = Disertatie/Source/Controllers/ChatController.swift; sourceTree = SOURCE_ROOT; };
+		BC554904243CCEA900764306 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		BC7328432427A575008D05EF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Disertatie/Source/Controllers/Colors.swift; sourceTree = SOURCE_ROOT; };
 		BC7328452427A605008D05EF /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		BCBB030A242787DE00C082F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -206,10 +208,11 @@
 		2DA534FA2422CFB80000E9F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2D18FCED2430FC5100939080 /* UITableViewExtension.swift */,
-				2D18FCEF24310EAF00939080 /* UIViewExtension.swift */,
 				2D2020BE24350845006BAE99 /* UIImageViewExtension.swift */,
+				BC554904243CCEA900764306 /* UITableViewCellExtension.swift */,
+				2D18FCED2430FC5100939080 /* UITableViewExtension.swift */,
 				2D2020C224351FB5006BAE99 /* UITextFieldExtension.swift */,
+				2D18FCEF24310EAF00939080 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				2D18FCF024310EAF00939080 /* UIViewExtension.swift in Sources */,
 				2D18FCEC2430F64B00939080 /* Strings.swift in Sources */,
 				2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */,
+				BC554905243CCEA900764306 /* UITableViewCellExtension.swift in Sources */,
 				BC33D820242C11FC007BF615 /* ChatController.swift in Sources */,
 				2D9CD076243A50A700E62FC7 /* ChatsListTableViewCell.swift in Sources */,
 				2D2020C124351F4E006BAE99 /* MessageBarView.swift in Sources */,

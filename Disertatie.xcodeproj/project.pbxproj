@@ -19,7 +19,7 @@
 		2D2020C324351FB5006BAE99 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2020C224351FB5006BAE99 /* UITextFieldExtension.swift */; };
 		2D277B78241E6082004335F2 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D277B77241E6082004335F2 /* BaseController.swift */; };
 		2D9CD076243A50A700E62FC7 /* ChatsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9CD075243A50A700E62FC7 /* ChatsListTableViewCell.swift */; };
-		2DA534FD2422D0E00000E9F9 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA534FC2422D0E00000E9F9 /* APIConfiguration.swift */; };
+		2DA534FD2422D0E00000E9F9 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA534FC2422D0E00000E9F9 /* APIRequest.swift */; };
 		2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F87B2413D6990097B013 /* AppDelegate.swift */; };
 		2DC6F87E2413D6990097B013 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F87D2413D6990097B013 /* SceneDelegate.swift */; };
 		2DC6F8802413D6990097B013 /* ChatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6F87F2413D6990097B013 /* ChatsController.swift */; };
@@ -30,11 +30,14 @@
 		BC33D81D242BFED0007BF615 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D81C242BFED0007BF615 /* Images.swift */; };
 		BC33D820242C11FC007BF615 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D81F242C11FC007BF615 /* ChatController.swift */; };
 		BC554905243CCEA900764306 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC554904243CCEA900764306 /* UITableViewCellExtension.swift */; };
+		BC554909243D086000764306 /* TranslationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC554908243D086000764306 /* TranslationEndpoint.swift */; };
+		BC55490B243D0C4F00764306 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55490A243D0C4F00764306 /* APIClient.swift */; };
 		BC7328442427A575008D05EF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328432427A575008D05EF /* Colors.swift */; };
 		BC7328462427A605008D05EF /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328452427A605008D05EF /* SettingsController.swift */; };
 		BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030A242787DE00C082F1 /* TabBarController.swift */; };
 		BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030D2427889800C082F1 /* TabBarItem.swift */; };
 		BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBB03122427A27A00C082F1 /* Colors.xcassets */; };
+		BCC64352243D28CD000EB35C /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC64351243D28CD000EB35C /* Translations.swift */; };
 		F91FA32A7F51B3B2EEFEB5CF /* Pods_Disertatie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E78301AEB54148F146B8E12 /* Pods_Disertatie.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +55,7 @@
 		2D2020C224351FB5006BAE99 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		2D277B77241E6082004335F2 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		2D9CD075243A50A700E62FC7 /* ChatsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsListTableViewCell.swift; sourceTree = "<group>"; };
-		2DA534FC2422D0E00000E9F9 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		2DA534FC2422D0E00000E9F9 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		2DC6F8782413D6990097B013 /* Disertatie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Disertatie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC6F87B2413D6990097B013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DC6F87D2413D6990097B013 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,11 +69,14 @@
 		BC33D81C242BFED0007BF615 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Images.swift; path = Disertatie/Source/Views/Images.swift; sourceTree = SOURCE_ROOT; };
 		BC33D81F242C11FC007BF615 /* ChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatController.swift; path = Disertatie/Source/Controllers/ChatController.swift; sourceTree = SOURCE_ROOT; };
 		BC554904243CCEA900764306 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		BC554908243D086000764306 /* TranslationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEndpoint.swift; sourceTree = "<group>"; };
+		BC55490A243D0C4F00764306 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BC7328432427A575008D05EF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Disertatie/Source/Controllers/Colors.swift; sourceTree = SOURCE_ROOT; };
 		BC7328452427A605008D05EF /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		BCBB030A242787DE00C082F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BCBB030D2427889800C082F1 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		BCBB03122427A27A00C082F1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BCC64351243D28CD000EB35C /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Translations.swift; path = Disertatie/Source/Network/Translations.swift; sourceTree = SOURCE_ROOT; };
 		C35C21BBBEB85CD1A3C1A380 /* Pods-Disertatie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.release.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +131,7 @@
 		2D277B74241E56DD004335F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BCC64351243D28CD000EB35C /* Translations.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,7 +163,9 @@
 		2DA534F32422CE150000E9F9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2DA534FC2422D0E00000E9F9 /* APIConfiguration.swift */,
+				2DA534FC2422D0E00000E9F9 /* APIRequest.swift */,
+				BC554908243D086000764306 /* TranslationEndpoint.swift */,
+				BC55490A243D0C4F00764306 /* APIClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -410,8 +419,11 @@
 				2D18FCEE2430FC5100939080 /* UITableViewExtension.swift in Sources */,
 				BC7328442427A575008D05EF /* Colors.swift in Sources */,
 				2DC6F8802413D6990097B013 /* ChatsController.swift in Sources */,
+				BC55490B243D0C4F00764306 /* APIClient.swift in Sources */,
+				BCC64352243D28CD000EB35C /* Translations.swift in Sources */,
 				BC7328462427A605008D05EF /* SettingsController.swift in Sources */,
-				2DA534FD2422D0E00000E9F9 /* APIConfiguration.swift in Sources */,
+				BC554909243D086000764306 /* TranslationEndpoint.swift in Sources */,
+				2DA534FD2422D0E00000E9F9 /* APIRequest.swift in Sources */,
 				2D2020BF24350845006BAE99 /* UIImageViewExtension.swift in Sources */,
 				2D18FCF024310EAF00939080 /* UIViewExtension.swift in Sources */,
 				2D18FCEC2430F64B00939080 /* Strings.swift in Sources */,

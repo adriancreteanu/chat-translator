@@ -9,21 +9,22 @@
 
 import Alamofire
 
-protocol APIConfiguration: URLRequestConvertible {
+protocol APIRequest: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }
     var parameters: Parameters? { get }
+    var parametersArray: [Parameters]? { get }
     var headers: [HTTPHeader] { get }
 }
 
-extension APIConfiguration {
+extension APIRequest {
     var headers: [HTTPHeader] {
         return [
             HTTPHeader(name: HTTPHeaderField.contentType.rawValue, value: ContentType.json.rawValue),
             HTTPHeader(name: HTTPHeaderField.accept.rawValue, value: ContentType.json.rawValue)
         ]
     }
-    
+
     func asURLRequest() throws -> URLRequest {
         let url = try Constants.API.baseURL.asURL()
 
@@ -36,7 +37,15 @@ extension APIConfiguration {
 
         if let parameters = parameters {
             do {
-                request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
+            } catch {
+                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
+            }
+        }
+
+        if let parametersArray = parametersArray {
+            do {
+                request.httpBody = try JSONSerialization.data(withJSONObject: parametersArray)
             } catch {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
@@ -46,12 +55,15 @@ extension APIConfiguration {
     }
 }
 
-
 enum HTTPHeaderField: String {
     case authentication = "Authorization"
     case contentType = "Content-Type"
     case accept = "Accept"
+    case contentLength = "Content-Length"
     case acceptEncoding = "Accept-Encoding"
+    case apiSubscriptionKey = "Ocp-Apim-Subscription-Key"
+    case clientTraceId = "X-ClientTraceID"
+    case host = "Host"
 }
 
 enum ContentType: String {

@@ -19,5 +19,5 @@ extension Constants.Design {
 }
 
 extension Constants.API {
-    static let baseURL = "http://www.test.com:8080"
+    static let baseURL = "https://dev.microsofttranslator.com"
 }

@@ -7,27 +7,32 @@
 //
 
 import Foundation
+import ObjectMapper
 
 class JSONHelper {
-    static func loadUsers() {
+    static func loadChats() -> [ChatViewModel] {
         if let pathURL = Bundle.main.url(
-            forResource: "Users",
+            forResource: "Chats",
             withExtension: "json") {
             do {
                 let data = try Data(contentsOf: pathURL, options: .alwaysMapped)
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                
+                guard let jsonObject = json as? [String: Any],
+                    let jsonElements = jsonObject["chats"] as? [[String: Any]] else {
+                    return []
+                }
+                
+                let chatModels = jsonElements.compactMap { Mapper<Chat>().map(JSONObject: $0) }
+                return chatModels.map { ChatViewModel(chat: $0) }
+                
             } catch {
                 print("parse error: \(error)")
+                return []
             }
         } else {
             print("invalid filename/path")
+            return []
         }
     }
-}
-
-
-struct Item: Codable {
-    let userId: Int
-    let id: Int
-    let title: String
-    let completed: Bool
 }

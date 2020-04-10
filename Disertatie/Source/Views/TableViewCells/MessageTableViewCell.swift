@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatTableViewCell: UITableViewCell {
+class MessageTableViewCell: UITableViewCell {
     private var messageText: UILabel!
     private var bubbleView: UIView!
     private var avatarImage: UIImageView!

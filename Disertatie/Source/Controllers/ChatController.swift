@@ -6,7 +6,6 @@
 //  Copyright © 2020 Adrian Creteanu. All rights reserved.
 //
 
-import SnapKit
 import UIKit
 
 class ChatController: BaseController {
@@ -30,7 +29,7 @@ extension ChatController: Base {
         tableView = UITableView.make()
         tableView.addDelegates(self)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
-        tableView.register(ChatTableViewCell.self, forCellReuseIdentifier: "MyCell") // Create method for this
+        tableView.register(MessageTableViewCell.self)
         
         view.add(tableView, then: {
             $0.layout(using: [
@@ -64,9 +63,7 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as? ChatTableViewCell else {
-            return UITableViewCell()
-        }
+        let cell = tableView.dequeue(MessageTableViewCell.self, forIndexPath: indexPath)
         
         return cell
     }

@@ -10,6 +10,7 @@ import UIKit
 
 class ChatsController: BaseController {
     private var tableView: UITableView!
+    private var viewModels: [ChatViewModel]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +18,7 @@ class ChatsController: BaseController {
         initializeUI()
         updateTexts()
         
-        JSONHelper.loadUsers()
+        viewModels = JSONHelper.loadChats()
     }
     
 //    override func viewWillAppear(_ animated: Bool) {
@@ -58,10 +59,12 @@ extension ChatsController: Base {
 
 extension ChatsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return viewModels.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeue(ChatsListTableViewCell.self, forIndexPath: indexPath)
+        let cell = tableView.dequeue(ChatsListTableViewCell.self, forIndexPath: indexPath)
+        cell.update(with: viewModels[indexPath.row])
+        return cell
     }
 }

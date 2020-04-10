@@ -1,0 +1,22 @@
+
+{
+    "chats": [
+        {
+            "user": {
+                "firstName": "Amy",
+                "lastName": "Michael",
+                "avatarURL": "https://randomuser.me/api/portraits/women/99.jpg"
+            },
+            "lastMessage": "How are you?"
+        },
+        
+        {
+            "user": {
+                "firstName": "Tom",
+                "lastName": "Green",
+                "avatarURL": "https://randomuser.me/api/portraits/men/99.jpg"
+            },
+            "lastMessage": "Good morning! :) "
+        }
+    ]
+}

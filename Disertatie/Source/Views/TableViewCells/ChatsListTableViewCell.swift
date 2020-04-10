@@ -29,8 +29,6 @@ class ChatsListTableViewCell: UITableViewCell {
         selectionStyle = .none
        
         avatarImage = UIImageView.roundImage(withSize: 54)
-        avatarImage.backgroundColor = .primary
-        
         contentView.add(avatarImage, then: {
             $0.layout(using: [
                 $0.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
@@ -42,12 +40,10 @@ class ChatsListTableViewCell: UITableViewCell {
         })
         
         nameLabel = UILabel()
-        nameLabel.text = "Michael, Amy"
         nameLabel.textColor = .primary
         nameLabel.font = UIFont.primary(ofSize: .callout)
         
         lastMessageLabel = UILabel()
-        lastMessageLabel.text = "How are you today?"
         lastMessageLabel.font = UIFont.primary(ofSize: .footnote)
         
         let vStack = UIStackView(arrangedSubviews: [
@@ -66,5 +62,11 @@ class ChatsListTableViewCell: UITableViewCell {
                 $0.leadingAnchor.constraint(equalTo: avatarImage.trailingAnchor, constant: 15)
             ])
         })
+    }
+    
+    func update(with data: ChatViewModel) {
+        nameLabel.text = data.user.name
+        lastMessageLabel.text = data.lastMessage
+        avatarImage.load(url: data.user.avatarURL)
     }
 }

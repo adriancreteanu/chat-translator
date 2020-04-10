@@ -16,20 +16,22 @@ class ChatsController: BaseController {
 
         initializeUI()
         updateTexts()
+        
+        JSONHelper.loadUsers()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        APIClient.translate(from: "en", to: "de") { (result) in
-            switch result {
-            case .success(let user):
-                print(user)
-            case.failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        APIClient.translate(from: "en", to: "de") { (result) in
+//            switch result {
+//            case .success(let user):
+//                print(user)
+//            case.failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
 }
 
 extension ChatsController: Base {

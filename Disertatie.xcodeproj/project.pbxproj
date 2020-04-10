@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0195210FA625190FD0069BAF /* Pods_Disertatie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD44BB0ED75260D02FF5BAA /* Pods_Disertatie.framework */; };
 		2D18FCDA242FF54400939080 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D18FCD9242FF54400939080 /* GoogleService-Info.plist */; };
 		2D18FCEA2430F41800939080 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18FCE92430F41800939080 /* Fonts.swift */; };
 		2D18FCEC2430F64B00939080 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18FCEB2430F64B00939080 /* Strings.swift */; };
@@ -38,11 +39,13 @@
 		BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030D2427889800C082F1 /* TabBarItem.swift */; };
 		BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBB03122427A27A00C082F1 /* Colors.xcassets */; };
 		BCC64352243D28CD000EB35C /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC64351243D28CD000EB35C /* Translations.swift */; };
-		F91FA32A7F51B3B2EEFEB5CF /* Pods_Disertatie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E78301AEB54148F146B8E12 /* Pods_Disertatie.framework */; };
+		BCC64359243FAAE7000EB35C /* Users.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC64358243FAAE7000EB35C /* Users.json */; };
+		BCC6435B243FABD0000EB35C /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6435A243FABD0000EB35C /* JSONHelper.swift */; };
+		BCC6435D243FAE15000EB35C /* Messages.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC6435C243FAE15000EB35C /* Messages.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E78301AEB54148F146B8E12 /* Pods_Disertatie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disertatie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23F482C901C6E36BF410E148 /* Pods-Disertatie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.release.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.release.xcconfig"; sourceTree = "<group>"; };
 		2D18FCD9242FF54400939080 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D18FCE92430F41800939080 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		2D18FCEB2430F64B00939080 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -63,7 +66,7 @@
 		2DC6F8842413D69D0097B013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DC6F8872413D69D0097B013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DC6F8892413D69D0097B013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4B4847B5D66A6DBDD8712D3 /* Pods-Disertatie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.debug.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.debug.xcconfig"; sourceTree = "<group>"; };
+		2FD44BB0ED75260D02FF5BAA /* Pods_Disertatie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disertatie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC33D818242BE4C6007BF615 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		BC33D81A242BE593007BF615 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base.swift; path = Disertatie/Source/Views/Base.swift; sourceTree = SOURCE_ROOT; };
 		BC33D81C242BFED0007BF615 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Images.swift; path = Disertatie/Source/Views/Images.swift; sourceTree = SOURCE_ROOT; };
@@ -77,7 +80,10 @@
 		BCBB030D2427889800C082F1 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		BCBB03122427A27A00C082F1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BCC64351243D28CD000EB35C /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Translations.swift; path = Disertatie/Source/Network/Translations.swift; sourceTree = SOURCE_ROOT; };
-		C35C21BBBEB85CD1A3C1A380 /* Pods-Disertatie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.release.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.release.xcconfig"; sourceTree = "<group>"; };
+		BCC64358243FAAE7000EB35C /* Users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Users.json; sourceTree = "<group>"; };
+		BCC6435A243FABD0000EB35C /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JSONHelper.swift; path = Disertatie/Assets/TestData/JSONHelper.swift; sourceTree = SOURCE_ROOT; };
+		BCC6435C243FAE15000EB35C /* Messages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Messages.json; sourceTree = "<group>"; };
+		C4AE3AF2AB9841D1413156A0 /* Pods-Disertatie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.debug.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,20 +91,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F91FA32A7F51B3B2EEFEB5CF /* Pods_Disertatie.framework in Frameworks */,
+				0195210FA625190FD0069BAF /* Pods_Disertatie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D18FCDB2430D59E00939080 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		2D18FCF1243117E600939080 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +138,7 @@
 		2D277B75241E56DF004335F2 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				2D18FCDB2430D59E00939080 /* Fonts */,
+				BCC64357243FAAB9000EB35C /* TestData */,
 				2D18FCD9242FF54400939080 /* GoogleService-Info.plist */,
 				2DC6F8892413D69D0097B013 /* Info.plist */,
 				2DC6F8842413D69D0097B013 /* Assets.xcassets */,
@@ -229,6 +228,7 @@
 		2DA534FB2422CFBE0000E9F9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				BCC6435A243FABD0000EB35C /* JSONHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -239,7 +239,7 @@
 				2DC6F87A2413D6990097B013 /* Disertatie */,
 				2DC6F8792413D6990097B013 /* Products */,
 				D627D618941C05B8B9E52F0F /* Pods */,
-				7AEF307D0E7A6C07A11882BC /* Frameworks */,
+				CAA98E3A8E5357D7FA2113B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -260,14 +260,6 @@
 			path = Disertatie;
 			sourceTree = "<group>";
 		};
-		7AEF307D0E7A6C07A11882BC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1E78301AEB54148F146B8E12 /* Pods_Disertatie.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		BC33D81E242C1072007BF615 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,11 +277,28 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		BCC64357243FAAB9000EB35C /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				BCC64358243FAAE7000EB35C /* Users.json */,
+				BCC6435C243FAE15000EB35C /* Messages.json */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
+		CAA98E3A8E5357D7FA2113B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FD44BB0ED75260D02FF5BAA /* Pods_Disertatie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D627D618941C05B8B9E52F0F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A4B4847B5D66A6DBDD8712D3 /* Pods-Disertatie.debug.xcconfig */,
-				C35C21BBBEB85CD1A3C1A380 /* Pods-Disertatie.release.xcconfig */,
+				C4AE3AF2AB9841D1413156A0 /* Pods-Disertatie.debug.xcconfig */,
+				23F482C901C6E36BF410E148 /* Pods-Disertatie.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -301,11 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DC6F88C2413D69D0097B013 /* Build configuration list for PBXNativeTarget "Disertatie" */;
 			buildPhases = (
-				E1EC7164C9E9D1BACB15A64B /* [CP] Check Pods Manifest.lock */,
+				E14C0535C349C67515AF247F /* [CP] Check Pods Manifest.lock */,
 				2DC6F8742413D6990097B013 /* Sources */,
 				2DC6F8752413D6990097B013 /* Frameworks */,
 				2DC6F8762413D6990097B013 /* Resources */,
-				21CBBD9253AE679A3BD1E61E /* [CP] Embed Pods Frameworks */,
+				6CF43F68FDD7DD1D74488B24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -357,6 +366,8 @@
 				2DC6F8882413D69D0097B013 /* LaunchScreen.storyboard in Resources */,
 				2D18FCDA242FF54400939080 /* GoogleService-Info.plist in Resources */,
 				BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */,
+				BCC6435D243FAE15000EB35C /* Messages.json in Resources */,
+				BCC64359243FAAE7000EB35C /* Users.json in Resources */,
 				2DC6F8852413D69D0097B013 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +375,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21CBBD9253AE679A3BD1E61E /* [CP] Embed Pods Frameworks */ = {
+		6CF43F68FDD7DD1D74488B24 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,7 +392,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Disertatie/Pods-Disertatie-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E1EC7164C9E9D1BACB15A64B /* [CP] Check Pods Manifest.lock */ = {
+		E14C0535C349C67515AF247F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -431,6 +442,7 @@
 				BC554905243CCEA900764306 /* UITableViewCellExtension.swift in Sources */,
 				BC33D820242C11FC007BF615 /* ChatController.swift in Sources */,
 				2D9CD076243A50A700E62FC7 /* ChatsListTableViewCell.swift in Sources */,
+				BCC6435B243FABD0000EB35C /* JSONHelper.swift in Sources */,
 				2D2020C124351F4E006BAE99 /* MessageBarView.swift in Sources */,
 				BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */,
 				BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */,
@@ -570,7 +582,7 @@
 		};
 		2DC6F88D2413D69D0097B013 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4B4847B5D66A6DBDD8712D3 /* Pods-Disertatie.debug.xcconfig */;
+			baseConfigurationReference = C4AE3AF2AB9841D1413156A0 /* Pods-Disertatie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -589,7 +601,7 @@
 		};
 		2DC6F88E2413D69D0097B013 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C35C21BBBEB85CD1A3C1A380 /* Pods-Disertatie.release.xcconfig */;
+			baseConfigurationReference = 23F482C901C6E36BF410E148 /* Pods-Disertatie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

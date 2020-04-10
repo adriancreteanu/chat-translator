@@ -1,0 +1,14 @@
+
+{
+    "users": [
+        {
+            "name": "Amy Michael",
+            "age": 23
+        },
+        
+        {
+            "name": "John Cena",
+            "age": 42
+        }
+    ]
+}

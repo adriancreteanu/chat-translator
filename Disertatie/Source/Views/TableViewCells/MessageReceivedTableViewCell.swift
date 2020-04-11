@@ -1,14 +1,14 @@
 //
-//  ChatTableViewCell.swift
+//  MessageReceivedTableViewCell.swift
 //  Disertatie
 //
-//  Created by Adrian Crețeanu on 29/03/2020.
+//  Created by Adrian Crețeanu on 11/04/2020.
 //  Copyright © 2020 Adrian Creteanu. All rights reserved.
 //
 
 import UIKit
 
-class MessageTableViewCell: UITableViewCell {
+class MessageReceivedTableViewCell: UITableViewCell {
     private var messageText: UILabel!
     private var bubbleView: UIView!
     
@@ -30,21 +30,27 @@ class MessageTableViewCell: UITableViewCell {
         // TODO: Customize UIView()
         bubbleView = UIView()
         bubbleView.layer.cornerRadius = Constants.Design.chatBubbleRadius
-        bubbleView.backgroundColor = .primary
+        bubbleView.backgroundColor = .white
         
+        // Shadow
+        bubbleView.layer.shadowOpacity = 0.12
+        bubbleView.layer.shadowRadius = 12.5
+        bubbleView.layer.shadowOffset = CGSize(width: 0, height: 7)
+        bubbleView.layer.shadowColor = UIColor.black.cgColor
+    
         contentView.add(bubbleView, then: {
             $0.layout(using: [
-                $0.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-                contentView.bottomAnchor.constraint(equalTo: $0.bottomAnchor, constant: 5),
-                $0.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: 50),
-                contentView.trailingAnchor.constraint(equalTo: $0.trailingAnchor, constant: 20)
+                $0.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+                contentView.bottomAnchor.constraint(equalTo: $0.bottomAnchor, constant: 10),
+                contentView.trailingAnchor.constraint(greaterThanOrEqualTo: $0.trailingAnchor, constant: 50),
+                $0.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
             ])
         })
         
         messageText = UILabel()
         messageText.numberOfLines = 0
         messageText.font = UIFont.primary(ofSize: .callout)
-        messageText.textColor = .white
+        messageText.textColor = .black
         
         bubbleView.add(messageText, then: {
             $0.layout(using: [

@@ -9,23 +9,23 @@
 import Foundation
 import ObjectMapper
 
+private typealias JSONArray = [[String: Any]]
+
 class JSONHelper {
-    static func loadChats() -> [ChatViewModel] {
+    private static func loadJSON(_ name: String) -> JSONArray {
         if let pathURL = Bundle.main.url(
-            forResource: "Chats",
+            forResource: name,
             withExtension: "json") {
             do {
                 let data = try Data(contentsOf: pathURL, options: .alwaysMapped)
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 
                 guard let jsonObject = json as? [String: Any],
-                    let jsonElements = jsonObject["chats"] as? [[String: Any]] else {
+                    let jsonArray = jsonObject[name] as? [[String: Any]] else {
                     return []
                 }
                 
-                let chatModels = jsonElements.compactMap { Mapper<Chat>().map(JSONObject: $0) }
-                return chatModels.map { ChatViewModel(chat: $0) }
-                
+                return jsonArray
             } catch {
                 print("parse error: \(error)")
                 return []
@@ -34,5 +34,17 @@ class JSONHelper {
             print("invalid filename/path")
             return []
         }
+    }
+    
+    static func loadChats() -> [ChatViewModel] {
+        let jsonArray = JSONHelper.loadJSON("chats")
+        let chatModels = jsonArray.compactMap { Mapper<Chat>().map(JSONObject: $0) }
+        return chatModels.map { ChatViewModel(chat: $0) }
+    }
+    
+    static func loadChatMessages() -> [MessageViewModel] {
+        let jsonArray = JSONHelper.loadJSON("messages")
+        let messageModels = jsonArray.compactMap { Mapper<Message>().map(JSONObject: $0) }
+        return messageModels.map { MessageViewModel(message: $0) }
     }
 }

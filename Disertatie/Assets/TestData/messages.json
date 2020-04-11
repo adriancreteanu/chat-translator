@@ -1,0 +1,31 @@
+
+{
+    "messages": [
+        {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum lacinia volutpat. Integer mollis tortor eu ex luctus vehicula. Nunc eu turpis ut turpis bibendum tristique.",
+            "user": {
+                "firstName": "Amy",
+                "lastName": "Michael",
+                "avatarURL": "https://randomuser.me/api/portraits/women/99.jpg"
+            },
+        },
+        
+        {
+            "text": "How are you?",
+            "user": {
+                "firstName": "Amy",
+                "lastName": "Michael",
+                "avatarURL": "https://randomuser.me/api/portraits/women/99.jpg"
+            },
+        },
+        
+        {
+            "text": "Good morning!",
+            "user": {
+                "firstName": "Amy",
+                "lastName": "Michael",
+                "avatarURL": "https://randomuser.me/api/portraits/women/99.jpg"
+            },
+        }
+    ]
+}

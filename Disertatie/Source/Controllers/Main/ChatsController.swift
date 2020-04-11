@@ -55,9 +55,14 @@ extension ChatsController: Base {
     func updateTexts() {
         navigationItem.title = "Chats"
     }
+    
+    func navigateToChat() {
+        let chatVC = ChatController()
+        navigationController?.pushViewController(chatVC, animated: true)
+    }
 }
 
-extension ChatsController: UITableViewDelegate, UITableViewDataSource {
+extension ChatsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModels.count
     }
@@ -66,5 +71,12 @@ extension ChatsController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeue(ChatsListTableViewCell.self, forIndexPath: indexPath)
         cell.update(with: viewModels[indexPath.row])
         return cell
+    }
+}
+
+extension ChatsController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        navigateToChat()
     }
 }

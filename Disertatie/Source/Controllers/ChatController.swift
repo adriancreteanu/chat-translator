@@ -11,12 +11,15 @@ import UIKit
 class ChatController: BaseController {
     private var tableView: UITableView!
     private var messageBarView: MessageBarView!
+    private var viewModels: [MessageViewModel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeUI()
         updateTexts()
+        
+        viewModels = JSONHelper.loadChatMessages()
     }
     
     // MARK: Table View
@@ -28,8 +31,8 @@ extension ChatController: Base {
         
         tableView = UITableView.make()
         tableView.addDelegates(self)
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
-        tableView.register(MessageTableViewCell.self)
+        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 20, right: 0)
+        tableView.register(MessageReceivedTableViewCell.self)
         
         view.add(tableView, then: {
             $0.layout(using: [
@@ -59,12 +62,12 @@ extension ChatController: Base {
 
 extension ChatController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return viewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(MessageTableViewCell.self, forIndexPath: indexPath)
-        
+        let cell = tableView.dequeue(MessageReceivedTableViewCell.self, forIndexPath: indexPath)
+        cell.update(with: viewModels[indexPath.row])
         return cell
     }
 }

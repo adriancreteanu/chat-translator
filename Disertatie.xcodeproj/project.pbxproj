@@ -39,13 +39,16 @@
 		BC55490B243D0C4F00764306 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55490A243D0C4F00764306 /* APIClient.swift */; };
 		BC7328442427A575008D05EF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328432427A575008D05EF /* Colors.swift */; };
 		BC7328462427A605008D05EF /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328452427A605008D05EF /* SettingsController.swift */; };
+		BC77AD2F244246A700F9983E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD2E244246A700F9983E /* Message.swift */; };
+		BC77AD31244246FC00F9983E /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD30244246FC00F9983E /* MessageViewModel.swift */; };
+		BC77AD332442570E00F9983E /* MessageReceivedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */; };
 		BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030A242787DE00C082F1 /* TabBarController.swift */; };
 		BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030D2427889800C082F1 /* TabBarItem.swift */; };
 		BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBB03122427A27A00C082F1 /* Colors.xcassets */; };
 		BCC64352243D28CD000EB35C /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC64351243D28CD000EB35C /* Translations.swift */; };
-		BCC64359243FAAE7000EB35C /* Chats.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC64358243FAAE7000EB35C /* Chats.json */; };
+		BCC64359243FAAE7000EB35C /* chats.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC64358243FAAE7000EB35C /* chats.json */; };
 		BCC6435B243FABD0000EB35C /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6435A243FABD0000EB35C /* JSONHelper.swift */; };
-		BCC6435D243FAE15000EB35C /* Messages.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC6435C243FAE15000EB35C /* Messages.json */; };
+		BCC6435D243FAE15000EB35C /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC6435C243FAE15000EB35C /* messages.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,13 +87,16 @@
 		BC55490A243D0C4F00764306 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BC7328432427A575008D05EF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Disertatie/Source/Controllers/Colors.swift; sourceTree = SOURCE_ROOT; };
 		BC7328452427A605008D05EF /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		BC77AD2E244246A700F9983E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Disertatie/Source/ViewModels/Message.swift; sourceTree = SOURCE_ROOT; };
+		BC77AD30244246FC00F9983E /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageReceivedTableViewCell.swift; sourceTree = "<group>"; };
 		BCBB030A242787DE00C082F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BCBB030D2427889800C082F1 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		BCBB03122427A27A00C082F1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BCC64351243D28CD000EB35C /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Translations.swift; path = Disertatie/Source/Network/Translations.swift; sourceTree = SOURCE_ROOT; };
-		BCC64358243FAAE7000EB35C /* Chats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Chats.json; sourceTree = "<group>"; };
+		BCC64358243FAAE7000EB35C /* chats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chats.json; sourceTree = "<group>"; };
 		BCC6435A243FABD0000EB35C /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JSONHelper.swift; path = Disertatie/Assets/TestData/JSONHelper.swift; sourceTree = SOURCE_ROOT; };
-		BCC6435C243FAE15000EB35C /* Messages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Messages.json; sourceTree = "<group>"; };
+		BCC6435C243FAE15000EB35C /* messages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
 		C4AE3AF2AB9841D1413156A0 /* Pods-Disertatie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.debug.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				2D18FCF2243121C800939080 /* MessageTableViewCell.swift */,
+				BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */,
 				2D9CD075243A50A700E62FC7 /* ChatsListTableViewCell.swift */,
 			);
 			path = TableViewCells;
@@ -141,6 +148,7 @@
 				BCC64351243D28CD000EB35C /* Translations.swift */,
 				BC4BDDDF2440FA1C00AC47E4 /* Chat.swift */,
 				BC4BDDE12440FA2400AC47E4 /* User.swift */,
+				BC77AD2E244246A700F9983E /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +293,7 @@
 			children = (
 				BC4BDDDB2440F96D00AC47E4 /* ChatViewModel.swift */,
 				BC4BDDDD2440F9A100AC47E4 /* UserViewModel.swift */,
+				BC77AD30244246FC00F9983E /* MessageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -300,8 +309,8 @@
 		BCC64357243FAAB9000EB35C /* TestData */ = {
 			isa = PBXGroup;
 			children = (
-				BCC64358243FAAE7000EB35C /* Chats.json */,
-				BCC6435C243FAE15000EB35C /* Messages.json */,
+				BCC64358243FAAE7000EB35C /* chats.json */,
+				BCC6435C243FAE15000EB35C /* messages.json */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -386,8 +395,8 @@
 				2DC6F8882413D69D0097B013 /* LaunchScreen.storyboard in Resources */,
 				2D18FCDA242FF54400939080 /* GoogleService-Info.plist in Resources */,
 				BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */,
-				BCC6435D243FAE15000EB35C /* Messages.json in Resources */,
-				BCC64359243FAAE7000EB35C /* Chats.json in Resources */,
+				BCC6435D243FAE15000EB35C /* messages.json in Resources */,
+				BCC64359243FAAE7000EB35C /* chats.json in Resources */,
 				2DC6F8852413D69D0097B013 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,8 +454,10 @@
 				2D2020BD2435066E006BAE99 /* Constants.swift in Sources */,
 				BC33D819242BE4C6007BF615 /* Title.swift in Sources */,
 				BC33D81D242BFED0007BF615 /* Images.swift in Sources */,
+				BC77AD332442570E00F9983E /* MessageReceivedTableViewCell.swift in Sources */,
 				BC4BDDE22440FA2400AC47E4 /* User.swift in Sources */,
 				2D18FCF3243121C800939080 /* MessageTableViewCell.swift in Sources */,
+				BC77AD2F244246A700F9983E /* Message.swift in Sources */,
 				2D2020C324351FB5006BAE99 /* UITextFieldExtension.swift in Sources */,
 				2D18FCEE2430FC5100939080 /* UITableViewExtension.swift in Sources */,
 				BC7328442427A575008D05EF /* Colors.swift in Sources */,
@@ -466,6 +477,7 @@
 				BC33D820242C11FC007BF615 /* ChatController.swift in Sources */,
 				2D9CD076243A50A700E62FC7 /* ChatsListTableViewCell.swift in Sources */,
 				BCC6435B243FABD0000EB35C /* JSONHelper.swift in Sources */,
+				BC77AD31244246FC00F9983E /* MessageViewModel.swift in Sources */,
 				2D2020C124351F4E006BAE99 /* MessageBarView.swift in Sources */,
 				BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */,
 				BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */,

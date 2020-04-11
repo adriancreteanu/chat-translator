@@ -12,6 +12,8 @@ extension UIImageView {
     static func roundImage(withSize size: CGFloat) -> UIImageView {
         let image = UIImageView()
         image.layer.cornerRadius = size / 2
+        image.layer.borderWidth = 1
+        image.layer.borderColor = UIColor.primary.cgColor
         image.clipsToBounds = true
         return image
     }

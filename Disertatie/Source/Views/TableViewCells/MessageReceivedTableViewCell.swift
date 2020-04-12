@@ -31,12 +31,7 @@ class MessageReceivedTableViewCell: UITableViewCell {
         bubbleView = UIView()
         bubbleView.layer.cornerRadius = Constants.Design.chatBubbleRadius
         bubbleView.backgroundColor = .white
-        
-        // Shadow
-        bubbleView.layer.shadowOpacity = 0.12
-        bubbleView.layer.shadowRadius = 12.5
-        bubbleView.layer.shadowOffset = CGSize(width: 0, height: 7)
-        bubbleView.layer.shadowColor = UIColor.black.cgColor
+        addShadow()
     
         contentView.add(bubbleView, then: {
             $0.layout(using: [
@@ -64,5 +59,13 @@ class MessageReceivedTableViewCell: UITableViewCell {
     
     func update(with data: MessageViewModel) {
         messageText.text = data.text
+    }
+    
+    fileprivate func addShadow() {
+        bubbleView.layer.shadowOpacity = 0.12
+        bubbleView.layer.shadowRadius = 12.5
+        bubbleView.layer.shadowOffset = CGSize(width: 0, height: 7)
+        bubbleView.layer.shadowColor = UIColor.black.cgColor
+        //bubbleView.layer.shadowPath = UIBezierPath(rect: bubbleView.bounds).cgPath
     }
 }

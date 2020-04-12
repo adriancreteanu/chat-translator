@@ -21,8 +21,6 @@ class ChatController: BaseController {
         
         viewModels = JSONHelper.loadChatMessages()
     }
-    
-    // MARK: Table View
 }
 
 extension ChatController: Base {
@@ -32,7 +30,7 @@ extension ChatController: Base {
         tableView = UITableView.make()
         tableView.addDelegates(self)
         tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 20, right: 0)
-        tableView.register(MessageReceivedTableViewCell.self)
+        tableView.register(MessageTableViewCell.self)
         
         view.add(tableView, then: {
             $0.layout(using: [
@@ -45,6 +43,7 @@ extension ChatController: Base {
         messageBarView = MessageBarView()
         messageBarView.delegate = self
         messageBarView.backgroundColor = .white
+        
         view.add(messageBarView, then: {
             $0.layout(using: [
                 $0.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -66,7 +65,7 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(MessageReceivedTableViewCell.self, forIndexPath: indexPath)
+        let cell = tableView.dequeue(MessageTableViewCell.self, forIndexPath: indexPath)
         cell.update(with: viewModels[indexPath.row])
         return cell
     }

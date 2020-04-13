@@ -42,6 +42,7 @@
 		BC77AD2F244246A700F9983E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD2E244246A700F9983E /* Message.swift */; };
 		BC77AD31244246FC00F9983E /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD30244246FC00F9983E /* MessageViewModel.swift */; };
 		BC77AD332442570E00F9983E /* MessageReceivedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */; };
+		BC77AD37244514B700F9983E /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */; };
 		BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030A242787DE00C082F1 /* TabBarController.swift */; };
 		BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030D2427889800C082F1 /* TabBarItem.swift */; };
 		BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBB03122427A27A00C082F1 /* Colors.xcassets */; };
@@ -90,6 +91,7 @@
 		BC77AD2E244246A700F9983E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Disertatie/Source/ViewModels/Message.swift; sourceTree = SOURCE_ROOT; };
 		BC77AD30244246FC00F9983E /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageReceivedTableViewCell.swift; sourceTree = "<group>"; };
+		BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 		BCBB030A242787DE00C082F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BCBB030D2427889800C082F1 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		BCBB03122427A27A00C082F1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				2D18FCED2430FC5100939080 /* UITableViewExtension.swift */,
 				2D2020C224351FB5006BAE99 /* UITextFieldExtension.swift */,
 				2D18FCEF24310EAF00939080 /* UIViewExtension.swift */,
+				BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				2D2020BD2435066E006BAE99 /* Constants.swift in Sources */,
 				BC33D819242BE4C6007BF615 /* Title.swift in Sources */,
 				BC33D81D242BFED0007BF615 /* Images.swift in Sources */,
+				BC77AD37244514B700F9983E /* UIEdgeInsetsExtension.swift in Sources */,
 				BC77AD332442570E00F9983E /* MessageReceivedTableViewCell.swift in Sources */,
 				BC4BDDE22440FA2400AC47E4 /* User.swift in Sources */,
 				2D18FCF3243121C800939080 /* MessageTableViewCell.swift in Sources */,

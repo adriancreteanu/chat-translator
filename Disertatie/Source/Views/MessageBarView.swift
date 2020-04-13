@@ -12,9 +12,10 @@ class MessageBarView: UIView {
     private var messageTextView: UITextView!
     private var sendButton: UIButton!
     
-    fileprivate let maxLinesDisplayed: CGFloat = 4
-    fileprivate let messageTextViewMinHeight: CGFloat = 45
-    fileprivate var messageTextViewMaxHeight: CGFloat = 65
+    fileprivate let maxLinesDisplayed: CGFloat = 3
+    fileprivate let messageTextViewPadding: CGFloat = 10 // move this to constants
+    fileprivate var messageTextViewMinHeight: CGFloat!
+    fileprivate var messageTextViewMaxHeight: CGFloat!
     
     weak var delegate: MessageBarViewDelegate?
     
@@ -25,7 +26,9 @@ class MessageBarView: UIView {
     
     private func initializeUI() {
         // TODO: Move this to another component if reused
+        // Yea, it's a lot of setup, we should move this to a component
         messageTextView = UITextView()
+        messageTextView.textContainerInset = .init(all: messageTextViewPadding)
         messageTextView.isScrollEnabled = false
         messageTextView.font = UIFont.primary(ofSize: .callout)
         messageTextView.textColor = .white
@@ -34,7 +37,15 @@ class MessageBarView: UIView {
         messageTextView.tintColor = .white
         messageTextView.delegate = self
         
-        messageTextViewMaxHeight = (messageTextView.font?.lineHeight ?? 20) * maxLinesDisplayed
+//        let style = NSMutableParagraphStyle()
+//        style.lineSpacing = 5
+//        let attributes = [NSAttributedString.Key.paragraphStyle : style]
+//        messageTextView.attributedText = NSAttributedString(string: "Type something", attributes: attributes)
+        
+        let textViewFontHeight = messageTextView.font?.lineHeight ?? 20
+        let verticalPadding = 2 * messageTextViewPadding
+        messageTextViewMinHeight = textViewFontHeight + verticalPadding
+        messageTextViewMaxHeight = (textViewFontHeight * maxLinesDisplayed) + verticalPadding + 10 // space between lines
         
         add(messageTextView, then: {
             $0.layout(using: [
@@ -73,7 +84,7 @@ protocol MessageBarViewDelegate: class {
 
 extension MessageBarView: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        let size = CGSize(width: frame.width, height: .infinity)
+        let size = CGSize(width: textView.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
         
         guard estimatedSize.height <= messageTextViewMaxHeight else {

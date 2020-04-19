@@ -12,6 +12,7 @@ import Alamofire
 protocol APIRequest: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }
+    var queryItems: [URLQueryItem]? { get }
     var parameters: Parameters? { get }
     var parametersArray: [Parameters]? { get }
     var headers: [HTTPHeader] { get }
@@ -26,9 +27,11 @@ extension APIRequest {
     }
 
     func asURLRequest() throws -> URLRequest {
-        let url = try Constants.API.baseURL.asURL()
-
-        var request = URLRequest(url: url.appendingPathComponent(path))
+        let url = Constants.API.baseURL + path
+        var urlComponents = URLComponents(string: url)!
+        urlComponents.queryItems = queryItems
+        
+        var request = try URLRequest(url: urlComponents.asURL())
         request.httpMethod = method.rawValue
 
         headers.forEach { httpHeader in

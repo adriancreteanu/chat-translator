@@ -19,7 +19,20 @@ enum TranslationEndpoint: APIRequest {
     
     var path: String {
         switch self {
-        case .translate: return "/translate?api-version=3.0&from=en&to=de"
+        case .translate: return "/translate"
+        }
+    }
+    
+    var queryItems: [URLQueryItem]? {
+        switch self {
+        case .translate(let from, let to):
+            return [
+                URLQueryItem(name: "api-version", value: "3.0"),
+                URLQueryItem(name: "from", value: from),
+                URLQueryItem(name: "to", value: to),
+            ]
+            
+        default: return nil
         }
     }
     

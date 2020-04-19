@@ -92,12 +92,17 @@ extension MessageBarView: UITextViewDelegate {
             return
         }
         
-        // Disable back the scroll
-        textView.isScrollEnabled = false
-        
         textView.constraints.forEach { constraint in
             if constraint.firstAttribute == .height {
-                if estimatedSize.height <= messageTextViewMinHeight {
+                
+                guard constraint.constant != estimatedSize.height else {
+                    return
+                }
+                
+                // Disable back the scroll
+                textView.isScrollEnabled = false
+                
+                if estimatedSize.height < messageTextViewMinHeight {
                     constraint.constant = messageTextViewMinHeight
                 } else {
                     constraint.constant = estimatedSize.height

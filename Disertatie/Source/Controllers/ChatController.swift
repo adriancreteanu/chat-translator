@@ -73,6 +73,17 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
 
 extension ChatController: MessageBarViewDelegate {
     func didTapSend(forText text: String?) {
-        print("Text: \(text!)")
+        guard let textToTranslate = text else {
+            return
+        }
+        
+        APIClient.translate(textToTranslate, from: "en", to: "de") { result in
+            switch result {
+            case .success(let user):
+                print(user)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

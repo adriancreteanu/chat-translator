@@ -20,7 +20,13 @@ class APIClient {
             }
     }
 
-    static func translate(from source: String, to target: String, completion: @escaping (AFResult<[ReturnedJson]>) -> Void) {
-        performRequest(TranslationEndpoint.translate(from: source, to: target), completion: completion)
+    static func translate(
+        _ text: String,
+        from source: String,
+        to target: String,
+        completion: @escaping (AFResult<[ReturnedJson]>) -> Void) {
+        performRequest(
+            TranslationEndpoint.translate(text, from: source, to: target),
+            completion: completion)
     }
 }

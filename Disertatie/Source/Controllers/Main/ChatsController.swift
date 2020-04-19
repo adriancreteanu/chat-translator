@@ -20,19 +20,6 @@ class ChatsController: BaseController {
         
         viewModels = JSONHelper.loadChats()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        APIClient.translate(from: "en", to: "de") { (result) in
-//            switch result {
-//            case .success(let user):
-//                print(user)
-//            case.failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
 }
 
 extension ChatsController: Base {

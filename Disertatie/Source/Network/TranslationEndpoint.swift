@@ -9,7 +9,7 @@
 import Alamofire
 
 enum TranslationEndpoint: APIRequest {
-    case translate(from: String, to: String) // This will be a country code enum
+    case translate(_ text: String, from: String, to: String) // This will be a country code enum
     
     var method: HTTPMethod {
         switch self {
@@ -42,9 +42,9 @@ enum TranslationEndpoint: APIRequest {
     
     var parametersArray: [Parameters]? {
         switch self {
-        case .translate:
+        case .translate(let text, _, _):
             let params: [[String: String]] = [
-                ["text": "The big brown fox jumps over the lazy dog..."],
+                ["text": text],
             ]
             return params
         }

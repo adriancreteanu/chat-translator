@@ -37,11 +37,6 @@ class MessageBarView: UIView {
         messageTextView.tintColor = .white
         messageTextView.delegate = self
         
-//        let style = NSMutableParagraphStyle()
-//        style.lineSpacing = 5
-//        let attributes = [NSAttributedString.Key.paragraphStyle : style]
-//        messageTextView.attributedText = NSAttributedString(string: "Type something", attributes: attributes)
-        
         let textViewFontHeight = messageTextView.font?.lineHeight ?? 20
         let verticalPadding = 2 * messageTextViewPadding
         messageTextViewMinHeight = textViewFontHeight + verticalPadding
@@ -73,7 +68,7 @@ class MessageBarView: UIView {
     
     @objc
     func sendButtonAction(_ sender: UIButton) {
-        // delegate?.didTapSend(forText: typeField.text)
+        delegate?.didTapSend(forText: messageTextView.text)
         messageTextView.text = ""
     }
 }

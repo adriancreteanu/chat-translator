@@ -3,6 +3,7 @@
     "messages": [
         {
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum lacinia volutpat. Integer mollis tortor eu ex luctus vehicula. Nunc eu turpis ut turpis bibendum tristique.",
+            "translation": null,
             "user": {
                 "firstName": "Amy",
                 "lastName": "Michael",
@@ -12,6 +13,10 @@
         
         {
             "text": "How are you?",
+            "translation": {
+                "language": "DE",
+                "text": "Wie geht es dir?"
+            },
             "user": {
                 "firstName": "Amy",
                 "lastName": "Michael",
@@ -21,6 +26,10 @@
         
         {
             "text": "Good morning!",
+            "translation": {
+                "language": "DE",
+                "text": "Guten Morgen!"
+            },
             "user": {
                 "firstName": "Amy",
                 "lastName": "Michael",

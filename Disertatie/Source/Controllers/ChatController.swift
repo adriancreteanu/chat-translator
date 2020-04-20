@@ -77,29 +77,31 @@ extension ChatController: MessageBarViewDelegate {
             return
         }
         
+        // 1. Update UI
         let message = Message(text: textToTranslate)
-        let viewModel = MessageViewModel(message: message)
-        self.viewModels.append(viewModel)
+        viewModels.append(MessageViewModel(message: message))
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
         
-        
+        // 2. Translate message
         APIClient.translate(textToTranslate, from: "en", to: "de") { result in
             switch result {
             case .success(let response):
-                viewModel.updateMessage(text: (response.first?.translations.first!.text)!)
                 
-               
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                guard let newMessage = self.viewModels.last else { return }
+                newMessage.updateTranslation(text: (response.first?.translations.first!.text)!)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     self.tableView.reloadData()
-                })
-                
+                }
                 
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
+        
+        // 3. Upload message to Firebase - TODO
     }
 }

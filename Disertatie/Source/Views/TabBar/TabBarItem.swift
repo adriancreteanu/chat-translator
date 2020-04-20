@@ -12,19 +12,22 @@ class TabBarItem: UITabBarItem {
     private(set) var item: Item!
     
     convenience init(for item: Item) {
-        self.init(title: item.title, image: item.image, selectedImage: item.image)
+        self.init(
+            title: item.title,
+            image: item.image,
+            selectedImage: item.selectedImage
+        )
         
         self.item = item
         
         titlePositionAdjustment = .init(horizontal: 0, vertical: -5)
-        setTitleTextAttributes([.font: UIFont.preferredFont(forTextStyle: .footnote)], for: .normal)
-        setTitleTextAttributes([.font: UIFont.preferredFont(forTextStyle: .footnote)], for: .selected)
+        setTitleTextAttributes([.font: UIFont.primary(ofSize: .caption1)], for: .normal)
     }
 }
 
 extension TabBarItem {
     enum Item: Int {
-        private typealias Tuple = (title: String, image: UIImage)
+        private typealias Tuple = (title: String, image: UIImage, selectedImage: UIImage)
         
         case chats
         case profile
@@ -32,14 +35,15 @@ extension TabBarItem {
         
         private var tuple: Tuple {
             switch self {
-            case .chats: return (title: "Chats", image: .chats)
-            case .profile: return (title: "Profile", image: .profile)
-            case .settings: return (title: "Settings", image: .settings)
+            case .chats: return (title: "Chats", image: .chatBubbles, selectedImage: .chatBubblesFill)
+            case .profile: return (title: "Profile", image: .person, selectedImage: .personFill)
+            case .settings: return (title: "Settings", image: .settings, selectedImage: .settingsFill)
             }
         }
         
         var title: String { return tuple.title }
         var image: UIImage { return tuple.image }
+        var selectedImage: UIImage { return tuple.selectedImage }
         
         var viewController: UINavigationController {
             let tabBarItem = TabBarItem(for: self)

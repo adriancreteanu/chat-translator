@@ -9,8 +9,11 @@
 import UIKit
 
 extension UIImage {
-    static let chats = UIImage(named: "chats")!
+    static let chatBubbles = UIImage(named: "chatBubbles")!
+    static let chatBubblesFill = UIImage(named: "chatBubbles_fill")!
     static let settings = UIImage(named: "settings")!
-    static let profile = UIImage(named: "profile")!
-    static let profileFilled = UIImage(named: "profile-filled")!
+    static let settingsFill = UIImage(named: "settings_fill")!
+    static let person = UIImage(named: "person")!
+    static let personFill = UIImage(named: "person_fill")!
+    static let world = UIImage(named: "World.png")!
 }

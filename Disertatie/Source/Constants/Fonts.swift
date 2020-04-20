@@ -9,8 +9,9 @@
 import UIKit.UIFont
 
 extension UIFont {
-    static func primary(ofSize size: FontSize) -> UIFont {
-        return UIFont(name: String.Design.primaryFont, size: size.rawValue)!
+    static func primary(ofSize size: FontSize, weight: FontWeight = .regular) -> UIFont {
+        let fontName = String.Design.primaryFont + "-" + weight.rawValue
+        return UIFont(name: fontName, size: size.rawValue)!
     }
 }
 
@@ -28,8 +29,21 @@ enum FontSize: CGFloat {
     case caption2 = 11.0 // SFUIText
 }
 
+// The are custom values for Avenir font
 enum FontWeight: String {
-    case regular
-    case bold
-    case italic
+    case regular = "Book"
+    case bold = "Black"
+    
+//    case Oblique
+//    case HeavyOblique
+//    case Heavy
+//    case BlackOblique
+//    case BookOblique
+//    case Roman
+//    case Medium
+//    case Black
+//    case Light
+//    case MediumOblique
+//    case Book
+//    case LightOblique
 }

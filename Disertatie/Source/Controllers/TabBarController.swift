@@ -37,7 +37,7 @@ class TabBarController: UITabBarController {
         tabBar.barTintColor = .primary
         tabBar.isTranslucent = false
         tabBar.tintColor = .white
-        tabBar.unselectedItemTintColor = .gray
+        tabBar.unselectedItemTintColor = UIColor.white.withAlphaComponent(0.5)
     }
     
 }

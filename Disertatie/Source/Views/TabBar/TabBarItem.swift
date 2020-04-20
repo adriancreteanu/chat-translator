@@ -47,6 +47,7 @@ extension TabBarItem {
         
         var viewController: UINavigationController {
             let tabBarItem = TabBarItem(for: self)
+            tabBarItem.tag = self.rawValue
             
             switch self {
             case .chats:

@@ -13,6 +13,13 @@ class MessageTableViewCell: UITableViewCell {
     private var bubbleView: UIView!
     private var spinner: UIActivityIndicatorView!
     
+    var viewModel: MessageViewModel! {
+        didSet {
+            messageText.text = viewModel.translation ?? viewModel.text
+            spinner.isHidden = viewModel.translation != nil
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -32,6 +39,9 @@ class MessageTableViewCell: UITableViewCell {
         bubbleView = UIView()
         bubbleView.layer.cornerRadius = Constants.Design.chatBubbleRadius
         bubbleView.backgroundColor = .primary
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bubbleTapped(_:)))
+        bubbleView.addGestureRecognizer(tapGesture)
         
         messageText = UILabel()
         messageText.numberOfLines = 0
@@ -68,8 +78,17 @@ class MessageTableViewCell: UITableViewCell {
         })
     }
     
-    func update(with data: MessageViewModel) {
-        messageText.text = data.translation ?? data.text
-        spinner.isHidden = data.translation != nil
+    @objc
+    func bubbleTapped(_ selector: UITapGestureRecognizer) {
+        // Message is being translated, return
+        guard spinner.isHidden else {
+            return
+        }
+        
+        messageText.text = (messageText.text == viewModel.translation) ?
+            viewModel.text :
+            viewModel.translation
+        
+        bubbleView.layoutIfNeeded()
     }
 }

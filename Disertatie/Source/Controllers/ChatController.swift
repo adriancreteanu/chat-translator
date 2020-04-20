@@ -66,14 +66,14 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(MessageTableViewCell.self, forIndexPath: indexPath)
-        cell.update(with: viewModels[indexPath.row])
+        cell.viewModel = viewModels[indexPath.row]
         return cell
     }
 }
 
 extension ChatController: MessageBarViewDelegate {
     func didTapSend(forText text: String?) {
-        guard let textToTranslate = text else {
+        guard let textToTranslate = text, !textToTranslate.isEmpty else {
             return
         }
         
@@ -89,13 +89,12 @@ extension ChatController: MessageBarViewDelegate {
         APIClient.translate(textToTranslate, from: "en", to: "de") { result in
             switch result {
             case .success(let response):
-                
                 guard let newMessage = self.viewModels.last else { return }
                 newMessage.updateTranslation(text: (response.first?.translations.first!.text)!)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.tableView.reloadData()
-                }
+                let indexPath = IndexPath(row: self.viewModels.count - 1, section: 0)
+                let cell = self.tableView.cellForRow(at: indexPath) as! MessageTableViewCell
+                cell.update(with: newMessage)
                 
             case .failure(let error):
                 print(error.localizedDescription)

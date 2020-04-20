@@ -77,10 +77,26 @@ extension ChatController: MessageBarViewDelegate {
             return
         }
         
+        let message = Message(text: textToTranslate)
+        let viewModel = MessageViewModel(message: message)
+        self.viewModels.append(viewModel)
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+        
         APIClient.translate(textToTranslate, from: "en", to: "de") { result in
             switch result {
-            case .success(let user):
-                print(user)
+            case .success(let response):
+                viewModel.updateMessage(text: (response.first?.translations.first!.text)!)
+                
+               
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                    self.tableView.reloadData()
+                })
+                
+                
             case .failure(let error):
                 print(error.localizedDescription)
             }

@@ -9,12 +9,16 @@
 import Foundation
 
 struct MessageViewModel {
-    private let message: Message
+    private var message: Message // TODO Change to let again
     let user: UserViewModel
     
     init(message: Message) {
         self.message = message
         self.user = UserViewModel(user: message.user!)
+    }
+    
+    func updateMessage(text: String) {
+        self.message.text = text
     }
 }
 

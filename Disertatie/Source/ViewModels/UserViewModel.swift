@@ -14,6 +14,11 @@ struct UserViewModel {
     init(user: User) {
         self.user = user
     }
+    
+    static var defaultUser: UserViewModel {
+        let user = User(firstName: "Tom", lastName: "Green")
+        return UserViewModel(user: user)
+    }
 }
 
 extension UserViewModel {

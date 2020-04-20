@@ -25,7 +25,7 @@ enum TranslationEndpoint: APIRequest {
     
     var queryItems: [URLQueryItem]? {
         switch self {
-        case .translate(let from, let to):
+        case .translate(_, let from, let to):
             return [
                 URLQueryItem(name: "api-version", value: "3.0"),
                 URLQueryItem(name: "from", value: from),

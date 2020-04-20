@@ -12,6 +12,11 @@ class Message: Mappable {
     var user: User?
     var text: String?
     
+    init(text: String?) {
+        self.text = text
+        self.user = User(firstName: "Tom", lastName: "Green")
+    }
+    
     required init?(map: Map) {}
     
     func mapping(map: Map) {

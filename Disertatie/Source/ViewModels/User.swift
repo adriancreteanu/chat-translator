@@ -12,9 +12,15 @@ class User: Mappable {
     var firstName: String?
     var lastName: String?
     var avatarURL: String?
-    
+
+    init(firstName: String?,
+         lastName: String?) {
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+
     required init?(map: Map) {}
-    
+
     func mapping(map: Map) {
         firstName <- map["firstName"]
         lastName <- map["lastName"]

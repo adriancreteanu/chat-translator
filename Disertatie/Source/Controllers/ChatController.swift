@@ -94,7 +94,7 @@ extension ChatController: MessageBarViewDelegate {
                 
                 let indexPath = IndexPath(row: self.viewModels.count - 1, section: 0)
                 let cell = self.tableView.cellForRow(at: indexPath) as! MessageTableViewCell
-                cell.update(with: newMessage)
+                cell.viewModel = newMessage
                 
             case .failure(let error):
                 print(error.localizedDescription)

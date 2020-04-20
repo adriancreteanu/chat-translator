@@ -43,6 +43,7 @@
 		BC77AD31244246FC00F9983E /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD30244246FC00F9983E /* MessageViewModel.swift */; };
 		BC77AD332442570E00F9983E /* MessageReceivedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */; };
 		BC77AD37244514B700F9983E /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */; };
+		BC946EC3244DE435004708FE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946EC2244DE435004708FE /* ProfileController.swift */; };
 		BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030A242787DE00C082F1 /* TabBarController.swift */; };
 		BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030D2427889800C082F1 /* TabBarItem.swift */; };
 		BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBB03122427A27A00C082F1 /* Colors.xcassets */; };
@@ -92,6 +93,7 @@
 		BC77AD30244246FC00F9983E /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageReceivedTableViewCell.swift; sourceTree = "<group>"; };
 		BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
+		BC946EC2244DE435004708FE /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		BCBB030A242787DE00C082F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BCBB030D2427889800C082F1 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		BCBB03122427A27A00C082F1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			children = (
 				BC7328452427A605008D05EF /* SettingsController.swift */,
 				2DC6F87F2413D6990097B013 /* ChatsController.swift */,
+				BC946EC2244DE435004708FE /* ProfileController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 			files = (
 				2D18FCEA2430F41800939080 /* Fonts.swift in Sources */,
 				2D2020BD2435066E006BAE99 /* Constants.swift in Sources */,
+				BC946EC3244DE435004708FE /* ProfileController.swift in Sources */,
 				BC33D819242BE4C6007BF615 /* Title.swift in Sources */,
 				BC33D81D242BFED0007BF615 /* Images.swift in Sources */,
 				BC77AD37244514B700F9983E /* UIEdgeInsetsExtension.swift in Sources */,

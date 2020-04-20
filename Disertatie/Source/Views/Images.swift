@@ -11,4 +11,6 @@ import UIKit
 extension UIImage {
     static let chats = UIImage(named: "chats")!
     static let settings = UIImage(named: "settings")!
+    static let profile = UIImage(named: "profile")!
+    static let profileFilled = UIImage(named: "profile-filled")!
 }

@@ -27,14 +27,14 @@ extension TabBarItem {
         private typealias Tuple = (title: String, image: UIImage)
         
         case chats
+        case profile
         case settings
         
         private var tuple: Tuple {
             switch self {
-            case .chats:
-                return (title: "Chats", image: .chats)
-            case .settings:
-                return (title: "Settings", image: .settings)
+            case .chats: return (title: "Chats", image: .chats)
+            case .profile: return (title: "Profile", image: .profile)
+            case .settings: return (title: "Settings", image: .settings)
             }
         }
         
@@ -49,6 +49,11 @@ extension TabBarItem {
                 let chatsVC = ChatsController()
                 chatsVC.tabBarItem = tabBarItem
                 let navigationController = UINavigationController(rootViewController: chatsVC)
+                return navigationController
+            case .profile:
+                let profileVC = ProfileController()
+                profileVC.tabBarItem = tabBarItem
+                let navigationController = UINavigationController(rootViewController: profileVC)
                 return navigationController
             case .settings:
                 let settingsVC = SettingsController()

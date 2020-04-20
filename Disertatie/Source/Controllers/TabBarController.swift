@@ -20,6 +20,7 @@ class TabBarController: UITabBarController {
         styleTabBar()
         viewControllers = [
             TabBarItem.Item.chats.viewController,
+            TabBarItem.Item.profile.viewController,
             TabBarItem.Item.settings.viewController
         ]
     }

@@ -6,7 +6,6 @@
 //  Copyright © 2020 Adrian Creteanu. All rights reserved.
 //
 
-import SnapKit
 import UIKit
 
 class SettingsController: BaseController {

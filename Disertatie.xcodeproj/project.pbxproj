@@ -47,6 +47,8 @@
 		BC946EC6244DE9E0004708FE /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946EC5244DE9E0004708FE /* AuthController.swift */; };
 		BC946EC9244DEAD3004708FE /* World.png in Resources */ = {isa = PBXBuildFile; fileRef = BC946EC8244DEAD3004708FE /* World.png */; };
 		BC946ECB244DF06C004708FE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946ECA244DF06C004708FE /* RoundedButton.swift */; };
+		BCB60D54244F71E8007108DB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB60D53244F71E8007108DB /* LoginController.swift */; };
+		BCB60D56244F779C007108DB /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB60D55244F779C007108DB /* BorderedTextField.swift */; };
 		BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030A242787DE00C082F1 /* TabBarController.swift */; };
 		BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030D2427889800C082F1 /* TabBarItem.swift */; };
 		BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBB03122427A27A00C082F1 /* Colors.xcassets */; };
@@ -54,6 +56,7 @@
 		BCC64359243FAAE7000EB35C /* chats.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC64358243FAAE7000EB35C /* chats.json */; };
 		BCC6435B243FABD0000EB35C /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6435A243FABD0000EB35C /* JSONHelper.swift */; };
 		BCC6435D243FAE15000EB35C /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC6435C243FAE15000EB35C /* messages.json */; };
+		BCD918D4244FA61D00F80194 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD918D3244FA61D00F80194 /* Login.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +103,8 @@
 		BC946EC5244DE9E0004708FE /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		BC946EC8244DEAD3004708FE /* World.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = World.png; sourceTree = "<group>"; };
 		BC946ECA244DF06C004708FE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		BCB60D53244F71E8007108DB /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		BCB60D55244F779C007108DB /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
 		BCBB030A242787DE00C082F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BCBB030D2427889800C082F1 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		BCBB03122427A27A00C082F1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 		BCC64358243FAAE7000EB35C /* chats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chats.json; sourceTree = "<group>"; };
 		BCC6435A243FABD0000EB35C /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JSONHelper.swift; path = Disertatie/Assets/TestData/JSONHelper.swift; sourceTree = SOURCE_ROOT; };
 		BCC6435C243FAE15000EB35C /* messages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
+		BCD918D3244FA61D00F80194 /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
 		C4AE3AF2AB9841D1413156A0 /* Pods-Disertatie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.debug.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,12 +186,13 @@
 		2D277B76241E5717004335F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2D18FCF1243117E600939080 /* TableViewCells */,
-				BCBB030C2427888A00C082F1 /* TabBar */,
-				2DC6F8862413D69D0097B013 /* LaunchScreen.storyboard */,
-				BC33D818242BE4C6007BF615 /* Title.swift */,
 				2D2020C024351F4E006BAE99 /* MessageBarView.swift */,
 				BC946ECA244DF06C004708FE /* RoundedButton.swift */,
+				BC33D818242BE4C6007BF615 /* Title.swift */,
+				2DC6F8862413D69D0097B013 /* LaunchScreen.storyboard */,
+				BCBB030C2427888A00C082F1 /* TabBar */,
+				2D18FCF1243117E600939080 /* TableViewCells */,
+				BCB60D55244F779C007108DB /* BorderedTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,12 +255,12 @@
 		2DA534FA2422CFB80000E9F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */,
 				2D2020BE24350845006BAE99 /* UIImageViewExtension.swift */,
 				BC554904243CCEA900764306 /* UITableViewCellExtension.swift */,
 				2D18FCED2430FC5100939080 /* UITableViewExtension.swift */,
 				2D2020C224351FB5006BAE99 /* UITextFieldExtension.swift */,
 				2D18FCEF24310EAF00939080 /* UIViewExtension.swift */,
-				BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				BC946EC5244DE9E0004708FE /* AuthController.swift */,
+				BCB60D53244F71E8007108DB /* LoginController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 		BC946EC7244DEA72004708FE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BCD918D3244FA61D00F80194 /* Login.png */,
 				BC946EC8244DEAD3004708FE /* World.png */,
 			);
 			path = Images;
@@ -428,6 +437,7 @@
 				BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */,
 				BCC6435D243FAE15000EB35C /* messages.json in Resources */,
 				BC946EC9244DEAD3004708FE /* World.png in Resources */,
+				BCD918D4244FA61D00F80194 /* Login.png in Resources */,
 				BCC64359243FAAE7000EB35C /* chats.json in Resources */,
 				2DC6F8852413D69D0097B013 /* Assets.xcassets in Resources */,
 			);
@@ -507,10 +517,12 @@
 				2D18FCF024310EAF00939080 /* UIViewExtension.swift in Sources */,
 				BC946EC6244DE9E0004708FE /* AuthController.swift in Sources */,
 				2D18FCEC2430F64B00939080 /* Strings.swift in Sources */,
+				BCB60D56244F779C007108DB /* BorderedTextField.swift in Sources */,
 				BC946ECB244DF06C004708FE /* RoundedButton.swift in Sources */,
 				2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */,
 				BC554905243CCEA900764306 /* UITableViewCellExtension.swift in Sources */,
 				BC33D820242C11FC007BF615 /* ChatController.swift in Sources */,
+				BCB60D54244F71E8007108DB /* LoginController.swift in Sources */,
 				2D9CD076243A50A700E62FC7 /* ChatsListTableViewCell.swift in Sources */,
 				BCC6435B243FABD0000EB35C /* JSONHelper.swift in Sources */,
 				BC77AD31244246FC00F9983E /* MessageViewModel.swift in Sources */,

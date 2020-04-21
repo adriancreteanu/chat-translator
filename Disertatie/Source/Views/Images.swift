@@ -16,4 +16,6 @@ extension UIImage {
     static let person = UIImage(named: "person")!
     static let personFill = UIImage(named: "person_fill")!
     static let world = UIImage(named: "World.png")!
+    static let login = UIImage(named: "Login.png")!
+    static let loginNew = UIImage(named: "login_new")!
 }

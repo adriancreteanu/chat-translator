@@ -16,6 +16,7 @@ class RoundedButton: UIButton {
     
     convenience init(
         title: String,
+        titleColor: UIColor,
         backgroundColor: UIColor
     ) {
         self.init(type: .system)
@@ -25,7 +26,7 @@ class RoundedButton: UIButton {
         
         titleLabel?.font = UIFont.primary(ofSize: .callout)
         
-        setTitleColor(.primary, for: [])
+        setTitleColor(titleColor, for: [])
         
         layer.cornerRadius = 20
         layer.borderWidth = 1

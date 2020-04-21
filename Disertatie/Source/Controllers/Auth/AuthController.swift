@@ -41,7 +41,7 @@ extension AuthController: Base {
         })
         
         let overlayView = UIView()
-        overlayView.backgroundColor = UIColor.primary.withAlphaComponent(0.8)
+        overlayView.backgroundColor = UIColor.primary.withAlphaComponent(0.95)
         
         view.add(overlayView, then: {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +58,7 @@ extension AuthController: Base {
         // buttons
         
         let loginButton = RoundedButton(title: "LOGIN",
+                                        titleColor: .primary,
                                         backgroundColor: .white)
         
         view.add(loginButton, then: {

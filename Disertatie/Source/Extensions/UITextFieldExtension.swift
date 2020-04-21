@@ -15,4 +15,29 @@ extension UITextField {
         return textField
     }
     
+    static func loginField(placeholder: String) -> UITextField {
+        let textField = UITextField()
+        
+        textField.textColor = .primary
+        textField.placeholder = placeholder
+        textField.tintColor = .primary
+        
+        textField.addBottomBorder()
+        
+        return textField
+    }
+    
+    func addBottomBorder() {
+        let border = CALayer()
+        border.borderColor = UIColor.gray.cgColor
+        border.borderWidth = 1
+        
+        
+        border.frame = CGRect(x: 0, y: self.frame.height, width: 200, height: 1)
+        
+        
+        layer.addSublayer(border)
+        layer.masksToBounds = true
+    }
+    
 }

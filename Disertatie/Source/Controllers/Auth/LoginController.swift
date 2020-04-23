@@ -29,15 +29,7 @@ extension LoginController: Base {
         backgroundImage.contentMode = .scaleAspectFit
         
         view.add(backgroundImage, then: {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            
-            NSLayoutConstraint.activate([
-                $0.topAnchor.constraint(equalTo: view.topAnchor),
-                $0.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                $0.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                $0.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ])
-            
+            $0.pinEdges(to: view)
         })
         
         let emailTF = BorderedTextField(placeholder: "EMAIL")
@@ -74,16 +66,11 @@ extension LoginController: Base {
                                         backgroundColor: .primary)
         
         view.add(loginButton, then: {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            
-            NSLayoutConstraint.activate([
-                $0.topAnchor.constraint(equalTo: vStackView.bottomAnchor, constant: 50),
-                $0.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                $0.heightAnchor.constraint(equalToConstant: 40),
-                $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2 / 3)
-                
-                
-            ])
+            $0.center(in: view)
+            $0.layoutDimensions {
+                $0.width == 200
+                $0.height == 40
+            }
         })
     }
     

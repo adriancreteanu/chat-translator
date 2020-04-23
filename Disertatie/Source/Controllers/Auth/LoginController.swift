@@ -25,7 +25,7 @@ class LoginController: UIViewController {
 
 extension LoginController: Base {
     func initializeUI() {
-        backgroundImage = UIImageView(image: .loginNew)
+        backgroundImage = UIImageView(image: .login)
         backgroundImage.contentMode = .scaleAspectFit
         
         view.add(backgroundImage, then: {
@@ -39,21 +39,6 @@ extension LoginController: Base {
             ])
             
         })
-        
-//        let overlayView = UIView()
-//        overlayView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
-//
-//        view.add(overlayView, then: {
-//            $0.translatesAutoresizingMaskIntoConstraints = false
-//
-//            NSLayoutConstraint.activate([
-//                $0.topAnchor.constraint(equalTo: view.topAnchor),
-//                $0.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//                $0.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//                $0.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-//            ])
-//
-//        })
         
         let emailTF = BorderedTextField(placeholder: "EMAIL")
         let passTF = BorderedTextField(placeholder: "PASSWORD", isSecureEntry: true)

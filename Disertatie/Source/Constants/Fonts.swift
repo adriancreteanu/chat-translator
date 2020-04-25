@@ -16,17 +16,32 @@ extension UIFont {
 }
 
 enum FontSize: CGFloat {
-    case largeTitle = 34.0 // SFUIDisplay
-    case title1 = 28.0 // SFUIDisplay (-Light ≤ iOS 10)
-    case title2 = 22.0 // SFUIDisplay
-    case title3 = 20.0 // SFUIDisplay
-    case headline = 17.0 // SFUIText-Semibold
-    case subheadline = 15.0 // SFUIText
-    //case body = 17.0 // SFUIText
-    case callout = 16.0 // SFUIText
-    case footnote = 13.0 // SFUIText
-    case caption1 = 12.0 // SFUIText
-    case caption2 = 11.0 // SFUIText
+//    case largeTitle = 34.0 // SFUIDisplay
+//    case title1 = 28.0 // SFUIDisplay (-Light ≤ iOS 10)
+//    case title2 = 22.0 // SFUIDisplay
+//    case title3 = 20.0 // SFUIDisplay
+//    case headline = 17.0 // SFUIText-Semibold
+//    case subheadline = 15.0 // SFUIText
+//    //case body = 17.0 // SFUIText
+//    case callout = 16.0 // SFUIText
+//    case footnote = 13.0 // SFUIText
+//    case caption1 = 12.0 // SFUIText
+//    case caption2 = 11.0 // SFUIText
+    
+    
+    
+    case large3 = 26.0
+    case large2 = 24.0
+    case large1 = 22.0
+    
+    case medium3 = 20.0
+    case medium2 = 18.0
+    case medium1 = 16.0
+    
+    case small3 = 14.0
+    case small2 = 12.0
+    case small1 = 10.0
+    
 }
 
 // The are custom values for Avenir font

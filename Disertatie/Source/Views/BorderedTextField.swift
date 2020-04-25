@@ -11,8 +11,34 @@ import UIKit
 class BorderedTextField: UITextField {
     private var borderLayer: CALayer!
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        initializeUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        initializeUI()
+    }
+    
+    
+    fileprivate func initializeUI() {
+        textColor = .primary
+        tintColor = .primary
+        
+        layer.cornerRadius = Constants.Design.primaryRadius
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.border.cgColor
+    }
+    
+    
+    
+    // 👇🏼 IGNORE THIS FOR NOW
+    
     convenience init(
-        placeholder: String,
+        placeholder: String = "",
         keyboardType: UIKeyboardType = .default,
         isSecureEntry: Bool = false
     ) {
@@ -23,17 +49,21 @@ class BorderedTextField: UITextField {
         textColor = .primary
         tintColor = .primary
         isSecureTextEntry = isSecureEntry
-    
-        borderLayer = CALayer()
-        borderLayer.borderColor = UIColor.gray.cgColor
-        borderLayer.borderWidth = 1
-        layer.addSublayer(borderLayer)
-        layer.masksToBounds = true
+        
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.red.cgColor
+        
+        
+//        borderLayer = CALayer()
+//        borderLayer.borderColor = UIColor.gray.cgColor
+//        borderLayer.borderWidth = 1
+//        layer.addSublayer(borderLayer)
+//        layer.masksToBounds = true
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        borderLayer.frame = CGRect(x: 0, y: frame.height - 1,
-                                   width: frame.width, height: 1)
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        borderLayer.frame = CGRect(x: 0, y: frame.height - 1,
+//                                   width: frame.width, height: 1)
+//    }
 }

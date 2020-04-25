@@ -21,7 +21,7 @@ class TabBarItem: UITabBarItem {
         self.item = item
         
         titlePositionAdjustment = .init(horizontal: 0, vertical: -5)
-        setTitleTextAttributes([.font: UIFont.primary(ofSize: .caption1)], for: .normal)
+        setTitleTextAttributes([.font: UIFont.primary(ofSize: .small2)], for: .normal)
     }
 }
 

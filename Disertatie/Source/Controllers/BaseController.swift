@@ -18,7 +18,7 @@ class BaseController: UIViewController {
         navigationController?.navigationBar.tintColor = .primary
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.navigationTitle,
-            .font: UIFont.primary(ofSize: .headline)
+            .font: UIFont.primary(ofSize: .medium2)
         ]
     }
     

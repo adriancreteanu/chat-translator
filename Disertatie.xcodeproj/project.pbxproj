@@ -55,6 +55,8 @@
 		BC946EC6244DE9E0004708FE /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946EC5244DE9E0004708FE /* AuthController.swift */; };
 		BC946EC9244DEAD3004708FE /* World.png in Resources */ = {isa = PBXBuildFile; fileRef = BC946EC8244DEAD3004708FE /* World.png */; };
 		BC946ECB244DF06C004708FE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946ECA244DF06C004708FE /* RoundedButton.swift */; };
+		BC9FA31224548EB90042A54D /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FA31124548EB90042A54D /* FormField.swift */; };
+		BC9FA314245498200042A54D /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FA313245498200042A54D /* UILabelExtension.swift */; };
 		BCB60D54244F71E8007108DB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB60D53244F71E8007108DB /* LoginController.swift */; };
 		BCB60D56244F779C007108DB /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB60D55244F779C007108DB /* BorderedTextField.swift */; };
 		BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030A242787DE00C082F1 /* TabBarController.swift */; };
@@ -117,6 +119,8 @@
 		BC946EC5244DE9E0004708FE /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		BC946EC8244DEAD3004708FE /* World.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = World.png; sourceTree = "<group>"; };
 		BC946ECA244DF06C004708FE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		BC9FA31124548EB90042A54D /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		BC9FA313245498200042A54D /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		BCB60D53244F71E8007108DB /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BCB60D55244F779C007108DB /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
 		BCBB030A242787DE00C082F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -187,13 +191,14 @@
 		2D277B76241E5717004335F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BCB60D55244F779C007108DB /* BorderedTextField.swift */,
+				BC9FA31124548EB90042A54D /* FormField.swift */,
 				2D2020C024351F4E006BAE99 /* MessageBarView.swift */,
 				BC946ECA244DF06C004708FE /* RoundedButton.swift */,
 				BC33D818242BE4C6007BF615 /* Title.swift */,
 				2DC6F8862413D69D0097B013 /* LaunchScreen.storyboard */,
 				BCBB030C2427888A00C082F1 /* TabBar */,
 				2D18FCF1243117E600939080 /* TableViewCells */,
-				BCB60D55244F779C007108DB /* BorderedTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				2D2020C224351FB5006BAE99 /* UITextFieldExtension.swift */,
 				2D18FCEF24310EAF00939080 /* UIViewExtension.swift */,
 				BC52DC3F24523DFE00ABB1BB /* UIView+ConstraintsExtension.swift */,
+				BC9FA313245498200042A54D /* UILabelExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -528,6 +534,8 @@
 				BC55490B243D0C4F00764306 /* APIClient.swift in Sources */,
 				BC7328462427A605008D05EF /* SettingsController.swift in Sources */,
 				BC4BDDDE2440F9A100AC47E4 /* UserViewModel.swift in Sources */,
+				BC9FA314245498200042A54D /* UILabelExtension.swift in Sources */,
+				BC9FA31224548EB90042A54D /* FormField.swift in Sources */,
 				BC554909243D086000764306 /* TranslationEndpoint.swift in Sources */,
 				BC52DC3E2452358A00ABB1BB /* LayoutOperations.swift in Sources */,
 				BC52DC422452498200ABB1BB /* LayoutDimension.swift in Sources */,

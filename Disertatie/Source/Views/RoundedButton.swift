@@ -23,13 +23,11 @@ class RoundedButton: UIButton {
         
         self.backgroundColor = backgroundColor
         setTitle(title, for: [])
-        
-        titleLabel?.font = UIFont.primary(ofSize: .callout)
-        
         setTitleColor(titleColor, for: [])
+        titleLabel?.font = .primary(ofSize: .medium1, weight: .bold)
         
-        layer.cornerRadius = 20
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.white.cgColor
+        layer.cornerRadius = Constants.Design.primaryRadius
+        //layer.borderWidth = 1
+        //layer.borderColor = UIColor.white.cgColor
     }
 }

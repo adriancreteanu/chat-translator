@@ -39,10 +39,10 @@ class ChatsListTableViewCell: UITableViewCell {
         
         nameLabel = UILabel()
         nameLabel.textColor = .primary
-        nameLabel.font = UIFont.primary(ofSize: .callout)
+        nameLabel.font = UIFont.primary(ofSize: .medium1)
         
         lastMessageLabel = UILabel()
-        lastMessageLabel.font = UIFont.primary(ofSize: .footnote)
+        lastMessageLabel.font = UIFont.primary(ofSize: .small3)
         
         let vStack = UIStackView(arrangedSubviews: [
             nameLabel,

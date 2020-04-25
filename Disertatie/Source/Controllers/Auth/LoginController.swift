@@ -10,6 +10,8 @@ import UIKit
 
 class LoginController: UIViewController {
     private var backgroundImage: UIImageView!
+    private var emailField: FormField!
+    private var passwordField: FormField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,47 +31,43 @@ extension LoginController: Base {
         backgroundImage.contentMode = .scaleAspectFit
         
         view.add(backgroundImage, then: {
-            $0.pinEdges(to: view)
+            $0.pin(.fitParent, to: view)
         })
         
-        let emailTF = BorderedTextField(placeholder: "EMAIL")
-        let passTF = BorderedTextField(placeholder: "PASSWORD", isSecureEntry: true)
+        initializeFormUI()
+    }
+    
+    func initializeFormUI() {
+        let formView = UIView()
+        formView.backgroundColor = .white
+        formView.layer.cornerRadius = 10
         
-        let vStackView = UIStackView(arrangedSubviews: [
-            emailTF,
-            passTF
-        ])
-        
-        vStackView.axis = .vertical
-        vStackView.spacing = 25
-        
-        view.add(vStackView, then: {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            
-            NSLayoutConstraint.activate([
-                $0.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-                $0.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                $0.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2 / 3)
-            ])
+        view.add(formView, then: {
+            $0.center(in: view)
+            $0.pin(.middle, to: view, offsetBy: .init(horizontal: 30))
         })
         
-        emailTF.translatesAutoresizingMaskIntoConstraints = false
-        passTF.translatesAutoresizingMaskIntoConstraints = false
+        emailField = FormField(hint: "Username", fieldHeight: Constants.Design.textFieldHeight)
+        passwordField = FormField(hint: "Password", fieldHeight: Constants.Design.textFieldHeight)
         
-        emailTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        passTF.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        formView.add(emailField, then: {
+            $0.pin(.top, to: formView, offsetBy: .all(Constants.Design.primaryOffset))
+        })
         
-        // buttons
+        formView.add(passwordField, then: {
+            $0.pin(.middle, to: formView, offsetBy: .init(horizontal: Constants.Design.primaryOffset))
+            $0.chain(.vertically, to: emailField, offsetBy: 20)
+        })
         
         let loginButton = RoundedButton(title: "LOGIN",
                                         titleColor: .white,
                                         backgroundColor: .primary)
         
         view.add(loginButton, then: {
-            $0.center(in: view)
+            $0.pin(.bottom, to: formView, offsetBy: .init(vertical: 30, horizontal: Constants.Design.primaryOffset))
+            $0.chain(.vertically, to: passwordField, offsetBy: 30)
             $0.layoutDimensions {
-                $0.width == 200
-                $0.height == 40
+                $0.height == 50
             }
         })
     }

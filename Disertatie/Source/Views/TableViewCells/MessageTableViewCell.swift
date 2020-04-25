@@ -45,7 +45,7 @@ class MessageTableViewCell: UITableViewCell {
         
         messageText = UILabel()
         messageText.numberOfLines = 0
-        messageText.font = UIFont.primary(ofSize: .callout)
+        messageText.font = UIFont.primary(ofSize: .medium1)
         messageText.textColor = .white
         
         bubbleView.add(messageText, then: {

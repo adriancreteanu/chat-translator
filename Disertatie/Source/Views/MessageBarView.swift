@@ -30,7 +30,7 @@ class MessageBarView: UIView {
         messageTextView = UITextView()
         messageTextView.textContainerInset = .init(all: messageTextViewPadding)
         messageTextView.isScrollEnabled = false
-        messageTextView.font = UIFont.primary(ofSize: .callout)
+        messageTextView.font = UIFont.primary(ofSize: .medium1)
         messageTextView.textColor = .white
         messageTextView.backgroundColor = .primary
         messageTextView.layer.cornerRadius = Constants.Design.ovalRadius

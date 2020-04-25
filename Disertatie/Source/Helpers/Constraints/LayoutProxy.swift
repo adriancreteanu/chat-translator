@@ -39,7 +39,7 @@ extension LayoutProperty {
                           constant: constant).isActive = true
     }
 
-    func greaterThanOrEqual(to otherAnchor: Anchor,
+    func greaterThanOrEqual(to otherAnchor: Anchor,  
                             offsetBy constant: CGFloat = 0) {
         anchor.constraint(greaterThanOrEqualTo: otherAnchor,
                           constant: constant).isActive = true

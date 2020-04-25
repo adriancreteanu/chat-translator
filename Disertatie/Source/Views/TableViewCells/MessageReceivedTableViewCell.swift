@@ -44,7 +44,7 @@ class MessageReceivedTableViewCell: UITableViewCell {
         
         messageText = UILabel()
         messageText.numberOfLines = 0
-        messageText.font = UIFont.primary(ofSize: .callout)
+        messageText.font = UIFont.primary(ofSize: .medium1)
         messageText.textColor = .black
         
         bubbleView.add(messageText, then: {

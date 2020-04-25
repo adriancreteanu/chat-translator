@@ -17,9 +17,11 @@ extension Constants.Design {
     static let chatBubbleRadius: CGFloat = 16.0
     static let ovalRadius: CGFloat = 16.0
 
-    static let primaryOffset: CGFloat = 20.0
+    static let primaryXOffset: CGFloat = 20.0
+    static let primaryYOffset: CGFloat = 30.0
     static let primaryRadius: CGFloat = 10.0
     static let textFieldHeight: CGFloat = 50.0
+    static let buttonHeight: CGFloat = 50.0
 }
 
 extension Constants.API {

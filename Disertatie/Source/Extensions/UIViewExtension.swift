@@ -27,4 +27,16 @@ extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(constraints)
     }
+    
+    func addShadow(
+        color: CGColor = UIColor.black.cgColor,
+        opacity: Float = 0.5,
+        blur: CGFloat = 5,
+        offset: CGSize = .zero
+    ) {
+        layer.shadowColor = color
+        layer.shadowOpacity = opacity
+        layer.shadowRadius = blur / 2
+        layer.shadowOffset = offset
+    }
 }

@@ -58,6 +58,7 @@
 		BC9FA31224548EB90042A54D /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FA31124548EB90042A54D /* FormField.swift */; };
 		BC9FA314245498200042A54D /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FA313245498200042A54D /* UILabelExtension.swift */; };
 		BC9FA3162454D4D20042A54D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FA3152454D4D20042A54D /* UIButtonExtension.swift */; };
+		BC9FA3182455D7400042A54D /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FA3172455D7400042A54D /* UINavigationControllerExtension.swift */; };
 		BCB60D54244F71E8007108DB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB60D53244F71E8007108DB /* LoginController.swift */; };
 		BCB60D56244F779C007108DB /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB60D55244F779C007108DB /* BorderedTextField.swift */; };
 		BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030A242787DE00C082F1 /* TabBarController.swift */; };
@@ -123,6 +124,7 @@
 		BC9FA31124548EB90042A54D /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		BC9FA313245498200042A54D /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		BC9FA3152454D4D20042A54D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		BC9FA3172455D7400042A54D /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		BCB60D53244F71E8007108DB /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BCB60D55244F779C007108DB /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
 		BCBB030A242787DE00C082F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				BC52DC3F24523DFE00ABB1BB /* UIView+ConstraintsExtension.swift */,
 				BC9FA313245498200042A54D /* UILabelExtension.swift */,
 				BC9FA3152454D4D20042A54D /* UIButtonExtension.swift */,
+				BC9FA3172455D7400042A54D /* UINavigationControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			files = (
 				2D18FCEA2430F41800939080 /* Fonts.swift in Sources */,
 				2D2020BD2435066E006BAE99 /* Constants.swift in Sources */,
+				BC9FA3182455D7400042A54D /* UINavigationControllerExtension.swift in Sources */,
 				BC946EC3244DE435004708FE /* ProfileController.swift in Sources */,
 				BC33D819242BE4C6007BF615 /* Title.swift in Sources */,
 				BC33D81D242BFED0007BF615 /* Images.swift in Sources */,

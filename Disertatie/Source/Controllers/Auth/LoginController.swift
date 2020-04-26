@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginController: UIViewController {
     private var backgroundImage: UIImageView!
@@ -25,12 +26,33 @@ class LoginController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    
+    @objc
+    func loginButtonTap() {
+        loginUser()
+    }
+    
+    private func loginUser() {
+        Auth.auth().signIn(withEmail: "test@abc.com", password: "test1234") { (result, error) in
+            if let error = error {
+                print(error)
+                error.localizedDescription
+            } else {
+                if let result = result {
+                    print("Suceess")
+                    
+                    self.navigationController?.resetRootViewController()
+                }
+            }
+        }
+    }
 }
 
 extension LoginController: Base {
     func initializeUI() {
         backgroundImage = UIImageView(image: .login)
-        backgroundImage.contentMode = .scaleAspectFit
+        backgroundImage.contentMode = .scaleAspectFill
         
         view.add(backgroundImage, then: {
             $0.pin(.fitParent, to: view)
@@ -60,6 +82,7 @@ extension LoginController: Base {
         loginButton = RoundedButton(title: "LOGIN",
                                         titleColor: .white,
                                         backgroundColor: .primary)
+        loginButton.addTarget(self, action: #selector(LoginController.loginButtonTap), for: .touchUpInside)
         
         // Constraint subviews
         

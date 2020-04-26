@@ -7,14 +7,5 @@ target 'Disertatie' do
     pod 'Alamofire', '5.0.0-rc.2'
     pod 'AlamofireObjectMapper', '6.2.0'
     pod 'Firebase/Analytics'
+    pod 'Firebase/Auth'
 end
-
-#post_install do |installer|
-#  installer.pods_project.targets.each do |target|
-#    if ['AlamofireObjectMapper'].include? target.name
-#      target.build_configurations.each do |config|
-#        config.build_settings['SWIFT_VERSION'] = '4.2'
-#      end
-#    end
-#  end
-#end

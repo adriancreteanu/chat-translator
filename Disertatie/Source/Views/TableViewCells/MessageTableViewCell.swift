@@ -13,6 +13,15 @@ class MessageTableViewCell: UITableViewCell {
     private var bubbleView: UIView!
     private var spinner: UIActivityIndicatorView!
     
+    var interaction: UIContextMenuInteraction? {
+        didSet {
+            guard let interaction = interaction else {
+                return
+            }
+            bubbleView.addInteraction(interaction)
+        }
+    }
+    
     var viewModel: MessageViewModel! {
         didSet {
             messageText.text = viewModel.translation ?? viewModel.text
@@ -37,12 +46,15 @@ class MessageTableViewCell: UITableViewCell {
         
         // TODO: Customize UIView()
         bubbleView = UIView()
+        bubbleView.clipsToBounds = true
+        bubbleView.layer.masksToBounds = true
+        bubbleView.layer.backgroundColor = UIColor.clear.cgColor
         bubbleView.layer.cornerRadius = Constants.Design.chatBubbleRadius
         bubbleView.backgroundColor = .primary
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bubbleTapped(_:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bubbleTapped))
         bubbleView.addGestureRecognizer(tapGesture)
-        
+
         messageText = UILabel()
         messageText.numberOfLines = 0
         messageText.font = UIFont.primary(ofSize: .medium1)

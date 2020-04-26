@@ -67,6 +67,7 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(MessageTableViewCell.self, forIndexPath: indexPath)
         cell.viewModel = viewModels[indexPath.row]
+        cell.interaction = UIContextMenuInteraction(delegate: self)
         return cell
     }
 }
@@ -102,5 +103,29 @@ extension ChatController: MessageBarViewDelegate {
         }
         
         // 3. Upload message to Firebase - TODO
+    }
+}
+
+extension ChatController: UIContextMenuInteractionDelegate {
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction,
+                                configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { _ in
+            let translateElement = self.makeTranslateAction()
+            let children: [UIMenuElement] = [translateElement]
+            return UIMenu(title: "", children: children)
+        })
+    }
+    
+    func makeTranslateAction() -> UIAction {
+        let translateAttributes = UIMenuElement.Attributes.destructive
+        let deleteImage = UIImage(systemName: "delete.left")
+        
+        return UIAction(
+            title: "Translate",
+            image: deleteImage,
+            identifier: nil,
+            attributes: translateAttributes) { _ in
+                print("Translate tapped")
+        }
     }
 }

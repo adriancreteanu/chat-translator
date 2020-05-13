@@ -17,4 +17,3 @@ extension String {
 extension String.Design {
     static let primaryFont = "Avenir"
 }
-

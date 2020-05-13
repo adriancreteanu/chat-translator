@@ -121,7 +121,7 @@ extension ChatController: UIContextMenuInteractionDelegate {
         let deleteImage = UIImage(systemName: "delete.left")
         
         return UIAction(
-            title: "Translate",
+            title: Translations.rectify,
             image: deleteImage,
             identifier: nil,
             attributes: translateAttributes) { _ in

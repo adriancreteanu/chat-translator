@@ -35,7 +35,7 @@
 		BC52DC2F24522FB400ABB1BB /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52DC2B24522FB400ABB1BB /* Chat.swift */; };
 		BC52DC3024522FB400ABB1BB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52DC2C24522FB400ABB1BB /* Message.swift */; };
 		BC52DC3124522FB400ABB1BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52DC2D24522FB400ABB1BB /* User.swift */; };
-		BC52DC3224522FB400ABB1BB /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52DC2E24522FB400ABB1BB /* Translations.swift */; };
+		BC52DC3224522FB400ABB1BB /* TranslationsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52DC2E24522FB400ABB1BB /* TranslationsAPI.swift */; };
 		BC52DC3524522FDA00ABB1BB /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52DC3424522FD900ABB1BB /* Base.swift */; };
 		BC52DC382452300B00ABB1BB /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52DC372452300B00ABB1BB /* LayoutAnchor.swift */; };
 		BC52DC3C2452315D00ABB1BB /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52DC3B2452315D00ABB1BB /* LayoutProxy.swift */; };
@@ -66,6 +66,8 @@
 		BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBB03122427A27A00C082F1 /* Colors.xcassets */; };
 		BCC64359243FAAE7000EB35C /* chats.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC64358243FAAE7000EB35C /* chats.json */; };
 		BCC6435D243FAE15000EB35C /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC6435C243FAE15000EB35C /* messages.json */; };
+		BCC923F6246D21BC0058346F /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC923F5246D21BC0058346F /* Translations.swift */; };
+		BCC923FA246D228F0058346F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC923F9246D228F0058346F /* StringExtension.swift */; };
 		BCD918D4244FA61D00F80194 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD918D3244FA61D00F80194 /* Login.png */; };
 /* End PBXBuildFile section */
 
@@ -101,7 +103,7 @@
 		BC52DC2B24522FB400ABB1BB /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		BC52DC2C24522FB400ABB1BB /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BC52DC2D24522FB400ABB1BB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BC52DC2E24522FB400ABB1BB /* Translations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
+		BC52DC2E24522FB400ABB1BB /* TranslationsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationsAPI.swift; sourceTree = "<group>"; };
 		BC52DC3424522FD900ABB1BB /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		BC52DC372452300B00ABB1BB /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
 		BC52DC3B2452315D00ABB1BB /* LayoutProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutProxy.swift; sourceTree = "<group>"; };
@@ -132,6 +134,8 @@
 		BCBB03122427A27A00C082F1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BCC64358243FAAE7000EB35C /* chats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chats.json; sourceTree = "<group>"; };
 		BCC6435C243FAE15000EB35C /* messages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
+		BCC923F5246D21BC0058346F /* Translations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
+		BCC923F9246D228F0058346F /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		BCD918D3244FA61D00F80194 /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
 		F2276F97AC4DCAF910188CC1 /* Pods_Disertatie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disertatie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -237,6 +241,7 @@
 		2DA534F72422CFA00000E9F9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				BCC923F5246D21BC0058346F /* Translations.swift */,
 				BC7328432427A575008D05EF /* Colors.swift */,
 				BC33D81C242BFED0007BF615 /* Images.swift */,
 				2D18FCE92430F41800939080 /* Fonts.swift */,
@@ -249,6 +254,8 @@
 		2DA534FA2422CFB80000E9F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BCC923F8246D228F0058346F /* Data */,
+				BCC923F7246D228F0058346F /* UI */,
 				BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */,
 				2D2020BE24350845006BAE99 /* UIImageViewExtension.swift */,
 				BC554904243CCEA900764306 /* UITableViewCellExtension.swift */,
@@ -325,7 +332,7 @@
 				BC52DC2B24522FB400ABB1BB /* Chat.swift */,
 				BC52DC2C24522FB400ABB1BB /* Message.swift */,
 				BC52DC2D24522FB400ABB1BB /* User.swift */,
-				BC52DC2E24522FB400ABB1BB /* Translations.swift */,
+				BC52DC2E24522FB400ABB1BB /* TranslationsAPI.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,6 +390,21 @@
 				BCC6435C243FAE15000EB35C /* messages.json */,
 			);
 			path = TestData;
+			sourceTree = "<group>";
+		};
+		BCC923F7246D228F0058346F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BCC923F8246D228F0058346F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BCC923F9246D228F0058346F /* StringExtension.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		D627D618941C05B8B9E52F0F /* Pods */ = {
@@ -541,6 +563,7 @@
 				BC55490B243D0C4F00764306 /* APIClient.swift in Sources */,
 				BC7328462427A605008D05EF /* SettingsController.swift in Sources */,
 				BC4BDDDE2440F9A100AC47E4 /* UserViewModel.swift in Sources */,
+				BCC923F6246D21BC0058346F /* Translations.swift in Sources */,
 				BC9FA314245498200042A54D /* UILabelExtension.swift in Sources */,
 				BC9FA31224548EB90042A54D /* FormField.swift in Sources */,
 				BC554909243D086000764306 /* TranslationEndpoint.swift in Sources */,
@@ -560,7 +583,7 @@
 				BC52DC3524522FDA00ABB1BB /* Base.swift in Sources */,
 				BC52DC382452300B00ABB1BB /* LayoutAnchor.swift in Sources */,
 				BC52DC3124522FB400ABB1BB /* User.swift in Sources */,
-				BC52DC3224522FB400ABB1BB /* Translations.swift in Sources */,
+				BC52DC3224522FB400ABB1BB /* TranslationsAPI.swift in Sources */,
 				BC52DC2924522F5600ABB1BB /* JSONHelper.swift in Sources */,
 				BC554905243CCEA900764306 /* UITableViewCellExtension.swift in Sources */,
 				BC33D820242C11FC007BF615 /* ChatController.swift in Sources */,
@@ -569,6 +592,7 @@
 				BC52DC4024523DFE00ABB1BB /* UIView+ConstraintsExtension.swift in Sources */,
 				BC77AD31244246FC00F9983E /* MessageViewModel.swift in Sources */,
 				2D2020C124351F4E006BAE99 /* MessageBarView.swift in Sources */,
+				BCC923FA246D228F0058346F /* StringExtension.swift in Sources */,
 				BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */,
 				BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */,
 				2D277B78241E6082004335F2 /* BaseController.swift in Sources */,

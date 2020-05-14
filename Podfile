@@ -8,4 +8,6 @@ target 'Disertatie' do
     pod 'AlamofireObjectMapper', '6.2.0'
     pod 'Firebase/Analytics'
     pod 'Firebase/Auth'
+    pod 'Firebase/Firestore'
+    pod 'FirebaseFirestoreSwift'
 end

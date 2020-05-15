@@ -26,6 +26,8 @@
 		2DC6F8852413D69D0097B013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC6F8842413D69D0097B013 /* Assets.xcassets */; };
 		2DC6F8882413D69D0097B013 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC6F8862413D69D0097B013 /* LaunchScreen.storyboard */; };
 		5C7214F4798E7E4CF7B5B46A /* Pods_Disertatie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2276F97AC4DCAF910188CC1 /* Pods_Disertatie.framework */; };
+		BC2005C5246DC8C900D2EDEF /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2005C4246DC8C900D2EDEF /* FirestoreService.swift */; };
+		BC2005C7246DC8DB00D2EDEF /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2005C6246DC8DB00D2EDEF /* FirestoreManager.swift */; };
 		BC33D819242BE4C6007BF615 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D818242BE4C6007BF615 /* Title.swift */; };
 		BC33D81D242BFED0007BF615 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D81C242BFED0007BF615 /* Images.swift */; };
 		BC33D820242C11FC007BF615 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D81F242C11FC007BF615 /* ChatController.swift */; };
@@ -94,6 +96,8 @@
 		2DC6F8892413D69D0097B013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4146450FDA121C4C0ACE503F /* Pods-Disertatie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.release.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.release.xcconfig"; sourceTree = "<group>"; };
 		871927EB4BAF2C353339E3EB /* Pods-Disertatie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.debug.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.debug.xcconfig"; sourceTree = "<group>"; };
+		BC2005C4246DC8C900D2EDEF /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		BC2005C6246DC8DB00D2EDEF /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		BC33D818242BE4C6007BF615 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		BC33D81C242BFED0007BF615 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Images.swift; path = Disertatie/Source/Views/Images.swift; sourceTree = SOURCE_ROOT; };
 		BC33D81F242C11FC007BF615 /* ChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatController.swift; path = Disertatie/Source/Controllers/ChatController.swift; sourceTree = SOURCE_ROOT; };
@@ -228,6 +232,7 @@
 				2DA534F72422CFA00000E9F9 /* Constants */,
 				2D277B73241E56D6004335F2 /* Controllers */,
 				2DA534FA2422CFB80000E9F9 /* Extensions */,
+				BC2005C2246DC87400D2EDEF /* Firebase */,
 				BC52DC2724522F5600ABB1BB /* Helpers */,
 				BC52DC2A24522FB400ABB1BB /* Models */,
 				2DA534F32422CE150000E9F9 /* Network */,
@@ -295,6 +300,23 @@
 				2DA534F62422CF4C0000E9F9 /* Source */,
 			);
 			path = Disertatie;
+			sourceTree = "<group>";
+		};
+		BC2005C2246DC87400D2EDEF /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				BC2005C3246DC88E00D2EDEF /* Firestore */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		BC2005C3246DC88E00D2EDEF /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				BC2005C4246DC8C900D2EDEF /* FirestoreService.swift */,
+				BC2005C6246DC8DB00D2EDEF /* FirestoreManager.swift */,
+			);
+			path = Firestore;
 			sourceTree = "<group>";
 		};
 		BC33D81E242C1072007BF615 /* Main */ = {
@@ -551,6 +573,7 @@
 				BC33D819242BE4C6007BF615 /* Title.swift in Sources */,
 				BC33D81D242BFED0007BF615 /* Images.swift in Sources */,
 				BC77AD37244514B700F9983E /* UIEdgeInsetsExtension.swift in Sources */,
+				BC2005C5246DC8C900D2EDEF /* FirestoreService.swift in Sources */,
 				BC77AD332442570E00F9983E /* MessageReceivedTableViewCell.swift in Sources */,
 				2D18FCF3243121C800939080 /* MessageTableViewCell.swift in Sources */,
 				BC52DC3C2452315D00ABB1BB /* LayoutProxy.swift in Sources */,
@@ -564,6 +587,7 @@
 				BC7328462427A605008D05EF /* SettingsController.swift in Sources */,
 				BC4BDDDE2440F9A100AC47E4 /* UserViewModel.swift in Sources */,
 				BCC923F6246D21BC0058346F /* Translations.swift in Sources */,
+				BC2005C7246DC8DB00D2EDEF /* FirestoreManager.swift in Sources */,
 				BC9FA314245498200042A54D /* UILabelExtension.swift in Sources */,
 				BC9FA31224548EB90042A54D /* FormField.swift in Sources */,
 				BC554909243D086000764306 /* TranslationEndpoint.swift in Sources */,

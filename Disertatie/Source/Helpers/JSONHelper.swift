@@ -9,7 +9,8 @@
 import Foundation
 import ObjectMapper
 
-private typealias JSONArray = [[String: Any]]
+public typealias JSON = [String: Any]
+public typealias JSONArray = [[String: Any]]
 
 class JSONHelper {
     private static func loadJSON(_ name: String) -> JSONArray {

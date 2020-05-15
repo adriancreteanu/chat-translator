@@ -10,7 +10,9 @@ import UIKit
 
 class ChatsController: BaseController {
     private var tableView: UITableView!
-    private var viewModels: [ChatViewModel]!
+    
+    private var manager: FirestoreManager!
+    private var viewModels: [ChatViewModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,29 @@ class ChatsController: BaseController {
         initializeUI()
         updateTexts()
         
-        viewModels = JSONHelper.loadChats()
+        manager = FirestoreManager()
+        performNetworkRequests()
+    }
+    
+    // Move this to a protocol?
+    private func performNetworkRequests() {
+        getAllUsers()
+    }
+    
+    private func getAllUsers() {
+        manager.getAllData(from: .chats) { (chats: [Chat]?, error) in
+            if let error = error {
+                print(error)
+            } else {
+                if let modelsArray = chats?.compactMap({ ChatViewModel(chat: $0) }) {
+                    self.viewModels.append(contentsOf: modelsArray)
+                }
+
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 }
 

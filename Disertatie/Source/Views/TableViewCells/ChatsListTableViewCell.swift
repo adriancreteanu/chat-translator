@@ -27,15 +27,6 @@ class ChatsListTableViewCell: UITableViewCell {
     
     private func initializeUI() {
         avatarImage = UIImageView.roundImage(withSize: 54)
-        contentView.add(avatarImage, then: {
-            $0.layout(using: [
-                $0.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-                contentView.bottomAnchor.constraint(equalTo: $0.bottomAnchor, constant: 10),
-                $0.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-                $0.heightAnchor.constraint(equalToConstant: 54),
-                $0.widthAnchor.constraint(equalToConstant: 54)
-            ])
-        })
         
         nameLabel = UILabel()
         nameLabel.textColor = .primary
@@ -51,6 +42,17 @@ class ChatsListTableViewCell: UITableViewCell {
         
         vStack.axis = .vertical
         vStack.spacing = 10
+        
+        contentView.add(avatarImage, then: {
+            $0.layout(using: [
+                $0.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+                contentView.bottomAnchor.constraint(equalTo: $0.bottomAnchor, constant: 10),
+                $0.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
+                
+            ])
+            
+            $0.constraintToSquare(54)
+        })
         
         contentView.add(vStack, then: {
             $0.layout(using: [

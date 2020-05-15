@@ -42,7 +42,7 @@ extension UIView {
         case top
         case middle
         case bottom
-        case fitParent
+        case matchParent
     }
     
     // MARK: - Position
@@ -55,7 +55,7 @@ extension UIView {
             switch position {
             case .top: $0.top == otherView.topAnchor + offset.top
             case .bottom: $0.bottom == otherView.bottomAnchor - offset.bottom
-            case .fitParent:
+            case .matchParent:
                 $0.top == otherView.topAnchor + offset.top
                 $0.bottom == otherView.bottomAnchor - offset.bottom
                 

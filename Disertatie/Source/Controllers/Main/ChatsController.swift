@@ -54,12 +54,7 @@ extension ChatsController: Base {
         tableView.register(ChatsListTableViewCell.self)
 
         view.add(tableView, then: {
-            $0.layout(using: [
-                $0.topAnchor.constraint(equalTo: view.topAnchor),
-                $0.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                $0.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                $0.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ])
+            $0.pin(.matchParent, to: view)
         })
     }
 

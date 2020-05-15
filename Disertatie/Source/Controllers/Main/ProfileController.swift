@@ -9,10 +9,20 @@
 import UIKit
 
 class ProfileController: BaseController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        initializeUI()
+        updateTexts()
     }
-    
-    
+}
+
+extension ProfileController: Base {
+    func initializeUI() {
+        view.backgroundColor = .white
+    }
+
+    func updateTexts() {
+        navigationItem.title = "Profile"
+    }
 }

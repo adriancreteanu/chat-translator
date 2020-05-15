@@ -20,6 +20,9 @@ class BaseController: UIViewController {
             .foregroundColor: UIColor.navigationTitle,
             .font: UIFont.primary(ofSize: .medium2)
         ]
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
     
 }

@@ -55,7 +55,7 @@ extension LoginController: Base {
         backgroundImage.contentMode = .scaleAspectFill
         
         view.add(backgroundImage, then: {
-            $0.pin(.fitParent, to: view)
+            $0.pin(.matchParent, to: view)
         })
         
         initializeFormUI()

@@ -53,6 +53,7 @@
 		BC77AD31244246FC00F9983E /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD30244246FC00F9983E /* MessageViewModel.swift */; };
 		BC77AD332442570E00F9983E /* MessageReceivedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */; };
 		BC77AD37244514B700F9983E /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */; };
+		BC7C0F3D247124E30046C39B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC7C0F3B247124E30046C39B /* Localizable.strings */; };
 		BC946EC3244DE435004708FE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946EC2244DE435004708FE /* ProfileController.swift */; };
 		BC946EC6244DE9E0004708FE /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946EC5244DE9E0004708FE /* AuthController.swift */; };
 		BC946EC9244DEAD3004708FE /* World.png in Resources */ = {isa = PBXBuildFile; fileRef = BC946EC8244DEAD3004708FE /* World.png */; };
@@ -123,6 +124,8 @@
 		BC77AD30244246FC00F9983E /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageReceivedTableViewCell.swift; sourceTree = "<group>"; };
 		BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
+		BC7C0F3C247124E30046C39B /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BC7C0F3E247124ED0046C39B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BC946EC2244DE435004708FE /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		BC946EC5244DE9E0004708FE /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		BC946EC8244DEAD3004708FE /* World.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = World.png; sourceTree = "<group>"; };
@@ -190,6 +193,7 @@
 		2D277B75241E56DF004335F2 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				BC7C0F3B247124E30046C39B /* Localizable.strings */,
 				2D18FCD9242FF54400939080 /* GoogleService-Info.plist */,
 				2DC6F8892413D69D0097B013 /* Info.plist */,
 				2DC6F8842413D69D0097B013 /* Assets.xcassets */,
@@ -490,6 +494,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ro,
 			);
 			mainGroup = 2DC6F86F2413D6990097B013;
 			productRefGroup = 2DC6F8792413D6990097B013 /* Products */;
@@ -510,6 +515,7 @@
 				2D18FCDA242FF54400939080 /* GoogleService-Info.plist in Resources */,
 				BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */,
 				BCC6435D243FAE15000EB35C /* messages.json in Resources */,
+				BC7C0F3D247124E30046C39B /* Localizable.strings in Resources */,
 				BC946EC9244DEAD3004708FE /* World.png in Resources */,
 				BCD918D4244FA61D00F80194 /* Login.png in Resources */,
 				BCC64359243FAAE7000EB35C /* chats.json in Resources */,
@@ -633,6 +639,15 @@
 				2DC6F8872413D69D0097B013 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BC7C0F3B247124E30046C39B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC7C0F3C247124E30046C39B /* ro */,
+				BC7C0F3E247124ED0046C39B /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

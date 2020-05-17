@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootController = TabBarController()
+        let rootController = LoginController()
         let navigationController = UINavigationController(rootViewController: rootController) //TabBarController()
         navigationController.isNavigationBarHidden = true
         window?.rootViewController = navigationController

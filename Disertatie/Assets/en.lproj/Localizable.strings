@@ -8,3 +8,11 @@
 
 "Welcome" = "Welcome";
 "Rectify" = "Rectify";
+
+// Login
+
+"Username" = "Username";
+"Password" = "Password";
+"Login" = "Login";
+"ForgotPassword" = "Forgot password?";
+"SignUpMessage" = "New? Sign-up for a new account.";

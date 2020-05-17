@@ -22,7 +22,7 @@ class RoundedButton: UIButton {
         self.init(type: .system)
         
         self.backgroundColor = backgroundColor
-        setTitle(title, for: [])
+        setTitle(title.uppercased(), for: [])
         setTitleColor(titleColor, for: [])
         titleLabel?.font = .primary(ofSize: .medium1, weight: .bold)
         

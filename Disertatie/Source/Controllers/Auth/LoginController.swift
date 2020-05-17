@@ -15,6 +15,7 @@ class LoginController: UIViewController {
     private var passwordField: FormField!
     private var forgotButton: UIButton!
     private var loginButton: RoundedButton!
+    private var signUpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,14 @@ extension LoginController: Base {
         })
         
         initializeFormUI()
+        
+        signUpButton = UIButton(title: Translations.signUpMessage)
+        signUpButton.setStyle(font: .primary(ofSize: .medium2),
+                              color: .tundora)
+        
+        view.add(signUpButton, then: {
+            $0.pin(.bottom, to: view, offsetBy: .init(horizontal: 20, vertical: 10))
+        })
     }
     
     func initializeFormUI() {
@@ -72,14 +81,14 @@ extension LoginController: Base {
             $0.pin(.middle, to: view, offsetBy: .init(horizontal: 30))
         })
         
-        emailField = FormField(hint: "Username", fieldHeight: Constants.Design.textFieldHeight)
-        passwordField = FormField(hint: "Password", fieldHeight: Constants.Design.textFieldHeight)
+        emailField = FormField(hint: Translations.username, fieldHeight: Constants.Design.textFieldHeight)
+        passwordField = FormField(hint: Translations.password, fieldHeight: Constants.Design.textFieldHeight)
         
-        forgotButton = UIButton(title: "Forgot password?")
+        forgotButton = UIButton(title: Translations.forgotPassword)
         forgotButton.setStyle(font: .primary(ofSize: .small2),
                               color: .primary)
         
-        loginButton = RoundedButton(title: "LOGIN",
+        loginButton = RoundedButton(title: Translations.login,
                                         titleColor: .white,
                                         backgroundColor: .primary)
         loginButton.addTarget(self, action: #selector(LoginController.loginButtonTap), for: .touchUpInside)

@@ -13,6 +13,7 @@ extension UIColor {
     static let trout = UIColor(named: "Trout")!
     static let dustyGray = UIColor(named: "Dusty Gray")!
     static let alto = UIColor(named: "Alto")!
+    static let tundora = UIColor(named: "Tundora")!
 }
 
 extension UIColor {

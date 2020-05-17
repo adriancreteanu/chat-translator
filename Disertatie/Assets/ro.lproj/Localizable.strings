@@ -12,8 +12,17 @@
 
 // Login
 
+"Name" = "Nume";
+"Surname" = "Surname";
+
+
+
+"Email" = "Email";
 "Username" = "Utilizator";
 "Password" = "Parola";
 "Login" = "Conectare";
 "ForgotPassword" = "Ati uitat parola?";
 "SignUpMessage" = "Nou? Sign-up for a new account.";
+"Repeat" = "Repeta";
+"SignUp" = "Înregistrare";
+"LoginMessage" = "Deja membru? Conecteaza-te.";

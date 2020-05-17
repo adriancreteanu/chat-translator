@@ -11,8 +11,19 @@
 
 // Login
 
+
+"Email" = "Email";
 "Username" = "Username";
 "Password" = "Password";
 "Login" = "Login";
 "ForgotPassword" = "Forgot password?";
 "SignUpMessage" = "New? Sign-up for a new account.";
+"Repeat" = "Repeat";
+"SignUp" = "Sign up";
+"LoginMessage" = "Already a member? Login.";
+
+
+// Signup
+
+"Name" = "Nume";
+"Surname" = "Surname";

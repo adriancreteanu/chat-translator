@@ -54,6 +54,7 @@
 		BC77AD332442570E00F9983E /* MessageReceivedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */; };
 		BC77AD37244514B700F9983E /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */; };
 		BC7C0F3D247124E30046C39B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC7C0F3B247124E30046C39B /* Localizable.strings */; };
+		BC7C0F4024714C6F0046C39B /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C0F3F24714C6E0046C39B /* SignUpController.swift */; };
 		BC946EC3244DE435004708FE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946EC2244DE435004708FE /* ProfileController.swift */; };
 		BC946EC6244DE9E0004708FE /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946EC5244DE9E0004708FE /* AuthController.swift */; };
 		BC946EC9244DEAD3004708FE /* World.png in Resources */ = {isa = PBXBuildFile; fileRef = BC946EC8244DEAD3004708FE /* World.png */; };
@@ -126,6 +127,7 @@
 		BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 		BC7C0F3C247124E30046C39B /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BC7C0F3E247124ED0046C39B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BC7C0F3F24714C6E0046C39B /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		BC946EC2244DE435004708FE /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		BC946EC5244DE9E0004708FE /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		BC946EC8244DEAD3004708FE /* World.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = World.png; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 			children = (
 				BC946EC5244DE9E0004708FE /* AuthController.swift */,
 				BCB60D53244F71E8007108DB /* LoginController.swift */,
+				BC7C0F3F24714C6E0046C39B /* SignUpController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				BC77AD31244246FC00F9983E /* MessageViewModel.swift in Sources */,
 				2D2020C124351F4E006BAE99 /* MessageBarView.swift in Sources */,
 				BCC923FA246D228F0058346F /* StringExtension.swift in Sources */,
+				BC7C0F4024714C6F0046C39B /* SignUpController.swift in Sources */,
 				BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */,
 				BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */,
 				2D277B78241E6082004335F2 /* BaseController.swift in Sources */,

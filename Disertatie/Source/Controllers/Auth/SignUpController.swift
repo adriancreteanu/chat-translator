@@ -1,5 +1,5 @@
 //
-//  LoginController.swift
+//  SignUpController.swift
 //  Disertatie
 //
 //  Created by Adrian Creteanu on 20/04/2020.
@@ -9,13 +9,15 @@
 import UIKit
 import FirebaseAuth
 
-class LoginController: UIViewController {
+class SignUpController: UIViewController {
     private var backgroundImage: UIImageView!
+    private var nameField: FormField!
+    private var surnameField: FormField!
     private var emailField: FormField!
     private var passwordField: FormField!
-    private var forgotButton: UIButton!
-    private var loginButton: RoundedButton!
-    private var signUpButton: UIButton!
+    private var repeatPasswordField: FormField!
+    private var signUpButton: RoundedButton!
+    private var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,36 +33,11 @@ class LoginController: UIViewController {
     
     @objc
     func loginButtonTap() {
-        loginUser()
-    }
-    
-    @objc
-    func signUpButtonTap() {
-        navigateToSignUp()
-    }
-    
-    private func navigateToSignUp() {
-        let signUpController = SignUpController()
-        self.navigationController?.pushViewController(signUpController, animated: true)
-    }
-    
-    private func loginUser() {
-        Auth.auth().signIn(withEmail: "test@abc.com", password: "test1234") { (result, error) in
-            if let error = error {
-                print(error)
-                error.localizedDescription
-            } else {
-                if let result = result {
-                    print("Suceess")
-                    
-                    self.navigationController?.resetRootViewController()
-                }
-            }
-        }
+        navigationController?.popViewController(animated: true)
     }
 }
 
-extension LoginController: Base {
+extension SignUpController: Base {
     func initializeUI() {
         backgroundImage = UIImageView(image: .login)
         backgroundImage.contentMode = .scaleAspectFill
@@ -71,12 +48,12 @@ extension LoginController: Base {
         
         initializeFormUI()
         
-        signUpButton = UIButton(title: Translations.signUpMessage)
-        signUpButton.setStyle(font: .primary(ofSize: .medium1),
+        loginButton = UIButton(title: Translations.loginMessage)
+        loginButton.setStyle(font: .primary(ofSize: .medium1),
                               color: .tundora)
-        signUpButton.addTarget(self, action: .signUp, for: .touchUpInside)
+        loginButton.addTarget(self, action: .login, for: .touchUpInside)
         
-        view.add(signUpButton, then: {
+        view.add(loginButton, then: {
             $0.pin(.middle, to: view, offsetBy: .init(horizontal: 20, vertical: 10))
             view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: $0.bottomAnchor, multiplier: 1.0).isActive = true
         })
@@ -93,41 +70,39 @@ extension LoginController: Base {
             $0.pin(.middle, to: view, offsetBy: .init(horizontal: 30))
         })
         
+        nameField = FormField(hint: Translations.name, fieldHeight: Constants.Design.textFieldHeight)
+        surnameField = FormField(hint: Translations.surname, fieldHeight: Constants.Design.textFieldHeight)
         emailField = FormField(hint: Translations.email, fieldHeight: Constants.Design.textFieldHeight)
         passwordField = FormField(hint: Translations.password, fieldHeight: Constants.Design.textFieldHeight)
+        repeatPasswordField = FormField(hint: Translations.repeatPassword, fieldHeight: Constants.Design.textFieldHeight)
         
-        forgotButton = UIButton(title: Translations.forgotPassword)
-        forgotButton.setStyle(font: .primary(ofSize: .small2),
-                              color: .primary)
-        
-        loginButton = RoundedButton(title: Translations.login,
+        signUpButton = RoundedButton(title: Translations.signUp,
                                         titleColor: .white,
                                         backgroundColor: .primary)
-        loginButton.addTarget(self, action: .login, for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(SignUpController.loginButtonTap), for: .touchUpInside)
         
         // Constraint subviews
         
         let offset = Constants.Design.primaryXOffset
         
-        formView.add(emailField, then: {
+        let verticalStack = UIStackView(arrangedSubviews: [
+            nameField,
+            surnameField,
+            emailField,
+            passwordField,
+            repeatPasswordField
+        ])
+        
+        verticalStack.axis = .vertical
+        verticalStack.spacing = offset
+        
+        formView.add(verticalStack, then: {
             $0.pin(.top, to: formView, offsetBy: .all(offset))
         })
-
-        formView.add(passwordField, then: {
-            $0.pin(.middle, to: formView, offsetBy: .init(horizontal: offset))
-            $0.chain(.vertically, to: emailField, offsetBy: 20)
-        })
-
-        formView.add(forgotButton, then: {
-            $0.layout {
-                $0.leading == formView.leadingAnchor + offset
-            }
-            $0.chain(.vertically, to: passwordField, offsetBy: 25)
-        })
-
-        formView.add(loginButton, then: {
+        
+        formView.add(signUpButton, then: {
             $0.pin(.bottom, to: formView, offsetBy: .init(horizontal: offset, vertical: Constants.Design.primaryYOffset))
-            $0.chain(.vertically, to: forgotButton, offsetBy: 50)
+            $0.chain(.vertically, to: verticalStack, offsetBy: 50)
             $0.layoutDimensions {
                 $0.height == Constants.Design.buttonHeight
             }
@@ -138,6 +113,6 @@ extension LoginController: Base {
 }
 
 fileprivate extension Selector {
-    static let login = #selector(LoginController.loginButtonTap)
-    static let signUp = #selector(LoginController.signUpButtonTap)
+    static let login = #selector(SignUpController.loginButtonTap)
+    //static let signUp = #selector(SignUpController.signUpButtonTap)
 }

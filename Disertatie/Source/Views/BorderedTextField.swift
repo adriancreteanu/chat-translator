@@ -11,6 +11,10 @@ import UIKit
 class BorderedTextField: UITextField {
     private var borderLayer: CALayer!
     
+    var value: String? {
+        return self.text
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

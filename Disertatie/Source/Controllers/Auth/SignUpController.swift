@@ -32,8 +32,13 @@ class SignUpController: UIViewController {
     
     
     @objc
-    func loginButtonTap() {
+    func loginTap() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc
+    func signUpTap() {
+        // TODO
     }
 }
 
@@ -79,7 +84,7 @@ extension SignUpController: Base {
         signUpButton = RoundedButton(title: Translations.signUp,
                                         titleColor: .white,
                                         backgroundColor: .primary)
-        signUpButton.addTarget(self, action: #selector(SignUpController.loginButtonTap), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(SignUpController.loginTap), for: .touchUpInside)
         
         // Constraint subviews
         
@@ -113,6 +118,6 @@ extension SignUpController: Base {
 }
 
 fileprivate extension Selector {
-    static let login = #selector(SignUpController.loginButtonTap)
-    //static let signUp = #selector(SignUpController.signUpButtonTap)
+    static let login = #selector(SignUpController.loginTap)
+    static let signUp = #selector(SignUpController.signUpTap)
 }

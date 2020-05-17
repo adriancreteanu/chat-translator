@@ -55,6 +55,8 @@
 		BC77AD37244514B700F9983E /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD36244514B700F9983E /* UIEdgeInsetsExtension.swift */; };
 		BC7C0F3D247124E30046C39B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC7C0F3B247124E30046C39B /* Localizable.strings */; };
 		BC7C0F4024714C6F0046C39B /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C0F3F24714C6E0046C39B /* SignUpController.swift */; };
+		BC7C0F4324718D600046C39B /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C0F4224718D600046C39B /* FirebaseAuthService.swift */; };
+		BC7C0F4524718F160046C39B /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C0F4424718F160046C39B /* FirebaseAuthManager.swift */; };
 		BC946EC3244DE435004708FE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946EC2244DE435004708FE /* ProfileController.swift */; };
 		BC946EC6244DE9E0004708FE /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946EC5244DE9E0004708FE /* AuthController.swift */; };
 		BC946EC9244DEAD3004708FE /* World.png in Resources */ = {isa = PBXBuildFile; fileRef = BC946EC8244DEAD3004708FE /* World.png */; };
@@ -128,6 +130,8 @@
 		BC7C0F3C247124E30046C39B /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BC7C0F3E247124ED0046C39B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BC7C0F3F24714C6E0046C39B /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		BC7C0F4224718D600046C39B /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		BC7C0F4424718F160046C39B /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		BC946EC2244DE435004708FE /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		BC946EC5244DE9E0004708FE /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		BC946EC8244DEAD3004708FE /* World.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = World.png; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 		BC2005C2246DC87400D2EDEF /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				BC7C0F4124718D4C0046C39B /* Auth */,
 				BC2005C3246DC88E00D2EDEF /* Firestore */,
 			);
 			path = Firebase;
@@ -383,6 +388,15 @@
 				BC52DC3B2452315D00ABB1BB /* LayoutProxy.swift */,
 			);
 			path = Constraints;
+			sourceTree = "<group>";
+		};
+		BC7C0F4124718D4C0046C39B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				BC7C0F4224718D600046C39B /* FirebaseAuthService.swift */,
+				BC7C0F4424718F160046C39B /* FirebaseAuthManager.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		BC946EC4244DE9CF004708FE /* Auth */ = {
@@ -576,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D18FCEA2430F41800939080 /* Fonts.swift in Sources */,
+				BC7C0F4324718D600046C39B /* FirebaseAuthService.swift in Sources */,
 				2D2020BD2435066E006BAE99 /* Constants.swift in Sources */,
 				BC9FA3182455D7400042A54D /* UINavigationControllerExtension.swift in Sources */,
 				BC946EC3244DE435004708FE /* ProfileController.swift in Sources */,
@@ -600,6 +615,7 @@
 				BC9FA314245498200042A54D /* UILabelExtension.swift in Sources */,
 				BC9FA31224548EB90042A54D /* FormField.swift in Sources */,
 				BC554909243D086000764306 /* TranslationEndpoint.swift in Sources */,
+				BC7C0F4524718F160046C39B /* FirebaseAuthManager.swift in Sources */,
 				BC9FA3162454D4D20042A54D /* UIButtonExtension.swift in Sources */,
 				BC52DC3E2452358A00ABB1BB /* LayoutOperations.swift in Sources */,
 				BC52DC422452498200ABB1BB /* LayoutDimension.swift in Sources */,

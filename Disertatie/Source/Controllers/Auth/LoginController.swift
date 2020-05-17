@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class LoginController: UIViewController {
     private var backgroundImage: UIImageView!
@@ -17,10 +16,14 @@ class LoginController: UIViewController {
     private var loginButton: RoundedButton!
     private var signUpButton: UIButton!
     
+    private var manager: FirebaseAuthManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeUI()
+        
+        manager = FirebaseAuthManager()
     }
     
     // Move this to a BaseNoStatusBarController - ish class
@@ -30,12 +33,12 @@ class LoginController: UIViewController {
     
     
     @objc
-    func loginButtonTap() {
-        loginUser()
+    func loginTap() {
+        login()
     }
     
     @objc
-    func signUpButtonTap() {
+    func signUpTap() {
         navigateToSignUp()
     }
     
@@ -44,17 +47,19 @@ class LoginController: UIViewController {
         self.navigationController?.pushViewController(signUpController, animated: true)
     }
     
-    private func loginUser() {
-        Auth.auth().signIn(withEmail: "test@abc.com", password: "test1234") { (result, error) in
-            if let error = error {
-                print(error)
-                error.localizedDescription
+    private func login() {
+//        guard
+//            let email = emailField.value,
+//            let password = passwordField.value else { return }
+        
+        let email = "test@abc.com"
+        let password = "test1234"
+        
+        manager.login(with: (email, password)) { success, error in
+            if success {
+                self.navigationController?.resetRootViewController()
             } else {
-                if let result = result {
-                    print("Suceess")
-                    
-                    self.navigationController?.resetRootViewController()
-                }
+                print(error?.localizedDescription ?? "Error")
             }
         }
     }
@@ -138,6 +143,6 @@ extension LoginController: Base {
 }
 
 fileprivate extension Selector {
-    static let login = #selector(LoginController.loginButtonTap)
-    static let signUp = #selector(LoginController.signUpButtonTap)
+    static let login = #selector(LoginController.loginTap)
+    static let signUp = #selector(LoginController.signUpTap)
 }

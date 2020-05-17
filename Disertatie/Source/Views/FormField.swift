@@ -11,6 +11,10 @@ import UIKit
 class FormField: UIView {
     private var titleLabel: UILabel!
     private var textField: BorderedTextField!
+    
+    var value: String? {
+        return textField.value
+    }
 
     convenience init(
         hint: String,

@@ -10,12 +10,10 @@
 "Rectify" = "Rectifica";
 
 
-// Login
+// --- Login ---
 
 "Name" = "Nume";
 "Surname" = "Surname";
-
-
 
 "Email" = "Email";
 "Username" = "Utilizator";
@@ -24,5 +22,8 @@
 "ForgotPassword" = "Ati uitat parola?";
 "SignUpMessage" = "Nou? Sign-up for a new account.";
 "Repeat" = "Repeta";
+
+// --- Sign Up ---
+
 "SignUp" = "Înregistrare";
 "LoginMessage" = "Deja membru? Conecteaza-te.";

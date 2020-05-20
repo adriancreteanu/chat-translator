@@ -29,4 +29,7 @@ struct Translations {
     static var name: String { return "Name".localized() }
     static var surname: String { return "Surname".localized() }
     
+    static var original: String { return "Original".localized() }
+    static var corrected: String { return "Corrected".localized() }
+    
 }

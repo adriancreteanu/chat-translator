@@ -15,15 +15,22 @@
 "Name" = "Nume";
 "Surname" = "Surname";
 
+
+
 "Email" = "Email";
 "Username" = "Utilizator";
-"Password" = "Parola";
+"Password" = "Parolă";
 "Login" = "Conectare";
-"ForgotPassword" = "Ati uitat parola?";
-"SignUpMessage" = "Nou? Sign-up for a new account.";
-"Repeat" = "Repeta";
+"ForgotPassword" = "Ați uitat parola?";
+"SignUpMessage" = "Nou? Înregistrează-te pentru un cont nou.";
+"Repeat" = "Repetă";
 
 // --- Sign Up ---
 
 "SignUp" = "Înregistrare";
 "LoginMessage" = "Deja membru? Conecteaza-te.";
+
+// Chat
+
+"Original" = "Original";
+"Corrected" = "Corectat";

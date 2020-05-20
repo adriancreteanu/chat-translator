@@ -19,4 +19,14 @@ extension UILabel {
         self.font = font
         self.textColor = color
     }
+    
+    static func centered(
+        withText text: String,
+        multiline: Bool = false
+    ) -> UILabel {
+        let label = UILabel(text: text)
+        label.textAlignment = .center
+        label.numberOfLines = multiline ? 0 : 1
+        return label
+    }
 }

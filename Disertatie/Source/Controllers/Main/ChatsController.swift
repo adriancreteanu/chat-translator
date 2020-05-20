@@ -64,6 +64,7 @@ extension ChatsController: Base {
     
     func navigateToChat() {
         let chatVC = ChatController()
+        chatVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(chatVC, animated: true)
     }
 }

@@ -64,6 +64,22 @@ extension UIView {
         }
     }
     
+    func setBounds(_ orientation: Orientation, to otherView: UIView, offsetBy offset: Offset = .zero) {
+        switch orientation {
+        case .vertically:
+            layout {
+                $0.top >= otherView.topAnchor + offset.top
+                $0.bottom <= otherView.bottomAnchor - offset.bottom
+            }
+        case .horizontally:
+            layout {
+                $0.leading >= otherView.leadingAnchor + offset.left
+                $0.trailing <= otherView.trailingAnchor - offset.right
+            }
+        }
+    }
+    
+    
     // Not used for now
     func pinEdges(to otherView: UIView, offsetBy constant: CGFloat = 0) {
         layout {
@@ -97,6 +113,18 @@ extension UIView {
     }
     
     // MARK: - Dimensions
+    
+    func constraint(width: CGFloat? = nil, height: CGFloat? = nil) {
+        layoutDimensions {
+            if let width = width {
+                $0.width == width
+            }
+            
+            if let height = height {
+                $0.height == height
+            }
+        }
+    }
     
     func constraintToSquare(_ side: CGFloat) {
         layoutDimensions {

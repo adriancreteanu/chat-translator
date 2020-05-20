@@ -27,3 +27,8 @@
 
 "Name" = "Name";
 "Surname" = "Surname";
+
+// Chat
+
+"Original" = "Original";
+"Corrected" = "Corrected";

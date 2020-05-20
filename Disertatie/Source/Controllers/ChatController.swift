@@ -117,15 +117,19 @@ extension ChatController: UIContextMenuInteractionDelegate {
     }
     
     func makeTranslateAction() -> UIAction {
-        let translateAttributes = UIMenuElement.Attributes.destructive
-        let deleteImage = UIImage(systemName: "delete.left")
+        let pencilImage = UIImage(systemName: "pencil.circle")
         
         return UIAction(
             title: Translations.rectify,
-            image: deleteImage,
-            identifier: nil,
-            attributes: translateAttributes) { _ in
-                print("Translate tapped")
+            image: pencilImage,
+            identifier: nil) { _ in
+                self.displayCorrectionPopup()
         }
+    }
+    
+    private func displayCorrectionPopup() {
+        let correctPopupVC = CorrectPopupViewController()
+        correctPopupVC.modalPresentationStyle = .overFullScreen
+        navigationController?.present(correctPopupVC, animated: true)
     }
 }

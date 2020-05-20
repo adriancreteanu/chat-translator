@@ -74,6 +74,7 @@
 		BCC6435D243FAE15000EB35C /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = BCC6435C243FAE15000EB35C /* messages.json */; };
 		BCC923F6246D21BC0058346F /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC923F5246D21BC0058346F /* Translations.swift */; };
 		BCC923FA246D228F0058346F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC923F9246D228F0058346F /* StringExtension.swift */; };
+		BCC9D9092475BB2A004837AF /* CorrectPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC9D9082475BB2A004837AF /* CorrectPopupViewController.swift */; };
 		BCD918D4244FA61D00F80194 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD918D3244FA61D00F80194 /* Login.png */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +150,7 @@
 		BCC6435C243FAE15000EB35C /* messages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = messages.json; sourceTree = "<group>"; };
 		BCC923F5246D21BC0058346F /* Translations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
 		BCC923F9246D228F0058346F /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		BCC9D9082475BB2A004837AF /* CorrectPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectPopupViewController.swift; sourceTree = "<group>"; };
 		BCD918D3244FA61D00F80194 /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
 		F2276F97AC4DCAF910188CC1 /* Pods_Disertatie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disertatie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -187,11 +189,12 @@
 		2D277B73241E56D6004335F2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC946EC4244DE9CF004708FE /* Auth */,
 				2D277B77241E6082004335F2 /* BaseController.swift */,
 				BC33D81F242C11FC007BF615 /* ChatController.swift */,
-				BCBB030A242787DE00C082F1 /* TabBarController.swift */,
-				BC946EC4244DE9CF004708FE /* Auth */,
+				BCC9D9082475BB2A004837AF /* CorrectPopupViewController.swift */,
 				BC33D81E242C1072007BF615 /* Main */,
+				BCBB030A242787DE00C082F1 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				BC33D819242BE4C6007BF615 /* Title.swift in Sources */,
 				BC33D81D242BFED0007BF615 /* Images.swift in Sources */,
 				BC77AD37244514B700F9983E /* UIEdgeInsetsExtension.swift in Sources */,
+				BCC9D9092475BB2A004837AF /* CorrectPopupViewController.swift in Sources */,
 				BC2005C5246DC8C900D2EDEF /* FirestoreService.swift in Sources */,
 				BC77AD332442570E00F9983E /* MessageReceivedTableViewCell.swift in Sources */,
 				2D18FCF3243121C800939080 /* MessageTableViewCell.swift in Sources */,

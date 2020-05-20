@@ -39,4 +39,17 @@ extension UIView {
         layer.shadowRadius = blur / 2
         layer.shadowOffset = offset
     }
+    
+    func roundCorners(value: CGFloat) {
+        //layer.masksToBounds = true
+        layer.cornerRadius = value
+    }
+    
+    func addBlur(style: UIBlurEffect.Style = .light) {
+        let blurEffect = UIBlurEffect(style: style)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(blurEffectView)
+    }
 }

@@ -15,7 +15,7 @@ extension UILabel {
     }
     
     
-    func setStyle(font: UIFont, color: UIColor) {
+    func setStyle(font: UIFont, color: UIColor = .primaryText) {
         self.font = font
         self.textColor = color
     }

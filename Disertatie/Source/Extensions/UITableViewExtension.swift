@@ -20,6 +20,12 @@ extension UITableView {
         return tableView
     }
     
+    func addEmptyHeader() {
+        var frame: CGRect = .zero
+        frame.size.height = CGFloat.leastNonzeroMagnitude
+        self.tableHeaderView = UIView(frame: frame)
+    }
+    
     func addDelegates<T: UITableViewDelegate & UITableViewDataSource>(_ object: T) {
         self.delegate = object
         self.dataSource = object

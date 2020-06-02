@@ -30,3 +30,12 @@ extension UserViewModel {
         return URL(string: user.avatarURL!)!
     }
 }
+
+
+struct NewUserViewModel {
+    private let user: NewUser
+    
+    init(user: NewUser) {
+        self.user = user
+    }
+}

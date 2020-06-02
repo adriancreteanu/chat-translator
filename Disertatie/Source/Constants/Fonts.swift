@@ -48,6 +48,8 @@ enum FontSize: CGFloat {
 enum FontWeight: String {
     case regular = "Book"
     case bold = "Black"
+    case semibold = "Heavy"
+    case medium = "Medium"
     
 //    case Oblique
 //    case HeavyOblique

@@ -18,7 +18,7 @@ extension UIImageView {
         return image
     }
 
-    func load(url: URL) {
+    func load(url: URL, _ completion: @escaping (() -> ()) = {}) {
         DispatchQueue.global().async { [weak self] in
             guard let data = try? Data(contentsOf: url),
                 let image = UIImage(data: data) else {
@@ -27,6 +27,7 @@ extension UIImageView {
 
             DispatchQueue.main.async {
                 self?.image = image
+                completion()
             }
         }
     }

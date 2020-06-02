@@ -14,6 +14,7 @@ extension UIColor {
     static let dustyGray = UIColor(named: "Dusty Gray")!
     static let alto = UIColor(named: "Alto")!
     static let tundora = UIColor(named: "Tundora")!
+    static let athensGray = UIColor(named: "Athens Gray")!
 }
 
 extension UIColor {
@@ -22,4 +23,8 @@ extension UIColor {
     
     static let border = alto
     static let placeholder = dustyGray
+    
+    static let grayBackground = athensGray
+    
+    static let primaryText = tundora
 }

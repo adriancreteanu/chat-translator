@@ -26,17 +26,19 @@ class ChatsController: BaseController {
     
     // Move this to a protocol?
     private func performNetworkRequests() {
-        getAllUsers()
+        getChats()
     }
     
-    private func getAllUsers() {
-        manager.getAllData(from: .chats) { (chats: [Chat]?, error) in
+    private func getChats() {
+        manager.getQueryData(from: .chats, query: "O2pOdqPzh0vQyzdUaMbh") { (chats: [NewChat]?, error) in
             if let error = error {
                 print(error)
             } else {
-                if let modelsArray = chats?.compactMap({ ChatViewModel(chat: $0) }) {
-                    self.viewModels.append(contentsOf: modelsArray)
-                }
+                
+                print(chats)
+//                if let modelsArray = chats?.compactMap({ ChatViewModel(chat: $0) }) {
+//                    self.viewModels.append(contentsOf: modelsArray)
+//                }
 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()

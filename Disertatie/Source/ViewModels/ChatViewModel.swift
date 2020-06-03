@@ -15,12 +15,13 @@ struct ChatViewModel {
     init(chat: Chat) {
         self.chat = chat
         // TODO: Figure out a different way to do this 👇🏼 without force unwrapping.
-        self.user = UserViewModel(user: chat.user!)
+        
+        self.user = UserViewModel(user: (chat.users?.first)!)
     }
 }
 
 extension ChatViewModel {
     var lastMessage: String? {
-        return chat.lastMessage
+        return chat.lastMessage?.text
     }
 }

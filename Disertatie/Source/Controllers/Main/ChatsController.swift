@@ -30,15 +30,22 @@ class ChatsController: BaseController {
     }
     
     private func getChats() {
-        manager.getQueryData(from: .chats, query: "O2pOdqPzh0vQyzdUaMbh") { (chats: [NewChat]?, error) in
+        guard let uid = UserDefaults.standard.string(forKey: Constants.Keys.userUIDKey) else {
+            return
+        }
+
+        manager.getQueryData(from: .chats, query: uid) { (chats: [Chat]?, error) in
             if let error = error {
                 print(error)
             } else {
-                
-                print(chats)
-//                if let modelsArray = chats?.compactMap({ ChatViewModel(chat: $0) }) {
-//                    self.viewModels.append(contentsOf: modelsArray)
-//                }
+                // From the 2 users, we remove the one that belongs to the logged in user
+                chats?.forEach {
+                    $0.users = $0.users?.filter { $0.id != uid }
+                }
+
+                if let modelsArray = chats?.compactMap({ ChatViewModel(chat: $0) }) {
+                    self.viewModels.append(contentsOf: modelsArray)
+                }
 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -51,7 +58,7 @@ class ChatsController: BaseController {
 extension ChatsController: Base {
     func initializeUI() {
         tableView = UITableView.make(hasSeparators: true)
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        tableView.contentInset = UIEdgeInsets(vertical: 20, horizontal: 0)
         tableView.addDelegates(self)
         tableView.register(ChatsListTableViewCell.self)
 
@@ -61,7 +68,7 @@ extension ChatsController: Base {
     }
 
     func updateTexts() {
-        navigationItem.title = "Chats"
+        navigationItem.title = Translations.chats
     }
     
     func navigateToChat() {

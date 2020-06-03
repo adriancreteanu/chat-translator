@@ -9,18 +9,6 @@
 import ObjectMapper
 
 class Chat: Mappable {
-    var user: User?
-    var lastMessage: String?
-    
-    required init?(map: Map) {}
-    
-    func mapping(map: Map) {
-        user <- map["user"]
-        lastMessage <- map["lastMessage"]
-    }
-}
-
-class NewChat: Mappable {
     var users: [User]?
     var lastMessage: LastMessage?
     

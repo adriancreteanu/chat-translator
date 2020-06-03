@@ -30,6 +30,9 @@
 "SignUp" = "Înregistrare";
 "LoginMessage" = "Deja membru? Conecteaza-te.";
 
+// Chats
+"Chats" = "Chats";
+
 // Chat
 
 "Original" = "Original";

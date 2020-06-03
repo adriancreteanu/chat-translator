@@ -32,4 +32,5 @@ struct Translations {
     static var original: String { return "Original".localized() }
     static var corrected: String { return "Corrected".localized() }
     
+    static var chats: String { return "Chats".localized() }
 }

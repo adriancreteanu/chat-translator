@@ -55,12 +55,15 @@ class LoginController: UIViewController {
         let email = "creteanu.adrian@gmail.com"
         let password = "test1234"
         
-        manager.login(with: (email, password)) { success, error in
-            if success {
-                self.navigationController?.resetRootViewController()
-            } else {
+        manager.login(with: (email, password)) { uid, error in
+            guard let uid = uid else {
+                // alert error
                 print(error?.localizedDescription ?? "Error")
+                return
             }
+            
+            UserDefaults.standard.setValue(uid, forKey: Constants.Keys.userUIDKey)
+            self.navigationController?.resetRootViewController()
         }
     }
 }

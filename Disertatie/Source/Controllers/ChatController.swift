@@ -33,11 +33,7 @@ extension ChatController: Base {
         tableView.register(MessageTableViewCell.self)
         
         view.add(tableView, then: {
-            $0.layout(using: [
-                $0.topAnchor.constraint(equalTo: view.topAnchor),
-                $0.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                $0.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            ])
+            $0.pin(.top, to: view)
         })
         
         messageBarView = MessageBarView()
@@ -45,12 +41,11 @@ extension ChatController: Base {
         messageBarView.backgroundColor = .white
         
         view.add(messageBarView, then: {
-            $0.layout(using: [
-                $0.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                $0.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                $0.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                $0.topAnchor.constraint(equalTo: tableView.bottomAnchor),
-            ])
+            $0.chain(.vertically, to: tableView)
+            $0.pin(.middle, to: view)
+            $0.layout {
+                $0.bottom == view.safeAreaLayoutGuide.bottomAnchor - 10
+            }
         })
     }
     
@@ -123,7 +118,7 @@ extension ChatController: UIContextMenuInteractionDelegate {
             title: Translations.rectify,
             image: pencilImage,
             identifier: nil) { _ in
-                self.displayCorrectionPopup()
+            self.displayCorrectionPopup()
         }
     }
     

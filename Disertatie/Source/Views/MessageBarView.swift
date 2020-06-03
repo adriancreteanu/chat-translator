@@ -10,7 +10,7 @@ import UIKit
 
 class MessageBarView: UIView {
     private var messageTextView: UITextView!
-    private var sendButton: UIButton!
+    private var sendButton: ImageButton!
     
     fileprivate let maxLinesDisplayed: CGFloat = 3
     fileprivate let messageTextViewPadding: CGFloat = 10 // move this to constants
@@ -51,18 +51,20 @@ class MessageBarView: UIView {
             ])
         })
         
-        sendButton = UIButton(type: .system)
-        sendButton.setTitle("Send", for: [])
-        sendButton.tintColor = .primary
+        sendButton = ImageButton(icon: UIImage.send.asTemplate,
+                                 iconTint: .primary)
         sendButton.addTarget(self, action: #selector(sendButtonAction), for: .touchUpInside)
-        add(sendButton, then: {
-            $0.layout(using: [
-                $0.topAnchor.constraint(greaterThanOrEqualTo: self.topAnchor, constant: 20),
-                $0.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-                $0.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-                $0.leadingAnchor.constraint(equalTo: messageTextView.trailingAnchor, constant: 10),
-                $0.widthAnchor.constraint(equalToConstant: 60)
-            ])
+        
+        self.add(sendButton, then: {
+            
+            $0.layout {
+                $0.top >= self.topAnchor + 10
+                $0.bottom == self.bottomAnchor - 10
+                $0.trailing == self.trailingAnchor - 10
+            }
+            
+            $0.chain(.horizontally, to: messageTextView, offsetBy: 10)
+            $0.constraintToSquare(35)
         })
     }
     

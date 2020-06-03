@@ -56,13 +56,12 @@
 		BC7BCD592486966E00B479C2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7BCD582486966D00B479C2 /* SettingsTableViewCell.swift */; };
 		BC7BCD5B2486F7EB00B479C2 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7BCD5A2486F7EB00B479C2 /* UIImageExtension.swift */; };
 		BC7BCD5D2486FFB500B479C2 /* StaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7BCD5C2486FFB500B479C2 /* StaticData.swift */; };
+		BC7BCD5F24882ACA00B479C2 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7BCD5E24882ACA00B479C2 /* ImageButton.swift */; };
 		BC7C0F3D247124E30046C39B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC7C0F3B247124E30046C39B /* Localizable.strings */; };
 		BC7C0F4024714C6F0046C39B /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C0F3F24714C6E0046C39B /* SignUpController.swift */; };
 		BC7C0F4324718D600046C39B /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C0F4224718D600046C39B /* FirebaseAuthService.swift */; };
 		BC7C0F4524718F160046C39B /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C0F4424718F160046C39B /* FirebaseAuthManager.swift */; };
 		BC946EC3244DE435004708FE /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946EC2244DE435004708FE /* ProfileController.swift */; };
-		BC946EC6244DE9E0004708FE /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946EC5244DE9E0004708FE /* AuthController.swift */; };
-		BC946EC9244DEAD3004708FE /* World.png in Resources */ = {isa = PBXBuildFile; fileRef = BC946EC8244DEAD3004708FE /* World.png */; };
 		BC946ECB244DF06C004708FE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC946ECA244DF06C004708FE /* RoundedButton.swift */; };
 		BC9FA31224548EB90042A54D /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FA31124548EB90042A54D /* FormField.swift */; };
 		BC9FA314245498200042A54D /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FA313245498200042A54D /* UILabelExtension.swift */; };
@@ -134,14 +133,13 @@
 		BC7BCD582486966D00B479C2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		BC7BCD5A2486F7EB00B479C2 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		BC7BCD5C2486FFB500B479C2 /* StaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticData.swift; sourceTree = "<group>"; };
+		BC7BCD5E24882ACA00B479C2 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		BC7C0F3C247124E30046C39B /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BC7C0F3E247124ED0046C39B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BC7C0F3F24714C6E0046C39B /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		BC7C0F4224718D600046C39B /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		BC7C0F4424718F160046C39B /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		BC946EC2244DE435004708FE /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		BC946EC5244DE9E0004708FE /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
-		BC946EC8244DEAD3004708FE /* World.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = World.png; sourceTree = "<group>"; };
 		BC946ECA244DF06C004708FE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		BC9FA31124548EB90042A54D /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		BC9FA313245498200042A54D /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
@@ -231,6 +229,7 @@
 				2DC6F8862413D69D0097B013 /* LaunchScreen.storyboard */,
 				BCBB030C2427888A00C082F1 /* TabBar */,
 				2D18FCF1243117E600939080 /* TableViewCells */,
+				BC7BCD5E24882ACA00B479C2 /* ImageButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,7 +413,6 @@
 		BC946EC4244DE9CF004708FE /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				BC946EC5244DE9E0004708FE /* AuthController.swift */,
 				BCB60D53244F71E8007108DB /* LoginController.swift */,
 				BC7C0F3F24714C6E0046C39B /* SignUpController.swift */,
 			);
@@ -425,7 +423,6 @@
 			isa = PBXGroup;
 			children = (
 				BCD918D3244FA61D00F80194 /* Login.png */,
-				BC946EC8244DEAD3004708FE /* World.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -545,7 +542,6 @@
 				BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */,
 				BCC6435D243FAE15000EB35C /* messages.json in Resources */,
 				BC7C0F3D247124E30046C39B /* Localizable.strings in Resources */,
-				BC946EC9244DEAD3004708FE /* World.png in Resources */,
 				BCD918D4244FA61D00F80194 /* Login.png in Resources */,
 				BCC64359243FAAE7000EB35C /* chats.json in Resources */,
 				2DC6F8852413D69D0097B013 /* Assets.xcassets in Resources */,
@@ -636,7 +632,7 @@
 				2DA534FD2422D0E00000E9F9 /* APIRequest.swift in Sources */,
 				2D2020BF24350845006BAE99 /* UIImageViewExtension.swift in Sources */,
 				2D18FCF024310EAF00939080 /* UIViewExtension.swift in Sources */,
-				BC946EC6244DE9E0004708FE /* AuthController.swift in Sources */,
+				BC7BCD5F24882ACA00B479C2 /* ImageButton.swift in Sources */,
 				BC52DC2F24522FB400ABB1BB /* Chat.swift in Sources */,
 				2D18FCEC2430F64B00939080 /* Strings.swift in Sources */,
 				BCB60D56244F779C007108DB /* BorderedTextField.swift in Sources */,

@@ -15,8 +15,8 @@ class FirebaseAuthManager {
         service = FirebaseAuthService()
     }
     
-    func login(with credentials: AuthCredentials, completion: @escaping (Bool, Error?) -> Void) {
-        service.login(with: credentials, completion: completion)
+    func login(with credentials: AuthCredentials, then handler: @escaping AuthCompletion) {
+        service.login(with: credentials, then: handler)
     }
     
     func signUp(with credentials: AuthCredentials, then handler: @escaping AuthCompletion) {

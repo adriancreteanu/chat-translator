@@ -9,32 +9,12 @@
 import ObjectMapper
 
 class User: Mappable {
-    var firstName: String?
-    var lastName: String?
-    var avatarURL: String?
-
-    init(firstName: String?,
-         lastName: String?) {
-        self.firstName = firstName
-        self.lastName = lastName
-    }
-
-    required init?(map: Map) {}
-
-    func mapping(map: Map) {
-        firstName <- map["firstName"]
-        lastName <- map["lastName"]
-        avatarURL <- map["avatarURL"]
-    }
-}
-
-class NewUser: Mappable {
+    var id: String?
     var firstName: String?
     var lastName: String?
     var avatarURL: String?
     var email: String?
-    var chats: [String]?
-
+    
     init(firstName: String?,
          lastName: String?) {
         self.firstName = firstName
@@ -44,10 +24,10 @@ class NewUser: Mappable {
     required init?(map: Map) {}
 
     func mapping(map: Map) {
+        id <- map["id"]
         firstName <- map["firstName"]
         lastName <- map["lastName"]
-        avatarURL <- map["avatarURL"]
         email <- map["email"]
-        chats <- map["chats"]
+        avatarURL <- map["avatarURL"]
     }
 }

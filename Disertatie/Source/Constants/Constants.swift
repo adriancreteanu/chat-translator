@@ -11,6 +11,7 @@ import UIKit
 struct Constants {
     struct API {}
     struct Design {}
+    struct Keys {}
 }
 
 extension Constants.Design {
@@ -26,4 +27,8 @@ extension Constants.Design {
 
 extension Constants.API {
     static let baseURL = "https://dev.microsofttranslator.com"
+}
+
+extension Constants.Keys {
+    static let userUIDKey = "@user_uid_key"
 }

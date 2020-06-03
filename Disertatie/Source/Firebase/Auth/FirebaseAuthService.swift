@@ -14,14 +14,14 @@ typealias AuthCompletion = (String?, Error?) -> Void
 
 class FirebaseAuthService {
     
-    func login(with credentials: AuthCredentials, completion: @escaping (Bool, Error?) -> Void) {
+    func login(with credentials: AuthCredentials, then handler: @escaping AuthCompletion) {
         Auth.auth().signIn(withEmail: credentials.email,
-                           password: credentials.password) { _, error in
+                           password: credentials.password) { result, error in
             
             if error != nil {
-                completion(false, error)
+                handler(nil, error)
             } else {
-                completion(true, nil)
+                handler(result?.user.uid, nil)
             }
         }
     }

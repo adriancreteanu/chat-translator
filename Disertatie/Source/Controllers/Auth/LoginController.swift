@@ -52,7 +52,7 @@ class LoginController: UIViewController {
 //            let email = emailField.value,
 //            let password = passwordField.value else { return }
         
-        let email = "test@abc.com"
+        let email = "creteanu.adrian@gmail.com"
         let password = "test1234"
         
         manager.login(with: (email, password)) { success, error in

@@ -19,10 +19,16 @@ class SignUpController: UIViewController {
     private var signUpButton: RoundedButton!
     private var loginButton: UIButton!
     
+    private var manager: FirebaseAuthManager!
+    private var dbManager: FirestoreManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeUI()
+        
+        manager = FirebaseAuthManager()
+        dbManager = FirestoreManager()
     }
     
     // Move this to a BaseNoStatusBarController - ish class
@@ -38,6 +44,25 @@ class SignUpController: UIViewController {
     
     @objc
     func signUpTap() {
+        let email = "creteanu.adrian@gmail.com"
+        let pass = "test1234"
+        
+        manager.signUp(with: (email, pass)) { uid, error in
+            guard let uid = uid else {
+                return
+            }
+            
+            self.dbManager.createUser(withUID: uid) { success, _ in
+                if success {
+                    self.navigationController?.resetRootViewController()
+                } else {
+                    print(error?.localizedDescription ?? "Error")
+                }
+            }
+        }
+    }
+    
+    private func saveUserInDB() {
         // TODO
     }
 }
@@ -84,7 +109,7 @@ extension SignUpController: Base {
         signUpButton = RoundedButton(title: Translations.signUp,
                                         titleColor: .white,
                                         backgroundColor: .primary)
-        signUpButton.addTarget(self, action: #selector(SignUpController.loginTap), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(SignUpController.signUpTap), for: .touchUpInside)
         
         // Constraint subviews
         

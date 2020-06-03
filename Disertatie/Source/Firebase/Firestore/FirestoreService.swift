@@ -9,6 +9,8 @@
 import Firebase
 import Foundation
 
+typealias DBWriteCompletion = (Bool, Error?) -> Void
+
 class FirestoreService {
     private let database: Firestore!
     
@@ -16,20 +18,18 @@ class FirestoreService {
         self.database = Firestore.firestore()
     }
     
-    func createUser() {
-        var ref: DocumentReference?
-        
-        ref = database.collection("users").addDocument(data: [
-            "first": "Ada",
-            "last": "Lovelace",
-            "born": 1815
-        ], completion: { err in
-            if let err = err {
-                print("Error adding document: \(err)")
+    func createUser(withUID uid: String, then handler: @escaping DBWriteCompletion) {
+        database.collection("users").document(uid).setData([
+            "firstName": "Adrian",
+            "lastName": "Creteanu",
+            "email": "creteanu.adrian@gmail.com"
+        ]) { error in
+            if let error = error {
+                handler(false, error)
             } else {
-                print("Document added with ID: \(ref!.documentID)")
+                handler(true, nil)
             }
-        })
+        }
     }
     
     func getAllUsers() {

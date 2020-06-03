@@ -16,8 +16,8 @@ class FirestoreManager {
         service = FirestoreService()
     }
     
-    func createUser() {
-        service.createUser()
+    func createUser(withUID uid: String, then handler: @escaping DBWriteCompletion) {
+        service.createUser(withUID: uid, then: handler)
     }
     
     func getQueryData<T: BaseMappable>(from collection: FirestoreCollection,

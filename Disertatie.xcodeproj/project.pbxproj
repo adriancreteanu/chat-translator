@@ -26,6 +26,7 @@
 		2DC6F8852413D69D0097B013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC6F8842413D69D0097B013 /* Assets.xcassets */; };
 		2DC6F8882413D69D0097B013 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC6F8862413D69D0097B013 /* LaunchScreen.storyboard */; };
 		5C7214F4798E7E4CF7B5B46A /* Pods_Disertatie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2276F97AC4DCAF910188CC1 /* Pods_Disertatie.framework */; };
+		BC006A83248991FF002B548D /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC006A82248991FF002B548D /* LaunchController.swift */; };
 		BC2005C5246DC8C900D2EDEF /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2005C4246DC8C900D2EDEF /* FirestoreService.swift */; };
 		BC2005C7246DC8DB00D2EDEF /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2005C6246DC8DB00D2EDEF /* FirestoreManager.swift */; };
 		BC33D819242BE4C6007BF615 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33D818242BE4C6007BF615 /* Title.swift */; };
@@ -103,6 +104,7 @@
 		2DC6F8892413D69D0097B013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4146450FDA121C4C0ACE503F /* Pods-Disertatie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.release.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.release.xcconfig"; sourceTree = "<group>"; };
 		871927EB4BAF2C353339E3EB /* Pods-Disertatie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disertatie.debug.xcconfig"; path = "Target Support Files/Pods-Disertatie/Pods-Disertatie.debug.xcconfig"; sourceTree = "<group>"; };
+		BC006A82248991FF002B548D /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
 		BC2005C4246DC8C900D2EDEF /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		BC2005C6246DC8DB00D2EDEF /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		BC33D818242BE4C6007BF615 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				BCC9D9082475BB2A004837AF /* CorrectPopupViewController.swift */,
 				BC33D81E242C1072007BF615 /* Main */,
 				BCBB030A242787DE00C082F1 /* TabBarController.swift */,
+				BC006A82248991FF002B548D /* LaunchController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */,
 				BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */,
 				2D277B78241E6082004335F2 /* BaseController.swift in Sources */,
+				BC006A83248991FF002B548D /* LaunchController.swift in Sources */,
 				2DC6F87E2413D6990097B013 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@ typealias AuthCompletion = (String?, Error?) -> Void
 
 class FirebaseAuthService {
     
-    func login(with credentials: AuthCredentials, then handler: @escaping AuthCompletion) {
+    func signIn(with credentials: AuthCredentials, then handler: @escaping AuthCompletion) {
         Auth.auth().signIn(withEmail: credentials.email,
                            password: credentials.password) { result, error in
             
@@ -26,6 +26,14 @@ class FirebaseAuthService {
         }
     }
     
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("Could not log out. Reason: \(error.localizedDescription)")
+        }
+    }
+     
     func signUp(with credentials: AuthCredentials, then handler: @escaping AuthCompletion) {
         Auth.auth().createUser(withEmail: credentials.email,
                                password: credentials.password) { result, error in

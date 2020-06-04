@@ -16,5 +16,9 @@ extension UIImage {
     static let person = UIImage(named: "person")!
     static let personFill = UIImage(named: "person_fill")!
     static let send = UIImage(named: "send")!
+    static let share = UIImage(named: "share")!
+    static let logOut = UIImage(named: "logOut")!
+    static let about = UIImage.init(systemName: "info.circle")!
+    
     static let login = UIImage(named: "Login.png")!
 }

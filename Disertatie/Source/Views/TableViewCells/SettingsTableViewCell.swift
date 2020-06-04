@@ -33,7 +33,8 @@ class SettingsTableViewCell: UITableViewCell {
     
     private func initializeUI() {
         iconImage = UIImageView()
-        iconImage.tintColor = .dustyGray
+        iconImage.contentMode = .scaleAspectFit
+        iconImage.tintColor = .primary
         
         rowLabel = UILabel()
         rowLabel.setStyle(font: .primary(ofSize: .medium2, weight: .medium))
@@ -45,7 +46,7 @@ class SettingsTableViewCell: UITableViewCell {
                 $0.bottom == contentView.bottomAnchor - 15
             }
             
-            $0.constraintToSquare(30)
+            $0.constraintToSquare(20)
         })
         
         contentView.add(rowLabel, then: {

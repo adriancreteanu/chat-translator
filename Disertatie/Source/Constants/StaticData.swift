@@ -13,11 +13,11 @@ typealias SettingsRowTuple = (icon: UIImage, text: String)
 struct StaticData {
     static var settings: [SettingsSectionType: [SettingsRowTuple]] = [
         .info: [
-            (.settings, "About"),
-            (.settings, "Share app")
+            (.about, "About"),
+            (.share, "Share app")
         ],
         .logOut: [
-            (.settings, "Log out")
+            (.logOut, "Log out")
         ]
     ]
 }

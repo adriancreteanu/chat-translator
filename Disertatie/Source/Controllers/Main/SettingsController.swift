@@ -18,6 +18,15 @@ class SettingsController: BaseController {
         initializeUI()
         updateTexts()
     }
+    
+    // MARK: - Actions
+    
+    fileprivate func signOut() {
+        FirebaseAuthManager().signOut()
+        // TODO: Create helper class for UserDefaults
+        UserDefaults.standard.removeObject(forKey: Constants.Keys.userUIDKey)
+        SceneDelegate.shared.setRootController(isLogged: false)
+    }
 }
 
 extension SettingsController: Base {
@@ -29,7 +38,6 @@ extension SettingsController: Base {
             hasSeparators: true
         )
         tableView.separatorInset = .zero
-        //tableView.addEmptyHeader()
         tableView.addDelegates(self)
         tableView.register(SettingsTableViewCell.self)
 
@@ -41,16 +49,29 @@ extension SettingsController: Base {
     }
 
     func updateTexts() {
-        navigationItem.title = "Settings"
+        navigationItem.title = Translations.settings
     }
 }
 
 extension SettingsController: UITableViewDelegate, UITableViewDataSource {
+    func sectionType(for indexPath: IndexPath) -> SettingsSectionType {
+        return SettingsSectionType(rawValue: indexPath.section)!
+    }
+    
     func itemsForSection(at indexPath: IndexPath) -> [SettingsRowTuple]? {
         guard let sectionType = SettingsSectionType(rawValue: indexPath.section) else {
             return nil
         }
         return settingsData[sectionType]
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        let type = sectionType(for: indexPath)
+
+        switch type {
+        case .info: break
+        case .logOut: signOut()
+        }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,7 +88,7 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let sectionItems = itemsForSection(at: indexPath) else {
-            // Throw??
+            // Throw?
             return UITableViewCell()
         }
 
@@ -78,6 +99,8 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        didSelectRow(at: indexPath)
     }
 }
 

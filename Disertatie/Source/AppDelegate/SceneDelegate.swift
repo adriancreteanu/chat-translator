@@ -11,7 +11,18 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    func setRootController(isLogged: Bool) {
+        let rootController = isLogged ?
+            TabBarController() :
+            LoginController()
 
+        let navigationController = UINavigationController(rootViewController: rootController)
+        navigationController.isNavigationBarHidden = true
+
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,10 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootController = TabBarController()
-        let navigationController = UINavigationController(rootViewController: rootController) //TabBarController()
-        navigationController.isNavigationBarHidden = true
-        window?.rootViewController = navigationController
+        window?.rootViewController = LaunchController()
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
     }
@@ -59,3 +67,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate {
+    static var shared: SceneDelegate {
+        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else {
+            fatalError()
+        }
+        return sceneDelegate
+    }
+}

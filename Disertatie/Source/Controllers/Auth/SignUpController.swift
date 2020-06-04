@@ -42,12 +42,18 @@ class SignUpController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    //        let email = "creteanu.adrian@gmail.com"
+    //        let pass = "test1234"
+    
     @objc
     func signUpTap() {
-        let email = "creteanu.adrian@gmail.com"
-        let pass = "test1234"
+        guard
+            let email = emailField.value,
+            let password = passwordField.value else {
+            return
+        }
         
-        manager.signUp(with: (email, pass)) { uid, error in
+        manager.signUp(with: (email, password)) { uid, error in
             guard let uid = uid else {
                 return
             }

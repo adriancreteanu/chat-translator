@@ -55,7 +55,7 @@ class LoginController: UIViewController {
         let email = "creteanu.adrian@gmail.com"
         let password = "test1234"
         
-        manager.login(with: (email, password)) { uid, error in
+        manager.signIn(with: (email, password)) { uid, error in
             guard let uid = uid else {
                 // alert error
                 print(error?.localizedDescription ?? "Error")

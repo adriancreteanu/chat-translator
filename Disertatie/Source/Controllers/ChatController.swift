@@ -112,40 +112,43 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ChatController: MessageBarViewDelegate {
-//    func didTapSend(forText text: String?) {
-//        guard let textToTranslate = text, !textToTranslate.isEmpty else {
-//            return
-//        }
-//
-//        // 1. Update UI
-//        let message = Message(text: textToTranslate)
-//        viewModels.append(MessageViewModel(message: message))
-//
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//        }
-//
-//        // 2. Translate message
-//        APIClient.translate(textToTranslate, from: "en", to: "de") { result in
-//            switch result {
-//            case .success(let response):
-//                guard let newMessage = self.viewModels.last else { return }
-//                newMessage.updateTranslation(text: (response.first?.translations.first!.text)!)
-//
-//                let indexPath = IndexPath(row: self.viewModels.count - 1, section: 0)
-//                let cell = self.tableView.cellForRow(at: indexPath) as! MessageTableViewCell
-//                cell.viewModel = newMessage
-//
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//
-//        // 3. Upload message to Firebase - TODO
-//    }
-    
     func didTapSend(forText text: String?) {
-        
+        guard let textToTranslate = text,
+            !textToTranslate.isEmpty,
+            let userId = userId else {
+            return
+        }
+
+        // 1. Update UI
+        let reply = Reply(userId: userId, text: textToTranslate)
+        viewModels.append(MessageViewModel(reply: reply))
+
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+
+        // 2. Translate message
+        APIClient.translate(textToTranslate, from: "en", to: "de") { result in
+            switch result {
+            case .success(let response):
+                guard
+                    let newMessage = self.viewModels.last,
+                    let translation = response.first?.translations.first?.text else { // TODO
+                    return
+                }
+                
+                newMessage.updateTranslation(translation, from: .DE)
+                
+                let indexPath = IndexPath(row: self.viewModels.count - 1, section: 0)
+                let cell = self.tableView.cellForRow(at: indexPath) as! MessageTableViewCell
+                cell.viewModel = newMessage
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
+        // 3. Upload message to Firebase - TODO
     }
 }
 

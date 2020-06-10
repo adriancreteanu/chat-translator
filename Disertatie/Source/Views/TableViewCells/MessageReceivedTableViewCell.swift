@@ -36,8 +36,8 @@ class MessageReceivedTableViewCell: UITableViewCell {
         // TODO: Customize UIView()
         bubbleView = UIView()
         bubbleView.layer.cornerRadius = Constants.Design.chatBubbleRadius
-        bubbleView.backgroundColor = .cyan // white
-        addShadow()
+        bubbleView.backgroundColor = .orangeWhite
+        //addShadow()
     
         contentView.add(bubbleView, then: {
             $0.layout(using: [

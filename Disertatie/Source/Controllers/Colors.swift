@@ -15,6 +15,7 @@ extension UIColor {
     static let alto = UIColor(named: "Alto")!
     static let tundora = UIColor(named: "Tundora")!
     static let athensGray = UIColor(named: "Athens Gray")!
+    static let orangeWhite = UIColor(named: "Orange White")!
 }
 
 extension UIColor {

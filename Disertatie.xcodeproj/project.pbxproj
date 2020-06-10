@@ -71,6 +71,7 @@
 		BC9FA3182455D7400042A54D /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FA3172455D7400042A54D /* UINavigationControllerExtension.swift */; };
 		BCB60D54244F71E8007108DB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB60D53244F71E8007108DB /* LoginController.swift */; };
 		BCB60D56244F779C007108DB /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB60D55244F779C007108DB /* BorderedTextField.swift */; };
+		BCB8505A249155FC007894CA /* LanguageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB85059249155FC007894CA /* LanguageCode.swift */; };
 		BCBB030B242787DE00C082F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030A242787DE00C082F1 /* TabBarController.swift */; };
 		BCBB030E2427889800C082F1 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB030D2427889800C082F1 /* TabBarItem.swift */; };
 		BCBB03132427A27A00C082F1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCBB03122427A27A00C082F1 /* Colors.xcassets */; };
@@ -151,6 +152,7 @@
 		BC9FA3172455D7400042A54D /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		BCB60D53244F71E8007108DB /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		BCB60D55244F779C007108DB /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
+		BCB85059249155FC007894CA /* LanguageCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCode.swift; sourceTree = "<group>"; };
 		BCBB030A242787DE00C082F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BCBB030D2427889800C082F1 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		BCBB03122427A27A00C082F1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				BC52DC2C24522FB400ABB1BB /* Message.swift */,
 				BC52DC2D24522FB400ABB1BB /* User.swift */,
 				BC52DC2E24522FB400ABB1BB /* TranslationsAPI.swift */,
+				BCB85059249155FC007894CA /* LanguageCode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				2DC6F87C2413D6990097B013 /* AppDelegate.swift in Sources */,
 				BC52DC3524522FDA00ABB1BB /* Base.swift in Sources */,
 				BC52DC382452300B00ABB1BB /* LayoutAnchor.swift in Sources */,
+				BCB8505A249155FC007894CA /* LanguageCode.swift in Sources */,
 				BC52DC3124522FB400ABB1BB /* User.swift in Sources */,
 				BC52DC3224522FB400ABB1BB /* TranslationsAPI.swift in Sources */,
 				BC52DC2924522F5600ABB1BB /* JSONHelper.swift in Sources */,

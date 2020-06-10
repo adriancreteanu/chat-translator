@@ -41,6 +41,16 @@ class Reply: Mappable {
     var userId: String?
     var timestamp: String? // TODO:
     var text: ReplyText?
+    var languages: ReplyLanguages?
+    
+    init(
+        userId: String,
+        text: String
+    ) {
+        self.userId = userId
+        self.timestamp = "now" // TODO:
+        self.text = ReplyText(text: text)
+    }
     
     required init?(map: Map) {}
     
@@ -48,6 +58,14 @@ class Reply: Mappable {
         userId <- map["userId"]
         timestamp <- map["timestamp"]
         text <- map["text"]
+        languages <- map["languages"]
+    }
+    
+    func updateTranslation(_ text: String,
+                        from language: LanguageCode) {
+        
+        self.text?.translated = text
+        self.languages?.target = language
     }
 }
 
@@ -56,12 +74,28 @@ class ReplyText: Mappable {
     var original: String?
     var translated: String?
     
+    init(text: String) {
+        self.original = text
+    }
+    
     required init?(map: Map) {}
     
     func mapping(map: Map) {
         corrected <- map["corrected"]
         original <- map["original"]
         translated <- map["translated"]
+    }
+}
+
+class ReplyLanguages: Mappable {
+    var original: LanguageCode?
+    var target: LanguageCode?
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        original <- map["original"]
+        target <- map["target"]
     }
 }
 

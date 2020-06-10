@@ -28,4 +28,8 @@ extension ChatViewModel {
     var lastMessage: String? {
         return chat.lastMessage?.text
     }
+    
+    var autoTranslate: Bool {
+        return chat.autoTranslate ?? true
+    }
 }

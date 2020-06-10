@@ -12,6 +12,7 @@ class Chat: Mappable {
     var id: String?
     var users: [User]?
     var lastMessage: LastMessage?
+    var autoTranslate: Bool?
     
     required init?(map: Map) {}
     
@@ -19,6 +20,7 @@ class Chat: Mappable {
         id <- map["documentId"]
         users <- map["users"]
         lastMessage <- map["lastMessage"]
+        autoTranslate <- map["autoTranslate"]
     }
 }
 

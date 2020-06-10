@@ -45,7 +45,7 @@ class MessageReceivedTableViewCell: UITableViewCell {
         // TODO: Customize UIView()
         bubbleView = UIView()
         bubbleView.layer.cornerRadius = Constants.Design.chatBubbleRadius
-        bubbleView.backgroundColor = .orangeWhite
+        bubbleView.backgroundColor = .grayBackground
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bubbleTapped))
         bubbleView.addGestureRecognizer(tapGesture)

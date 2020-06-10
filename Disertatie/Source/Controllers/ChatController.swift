@@ -11,12 +11,15 @@ import UIKit
 class ChatController: BaseController {
     private var tableView: UITableView!
     private var messageBarView: MessageBarView!
+    private var autoTranslateBarButton: UIBarButtonItem!
+    
     private var viewModels: [MessageViewModel] = []
     
     private var manager: FirestoreManager!
     
     var chatId: String?
     var userId: String?
+    var autoTranslate: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +59,7 @@ class ChatController: BaseController {
 
 extension ChatController: Base {
     func initializeUI() {
+        setupBarButton()
         view.backgroundColor = .white
         
         tableView = UITableView.make()
@@ -81,8 +85,27 @@ extension ChatController: Base {
         })
     }
     
+    func setupBarButton() {
+        let translateIcon = UIImage.translation.asTemplate
+        autoTranslateBarButton = UIBarButtonItem(
+            image: translateIcon,
+            style: .plain,
+            target: self,
+            action: #selector(autoTranslateAction)
+        )
+        
+        autoTranslateBarButton.tintColor = autoTranslate ? .primary : .trout
+        navigationItem.rightBarButtonItem = autoTranslateBarButton
+    }
+    
     func updateTexts() {
         navigationItem.title = "Mike H."
+    }
+    
+    @objc
+    func autoTranslateAction() {
+        autoTranslate = !autoTranslate
+        autoTranslateBarButton.tintColor = autoTranslate ? .primary : .trout
     }
 }
 

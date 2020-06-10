@@ -75,10 +75,11 @@ extension ChatsController: Base {
         navigationItem.title = Translations.chats
     }
     
-    func navigateToChat(_ id: String?) {
+    func navigateToChat(_ chat: ChatViewModel) {
         let chatVC = ChatController()
-        chatVC.chatId = id
+        chatVC.chatId = chat.chatId
         chatVC.userId = userId
+        chatVC.autoTranslate = chat.autoTranslate
         chatVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(chatVC, animated: true)
     }
@@ -99,7 +100,6 @@ extension ChatsController: UITableViewDataSource {
 extension ChatsController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let chatId = viewModels[indexPath.row].chatId
-        navigateToChat(chatId)
+        navigateToChat(viewModels[indexPath.row])
     }
 }

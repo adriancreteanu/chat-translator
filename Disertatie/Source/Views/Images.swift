@@ -18,6 +18,7 @@ extension UIImage {
     static let send = UIImage(named: "send")!
     static let share = UIImage(named: "share")!
     static let logOut = UIImage(named: "logOut")!
+    static let translation = UIImage(named: "translation")!
     static let about = UIImage.init(systemName: "info.circle")!
     
     static let login = UIImage(named: "Login.png")!

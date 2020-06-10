@@ -21,6 +21,10 @@ struct ChatViewModel {
 }
 
 extension ChatViewModel {
+    var chatId: String? {
+        return chat.id
+    }
+    
     var lastMessage: String? {
         return chat.lastMessage?.text
     }

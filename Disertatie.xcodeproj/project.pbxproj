@@ -49,6 +49,7 @@
 		BC554905243CCEA900764306 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC554904243CCEA900764306 /* UITableViewCellExtension.swift */; };
 		BC554909243D086000764306 /* TranslationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC554908243D086000764306 /* TranslationEndpoint.swift */; };
 		BC55490B243D0C4F00764306 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55490A243D0C4F00764306 /* APIClient.swift */; };
+		BC6F382B248EE65200D5152A /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6F382A248EE65200D5152A /* ProfileTableViewCell.swift */; };
 		BC7328442427A575008D05EF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328432427A575008D05EF /* Colors.swift */; };
 		BC7328462427A605008D05EF /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328452427A605008D05EF /* SettingsController.swift */; };
 		BC77AD31244246FC00F9983E /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC77AD30244246FC00F9983E /* MessageViewModel.swift */; };
@@ -127,6 +128,7 @@
 		BC554904243CCEA900764306 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		BC554908243D086000764306 /* TranslationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEndpoint.swift; sourceTree = "<group>"; };
 		BC55490A243D0C4F00764306 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BC6F382A248EE65200D5152A /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		BC7328432427A575008D05EF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Disertatie/Source/Controllers/Colors.swift; sourceTree = SOURCE_ROOT; };
 		BC7328452427A605008D05EF /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		BC77AD30244246FC00F9983E /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */,
 				2D9CD075243A50A700E62FC7 /* ChatsListTableViewCell.swift */,
 				BC7BCD582486966D00B479C2 /* SettingsTableViewCell.swift */,
+				BC6F382A248EE65200D5152A /* ProfileTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				BC33D81D242BFED0007BF615 /* Images.swift in Sources */,
 				BC77AD37244514B700F9983E /* UIEdgeInsetsExtension.swift in Sources */,
 				BCC9D9092475BB2A004837AF /* CorrectPopupViewController.swift in Sources */,
+				BC6F382B248EE65200D5152A /* ProfileTableViewCell.swift in Sources */,
 				BC2005C5246DC8C900D2EDEF /* FirestoreService.swift in Sources */,
 				BC77AD332442570E00F9983E /* MessageReceivedTableViewCell.swift in Sources */,
 				2D18FCF3243121C800939080 /* MessageTableViewCell.swift in Sources */,

@@ -20,4 +20,11 @@ struct StaticData {
             (.logOut, "Log out")
         ]
     ]
+    
+    static var profile: [String] = [
+        "Native",
+        "Known",
+        "Target"
+    ]
+    
 }

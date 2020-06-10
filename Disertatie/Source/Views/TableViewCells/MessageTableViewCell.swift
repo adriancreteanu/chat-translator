@@ -24,8 +24,8 @@ class MessageTableViewCell: UITableViewCell {
     
     var viewModel: MessageViewModel! {
         didSet {
-            messageText.text = viewModel.translation ?? viewModel.text
-            spinner.isHidden = viewModel.translation != nil
+            messageText.text = viewModel.translated ?? viewModel.original
+            spinner.isHidden = viewModel.translated != nil
         }
     }
     
@@ -97,9 +97,9 @@ class MessageTableViewCell: UITableViewCell {
             return
         }
         
-        messageText.text = (messageText.text == viewModel.translation) ?
-            viewModel.text :
-            viewModel.translation
+        messageText.text = (messageText.text == viewModel.translated) ?
+            viewModel.original :
+            viewModel.translated
         
         bubbleView.layoutIfNeeded()
     }

@@ -43,9 +43,9 @@ class JSONHelper {
         return chatModels.map { ChatViewModel(chat: $0) }
     }
     
-    static func loadChatMessages() -> [MessageViewModel] {
-        let jsonArray = JSONHelper.loadJSON("messages")
-        let messageModels = jsonArray.compactMap { Mapper<Message>().map(JSONObject: $0) }
-        return messageModels.map { MessageViewModel(message: $0) }
-    }
+//    static func loadChatMessages() -> [MessageViewModel] {
+//        let jsonArray = JSONHelper.loadJSON("messages")
+//        let messageModels = jsonArray.compactMap { Mapper<Message>().map(JSONObject: $0) }
+//        return messageModels.map { MessageViewModel(message: $0) }
+//    }
 }

@@ -12,6 +12,9 @@ class ProfileController: BaseController {
     private var avatarImageView: UIImageView!
     private var nameOverlayView: UIView!
     private var nameLabel: UILabel!
+    private var tableView: UITableView!
+    
+    private var profileData = StaticData.profile
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,6 @@ extension ProfileController: Base {
         avatarImageView = UIImageView()
         avatarImageView.contentMode = .scaleAspectFill
         
-        
         nameOverlayView = UIView()
         nameOverlayView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         nameOverlayView.isHidden = true
@@ -49,6 +51,14 @@ extension ProfileController: Base {
             font: UIFont.primary(ofSize: .large1),
             color: .white
         )
+        
+        tableView = UITableView.make(
+            styled: .plain,
+            hasSeparators: true
+        )
+        tableView.separatorInset = .zero
+        tableView.addDelegates(self)
+        tableView.register(ProfileTableViewCell.self)
         
         // Setup constraints
         
@@ -71,9 +81,39 @@ extension ProfileController: Base {
                 $0.height == 60
             }
         })
+        
+        view.add(tableView, then: {
+            $0.pin(.bottom, to: view)
+            $0.chain(.vertically, to: avatarImageView)
+        })
     }
     
     func updateTexts() {
         navigationItem.title = "Profile"
     }
+}
+
+extension ProfileController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return profileData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue(ProfileTableViewCell.self, forIndexPath: indexPath)
+        
+        let item = profileData[indexPath.row]
+        cell.updateData(title: item, value: "EN")
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+enum ProfileSectionType: Int {
+    case native = 0
+    case known
+    case target
 }

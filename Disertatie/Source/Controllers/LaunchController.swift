@@ -24,7 +24,7 @@ class LaunchController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        verifyUsedLoggedIn()
+        verifyUserLoggedIn()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -33,7 +33,7 @@ class LaunchController: UIViewController {
         Auth.auth().removeStateDidChangeListener(listener)
     }
     
-    private func verifyUsedLoggedIn() {
+    private func verifyUserLoggedIn() {
         listener = Auth.auth().addStateDidChangeListener { _, user in
             
             let isLoggedIn = user != nil

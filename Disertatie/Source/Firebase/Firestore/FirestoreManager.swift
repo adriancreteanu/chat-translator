@@ -20,11 +20,11 @@ class FirestoreManager {
         service.createUser(withUID: uid, then: handler)
     }
     
-    func getQueryData<T: BaseMappable>(from collection: FirestoreCollection,
+    func getArrayQueryData<T: BaseMappable>(from collection: FirestoreCollection,
                                      query: String,
                                      _ completion: @escaping ([T]?, Error?) -> Void) {
         
-        service.getQueryData(from: collection, query: query) { jsonArray, error in
+        service.getArrayQueryData(from: collection, query: query) { jsonArray, error in
             if error != nil {
                 completion(nil, error)
             } else {
@@ -32,6 +32,28 @@ class FirestoreManager {
                     return
                 }
                 let data = array.compactMap { Mapper<T>().map(JSONObject: $0) }
+                completion(data, nil)
+            }
+        }
+    }
+    
+    func getQueryData<T: BaseMappable>(from collection: FirestoreCollection,
+                                     query: String,
+                                     _ completion: @escaping (T?, Error?) -> Void) {
+        
+        service.getQueryData(from: collection, query: query) { jsonArray, error in
+            if error != nil {
+                completion(nil, error)
+            } else {
+                guard
+                    let array = jsonArray, array.count == 1,
+                    let json = array.first else {
+                    
+                    completion(nil, nil)
+                    return
+                }
+                
+                let data = Mapper<T>().map(JSONObject: json)
                 completion(data, nil)
             }
         }

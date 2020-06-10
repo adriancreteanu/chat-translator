@@ -12,6 +12,12 @@ class MessageReceivedTableViewCell: UITableViewCell {
     private var messageText: UILabel!
     private var bubbleView: UIView!
     
+    var viewModel: MessageViewModel! {
+        didSet {
+            messageText.text = viewModel.translated ?? viewModel.original
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -30,7 +36,7 @@ class MessageReceivedTableViewCell: UITableViewCell {
         // TODO: Customize UIView()
         bubbleView = UIView()
         bubbleView.layer.cornerRadius = Constants.Design.chatBubbleRadius
-        bubbleView.backgroundColor = .white
+        bubbleView.backgroundColor = .cyan // white
         addShadow()
     
         contentView.add(bubbleView, then: {
@@ -58,7 +64,7 @@ class MessageReceivedTableViewCell: UITableViewCell {
     }
     
     func update(with data: MessageViewModel) {
-        messageText.text = data.text
+        messageText.text = data.translated ?? data.original
     }
     
     fileprivate func addShadow() {

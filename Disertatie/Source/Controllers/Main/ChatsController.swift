@@ -13,6 +13,8 @@ class ChatsController: BaseController {
     
     private var manager: FirestoreManager!
     private var viewModels: [ChatViewModel] = []
+    
+    private var userId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,8 @@ class ChatsController: BaseController {
         initializeUI()
         updateTexts()
         
+        
+        userId = UserDefaults.standard.string(forKey: Constants.Keys.userUIDKey)
         manager = FirestoreManager()
         performNetworkRequests()
     }
@@ -30,11 +34,11 @@ class ChatsController: BaseController {
     }
     
     private func getChats() {
-        guard let uid = UserDefaults.standard.string(forKey: Constants.Keys.userUIDKey) else {
+        guard let uid = userId else {
             return
         }
 
-        manager.getQueryData(from: .chats, query: uid) { (chats: [Chat]?, error) in
+        manager.getArrayQueryData(from: .chats, query: uid) { (chats: [Chat]?, error) in
             if let error = error {
                 print(error)
             } else {
@@ -71,8 +75,10 @@ extension ChatsController: Base {
         navigationItem.title = Translations.chats
     }
     
-    func navigateToChat() {
+    func navigateToChat(_ id: String?) {
         let chatVC = ChatController()
+        chatVC.chatId = id
+        chatVC.userId = userId
         chatVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(chatVC, animated: true)
     }
@@ -93,6 +99,7 @@ extension ChatsController: UITableViewDataSource {
 extension ChatsController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        navigateToChat()
+        let chatId = viewModels[indexPath.row].chatId
+        navigateToChat(chatId)
     }
 }

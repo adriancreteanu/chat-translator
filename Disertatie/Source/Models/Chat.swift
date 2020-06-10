@@ -9,12 +9,14 @@
 import ObjectMapper
 
 class Chat: Mappable {
+    var id: String?
     var users: [User]?
     var lastMessage: LastMessage?
     
     required init?(map: Map) {}
     
     func mapping(map: Map) {
+        id <- map["documentId"]
         users <- map["users"]
         lastMessage <- map["lastMessage"]
     }

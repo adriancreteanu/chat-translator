@@ -61,9 +61,9 @@ class FirestoreService {
         })
     }
     
-    func getQueryData(from collection: FirestoreCollection,
-                      query: String,
-                      _ completion: @escaping (JSONArray?, Error?) -> Void) {
+    func getArrayQueryData(from collection: FirestoreCollection,
+                           query: String,
+                           _ completion: @escaping (JSONArray?, Error?) -> Void) {
         database.collection(collection.name)
             .whereField("userIds", arrayContains: query)
             .getDocuments(completion: { snapshot, error in
@@ -75,9 +75,34 @@ class FirestoreService {
                     
                     for document in snapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
-                        jsonArray.append(document.data())
+                        
+                        var jsonObject = document.data()
+                        jsonObject["documentId"] = document.documentID
+                        jsonArray.append(jsonObject)
                     }
                     
+                    completion(jsonArray, nil)
+                }
+            })
+    }
+
+    func getQueryData(from collection: FirestoreCollection,
+                      query: String,
+                      _ completion: @escaping (JSONArray?, Error?) -> Void) {
+        database.collection(collection.name)
+            .whereField("chatId", isEqualTo: query)
+            .getDocuments(completion: { snapshot, error in
+                if error != nil {
+                    completion(nil, error)
+
+                } else {
+                    var jsonArray: JSONArray = []
+
+                    for document in snapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                        jsonArray.append(document.data())
+                    }
+
                     completion(jsonArray, nil)
                 }
             })

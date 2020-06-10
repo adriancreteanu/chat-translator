@@ -11,7 +11,12 @@ import UIKit
 class ChatController: BaseController {
     private var tableView: UITableView!
     private var messageBarView: MessageBarView!
-    private var viewModels: [MessageViewModel]!
+    private var viewModels: [MessageViewModel] = []
+    
+    private var manager: FirestoreManager!
+    
+    var chatId: String?
+    var userId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +24,33 @@ class ChatController: BaseController {
         initializeUI()
         updateTexts()
         
-        viewModels = JSONHelper.loadChatMessages()
+        manager = FirestoreManager()
+        performNetworkRequests()
+    }
+    
+    private func performNetworkRequests() {
+        getMessages()
+    }
+    
+    private func getMessages() {
+        guard let chatId = chatId else {
+            return
+        }
+        
+        manager.getQueryData(from: .messages, query: chatId) { (message: Message?, error) in
+            if let error = error {
+                print(error)
+            } else {
+                if let modelsArray = message?.replies?
+                    .compactMap({ MessageViewModel(reply: $0) }) {
+                    self.viewModels.append(contentsOf: modelsArray)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -30,7 +61,8 @@ extension ChatController: Base {
         tableView = UITableView.make()
         tableView.addDelegates(self)
         tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 20, right: 0)
-        tableView.register(MessageTableViewCell.self)
+        tableView.register(MessageTableViewCell.self) // Rename this to MessageSent...
+        tableView.register(MessageReceivedTableViewCell.self)
         
         view.add(tableView, then: {
             $0.pin(.top, to: view)
@@ -60,44 +92,60 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(MessageTableViewCell.self, forIndexPath: indexPath)
-        cell.viewModel = viewModels[indexPath.row]
-        cell.interaction = UIContextMenuInteraction(delegate: self)
-        return cell
+        let viewModel = viewModels[indexPath.row]
+        
+        // TODO: Refactor here
+        
+        if viewModel.userId == userId {
+            let cell = tableView.dequeue(MessageTableViewCell.self, forIndexPath: indexPath)
+            cell.viewModel = viewModel
+            cell.interaction = UIContextMenuInteraction(delegate: self)
+            
+            return cell
+        } else {
+            let cell = tableView.dequeue(MessageReceivedTableViewCell.self, forIndexPath: indexPath)
+            cell.viewModel = viewModel
+            
+            return cell
+        }
     }
 }
 
 extension ChatController: MessageBarViewDelegate {
+//    func didTapSend(forText text: String?) {
+//        guard let textToTranslate = text, !textToTranslate.isEmpty else {
+//            return
+//        }
+//
+//        // 1. Update UI
+//        let message = Message(text: textToTranslate)
+//        viewModels.append(MessageViewModel(message: message))
+//
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
+//
+//        // 2. Translate message
+//        APIClient.translate(textToTranslate, from: "en", to: "de") { result in
+//            switch result {
+//            case .success(let response):
+//                guard let newMessage = self.viewModels.last else { return }
+//                newMessage.updateTranslation(text: (response.first?.translations.first!.text)!)
+//
+//                let indexPath = IndexPath(row: self.viewModels.count - 1, section: 0)
+//                let cell = self.tableView.cellForRow(at: indexPath) as! MessageTableViewCell
+//                cell.viewModel = newMessage
+//
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//
+//        // 3. Upload message to Firebase - TODO
+//    }
+    
     func didTapSend(forText text: String?) {
-        guard let textToTranslate = text, !textToTranslate.isEmpty else {
-            return
-        }
         
-        // 1. Update UI
-        let message = Message(text: textToTranslate)
-        viewModels.append(MessageViewModel(message: message))
-        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-        
-        // 2. Translate message
-        APIClient.translate(textToTranslate, from: "en", to: "de") { result in
-            switch result {
-            case .success(let response):
-                guard let newMessage = self.viewModels.last else { return }
-                newMessage.updateTranslation(text: (response.first?.translations.first!.text)!)
-                
-                let indexPath = IndexPath(row: self.viewModels.count - 1, section: 0)
-                let cell = self.tableView.cellForRow(at: indexPath) as! MessageTableViewCell
-                cell.viewModel = newMessage
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        // 3. Upload message to Firebase - TODO
     }
 }
 

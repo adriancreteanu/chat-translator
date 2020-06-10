@@ -25,4 +25,9 @@ struct MessageViewModel {
                            from language: LanguageCode) {
         reply.updateTranslation(text, from: language)
     }
+    
+    func updateCorrection(_ text: String,
+                           from language: LanguageCode) {
+        reply.updateCorrection(text, from: language)
+    }
 }

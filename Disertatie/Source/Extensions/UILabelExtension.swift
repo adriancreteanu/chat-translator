@@ -21,7 +21,7 @@ extension UILabel {
     }
     
     static func centered(
-        withText text: String,
+        withText text: String = "",
         multiline: Bool = false
     ) -> UILabel {
         let label = UILabel(text: text)

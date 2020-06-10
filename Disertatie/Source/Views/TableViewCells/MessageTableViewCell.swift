@@ -13,14 +13,14 @@ class MessageTableViewCell: UITableViewCell {
     private var bubbleView: UIView!
     private var spinner: UIActivityIndicatorView!
     
-    var interaction: UIContextMenuInteraction? {
-        didSet {
-            guard let interaction = interaction else {
-                return
-            }
-            bubbleView.addInteraction(interaction)
-        }
-    }
+//    var interaction: UIContextMenuInteraction? {
+//        didSet {
+//            guard let interaction = interaction else {
+//                return
+//            }
+//            bubbleView.addInteraction(interaction)
+//        }
+//    }
     
     var viewModel: MessageViewModel! {
         didSet {

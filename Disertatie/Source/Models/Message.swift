@@ -67,6 +67,13 @@ class Reply: Mappable {
         self.text?.translated = text
         self.languages?.target = language
     }
+    
+    func updateCorrection(_ text: String,
+                        from language: LanguageCode) {
+        
+        self.text?.corrected = text
+        self.languages?.target = language
+    }
 }
 
 class ReplyText: Mappable {

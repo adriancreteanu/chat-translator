@@ -99,14 +99,34 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
         if viewModel.userId == userId {
             let cell = tableView.dequeue(MessageTableViewCell.self, forIndexPath: indexPath)
             cell.viewModel = viewModel
-            cell.interaction = UIContextMenuInteraction(delegate: self)
-            
             return cell
         } else {
             let cell = tableView.dequeue(MessageReceivedTableViewCell.self, forIndexPath: indexPath)
             cell.viewModel = viewModel
-            
+            //cell.interaction = UIContextMenuInteraction(delegate: self)
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        // TODO: save this into a variable since it's used a lot -> viewModels[indexPath.row]
+        guard viewModels[indexPath.row].userId != userId else {
+            return nil
+        }
+        
+        let translateElement = makeTranslateAction(forItemAt: indexPath)
+        
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { _ in
+            let children: [UIMenuElement] = [translateElement]
+            return UIMenu(title: "", children: children)
+        })
+    }
+    
+    // Move this to extension?
+    func refreshTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 }
@@ -122,10 +142,7 @@ extension ChatController: MessageBarViewDelegate {
         // 1. Update UI
         let reply = Reply(userId: userId, text: textToTranslate)
         viewModels.append(MessageViewModel(reply: reply))
-
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        refreshTableView()
 
         // 2. Translate message
         APIClient.translate(textToTranslate, from: "en", to: "de") { result in
@@ -138,10 +155,7 @@ extension ChatController: MessageBarViewDelegate {
                 }
                 
                 newMessage.updateTranslation(translation, from: .DE)
-                
-                let indexPath = IndexPath(row: self.viewModels.count - 1, section: 0)
-                let cell = self.tableView.cellForRow(at: indexPath) as! MessageTableViewCell
-                cell.viewModel = newMessage
+                self.refreshTableView()
                 
             case .failure(let error):
                 print(error.localizedDescription)
@@ -152,30 +166,43 @@ extension ChatController: MessageBarViewDelegate {
     }
 }
 
-extension ChatController: UIContextMenuInteractionDelegate {
-    func contextMenuInteraction(_ interaction: UIContextMenuInteraction,
-                                configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
-        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { _ in
-            let translateElement = self.makeTranslateAction()
-            let children: [UIMenuElement] = [translateElement]
-            return UIMenu(title: "", children: children)
-        })
-    }
+extension ChatController { //UIContextMenuInteractionDelegate {
+//    func contextMenuInteraction(_ interaction: UIContextMenuInteraction,
+//                                configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+//        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { _ in
+//            let translateElement = self.makeTranslateAction()
+//            let children: [UIMenuElement] = [translateElement]
+//            return UIMenu(title: "", children: children)
+//        })
+//    }
     
-    func makeTranslateAction() -> UIAction {
+    func makeTranslateAction(forItemAt indexPath: IndexPath) -> UIAction {
         let pencilImage = UIImage(systemName: "pencil.circle")
         
         return UIAction(
             title: Translations.rectify,
             image: pencilImage,
             identifier: nil) { _ in
-            self.displayCorrectionPopup()
+                self.displayCorrectionPopup(forItemAt: indexPath)
         }
     }
     
-    private func displayCorrectionPopup() {
+    private func displayCorrectionPopup(forItemAt indexPath: IndexPath) {
         let correctPopupVC = CorrectPopupViewController()
         correctPopupVC.modalPresentationStyle = .overFullScreen
+        correctPopupVC.textToCorrect = viewModels[indexPath.row].original
+        correctPopupVC.indexPath = indexPath
+        correctPopupVC.delegate = self
         navigationController?.present(correctPopupVC, animated: true)
+    }
+}
+
+extension ChatController: CorrectPopupDelegate {
+    func didEditMessage(at indexPath: IndexPath, _ correctedText: String) {
+        viewModels[indexPath.row].updateCorrection(correctedText, from: .DE)
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }

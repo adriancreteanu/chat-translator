@@ -8,17 +8,31 @@
 
 import UIKit
 
+protocol CorrectPopupDelegate: class {
+    func didEditMessage(at indexPath: IndexPath, _ correctedText: String)
+}
+
 class CorrectPopupViewController: BaseController {
     private var popupView: UIView!
     private var originalMessageLabel: UILabel!
     private var correctTextView: UITextView!
     private var saveButton: RoundedButton!
     
+    var textToCorrect: String?
+    var indexPath: IndexPath?
+    
+    weak var delegate: CorrectPopupDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeUI()
         updateTexts()
+        
+        // TODO: Tap on popupView dismisses the entire Popup
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     override func viewDidLayoutSubviews() {
@@ -34,13 +48,14 @@ extension CorrectPopupViewController: Base {
         
         popupView = UIView()
         popupView.backgroundColor = .primary
+        popupView.isUserInteractionEnabled = true
         popupView.roundCorners(value: 16)
         
         let originalLabel = UILabel(text: Translations.original.uppercased())
         originalLabel.setStyle(font: .primary(ofSize: .small2, weight: .bold),
                                color: .white)
-        
-        originalMessageLabel = UILabel.centered(withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum lacinia volutpat. Integer mollis tortor eu ex luctus vehicula. Nunc eu turpis ut turpis bibendum tristique.",
+    
+        originalMessageLabel = UILabel.centered(withText: textToCorrect ?? "",
                                                 multiline: true)
         originalMessageLabel.setStyle(font: .primary(ofSize: .medium1),
                                       color: .white)
@@ -66,6 +81,8 @@ extension CorrectPopupViewController: Base {
                                    titleColor: .primary,
                                    font: .primary(ofSize: .small2, weight: .bold),
                                    backgroundColor: .white)
+        
+        saveButton.addTarget(self, action: #selector(saveAction), for: .touchUpInside)
         
         // Setup constraints
         
@@ -122,4 +139,20 @@ extension CorrectPopupViewController: Base {
     }
     
     func updateTexts() {}
+    
+    @objc
+    func saveAction() {
+        guard
+            let indexPath = self.indexPath,
+            !correctTextView.text.isEmpty else {
+            return
+        }
+        
+        delegate?.didEditMessage(at: indexPath, correctTextView.text)
+    }
+    
+    @objc
+    func close() {
+        dismiss(animated: true, completion: nil)
+    }
 }

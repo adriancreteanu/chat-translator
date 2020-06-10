@@ -12,6 +12,15 @@ class MessageReceivedTableViewCell: UITableViewCell {
     private var messageText: UILabel!
     private var bubbleView: UIView!
     
+    var interaction: UIContextMenuInteraction? {
+        didSet {
+            guard let interaction = interaction else {
+                return
+            }
+            bubbleView.addInteraction(interaction)
+        }
+    }
+    
     var viewModel: MessageViewModel! {
         didSet {
             messageText.text = viewModel.translated ?? viewModel.original
@@ -37,7 +46,9 @@ class MessageReceivedTableViewCell: UITableViewCell {
         bubbleView = UIView()
         bubbleView.layer.cornerRadius = Constants.Design.chatBubbleRadius
         bubbleView.backgroundColor = .orangeWhite
-        //addShadow()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bubbleTapped))
+        bubbleView.addGestureRecognizer(tapGesture)
     
         contentView.add(bubbleView, then: {
             $0.layout(using: [
@@ -73,5 +84,14 @@ class MessageReceivedTableViewCell: UITableViewCell {
         bubbleView.layer.shadowOffset = CGSize(width: 0, height: 7)
         bubbleView.layer.shadowColor = UIColor.black.cgColor
         //bubbleView.layer.shadowPath = UIBezierPath(rect: bubbleView.bounds).cgPath
+    }
+    
+    @objc
+    func bubbleTapped(_ selector: UITapGestureRecognizer) {
+        messageText.text = (messageText.text == viewModel.translated) ?
+            viewModel.original :
+            viewModel.translated
+        
+        bubbleView.layoutIfNeeded()
     }
 }

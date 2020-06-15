@@ -10,11 +10,13 @@ import UIKit
 
 class LoginController: UIViewController {
     private var backgroundImage: UIImageView!
+    private var appNameLabel: UILabel!
     private var emailField: FormField!
     private var passwordField: FormField!
     private var forgotButton: UIButton!
     private var loginButton: RoundedButton!
     private var signUpButton: UIButton!
+    private var formView: UIView!
     
     private var manager: FirebaseAuthManager!
     
@@ -79,6 +81,15 @@ extension LoginController: Base {
         
         initializeFormUI()
         
+        appNameLabel = UILabel.centered(withText: "BeFluent")
+        appNameLabel.setStyle(font: .primary(ofSize: .extraLarge3, weight: .bold),
+                              color: .white)
+        
+        view.add(appNameLabel, then: {
+            $0.pin(.middle, to: view, offsetBy: .init(horizontal: 30))
+            formView.chain(.vertically, to: appNameLabel, offsetBy: 50)
+        })
+        
         signUpButton = UIButton(title: Translations.signUpMessage)
         signUpButton.setStyle(font: .primary(ofSize: .medium1),
                               color: .tundora)
@@ -91,7 +102,7 @@ extension LoginController: Base {
     }
     
     func initializeFormUI() {
-        let formView = UIView()
+        formView = UIView()
         formView.backgroundColor = .white
         formView.layer.cornerRadius = 10        
         formView.addShadow(blur: 10)

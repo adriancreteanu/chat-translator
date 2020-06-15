@@ -21,10 +21,17 @@ struct StaticData {
         ]
     ]
     
-    static var profile: [String] = [
-        "Native",
-        "Known",
-        "Target"
+    static var profile: [ProfileSectionType: [String]] = [
+        .personalInfo: [
+            "Email",
+            "Birthday"
+        ],
+        
+        .languages: [
+            "I am native in",
+            "I also know",
+            "I want to learn"
+        ]
     ]
     
 }

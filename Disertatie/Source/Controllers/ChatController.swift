@@ -13,12 +13,14 @@ class ChatController: BaseController {
     private var messageBarView: MessageBarView!
     private var autoTranslateBarButton: UIBarButtonItem!
     
+    
     private var viewModels: [MessageViewModel] = []
     
     private var manager: FirestoreManager!
     
     var chatId: String?
     var userId: String?
+    var partnerName: String?
     var autoTranslate: Bool = true
     
     override func viewDidLoad() {
@@ -64,7 +66,7 @@ extension ChatController: Base {
         
         tableView = UITableView.make()
         tableView.addDelegates(self)
-        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 20, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 20, right: 0)
         tableView.register(MessageTableViewCell.self) // Rename this to MessageSent...
         tableView.register(MessageReceivedTableViewCell.self)
         
@@ -99,7 +101,7 @@ extension ChatController: Base {
     }
     
     func updateTexts() {
-        navigationItem.title = "Mike H."
+        navigationItem.title = partnerName
     }
     
     @objc
@@ -134,7 +136,9 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         
         // TODO: save this into a variable since it's used a lot -> viewModels[indexPath.row]
-        guard viewModels[indexPath.row].userId != userId else {
+        guard
+            !autoTranslate,
+            viewModels[indexPath.row].userId != userId else {
             return nil
         }
         

@@ -10,6 +10,7 @@ import UIKit
 
 class ChatsController: BaseController {
     private var tableView: UITableView!
+    private var searchBarButton: UIBarButtonItem!
     
     private var manager: FirestoreManager!
     private var viewModels: [ChatViewModel] = []
@@ -61,6 +62,7 @@ class ChatsController: BaseController {
 
 extension ChatsController: Base {
     func initializeUI() {
+        setupBarButton()
         tableView = UITableView.make(hasSeparators: true)
         tableView.contentInset = UIEdgeInsets(vertical: 20, horizontal: 0)
         tableView.addDelegates(self)
@@ -69,6 +71,19 @@ extension ChatsController: Base {
         view.add(tableView, then: {
             $0.pin(.matchParent, to: view)
         })
+    }
+    
+    func setupBarButton() {
+        let searchIcon = UIImage(systemName: "magnifyingglass")
+        searchBarButton = UIBarButtonItem(
+            image: searchIcon,
+            style: .plain,
+            target: self,
+            action: #selector(openSearchPage)
+        )
+        
+        searchBarButton.tintColor = .primary
+        navigationItem.rightBarButtonItem = searchBarButton
     }
 
     func updateTexts() {
@@ -79,9 +94,15 @@ extension ChatsController: Base {
         let chatVC = ChatController()
         chatVC.chatId = chat.chatId
         chatVC.userId = userId
+        chatVC.partnerName = chat.user.name
         chatVC.autoTranslate = chat.autoTranslate
         chatVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(chatVC, animated: true)
+    }
+    
+    @objc
+    func openSearchPage() {
+        
     }
 }
 

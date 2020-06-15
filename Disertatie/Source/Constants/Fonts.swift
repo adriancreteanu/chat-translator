@@ -28,7 +28,9 @@ enum FontSize: CGFloat {
 //    case caption1 = 12.0 // SFUIText
 //    case caption2 = 11.0 // SFUIText
     
-    
+    case extraLarge3 = 40
+    case extraLarge2 = 30
+    case extraLarge1 = 28
     
     case large3 = 26.0
     case large2 = 24.0

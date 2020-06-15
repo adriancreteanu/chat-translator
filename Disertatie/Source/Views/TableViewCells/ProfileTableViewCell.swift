@@ -26,10 +26,10 @@ class ProfileTableViewCell: UITableViewCell {
     
     private func initializeUI() {
         titleLabel = UILabel()
-        titleLabel.setStyle(font: .primary(ofSize: .medium2, weight: .bold), color: .primary)
+        titleLabel.setStyle(font: .primary(ofSize: .small3, weight: .regular), color: .primary)
         
         rowLabel = UILabel()
-        rowLabel.setStyle(font: .primary(ofSize: .medium2, weight: .regular))
+        rowLabel.setStyle(font: .primary(ofSize: .medium1, weight: .regular))
         
         let vStack = UIStackView(arrangedSubviews: [titleLabel, rowLabel])
         vStack.axis = .vertical

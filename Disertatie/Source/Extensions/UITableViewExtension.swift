@@ -47,4 +47,19 @@ extension UITableView {
         }
         return cell
     }
+    
+    func layoutHeader() {
+        guard let headerView = self.tableHeaderView else {
+            return
+        }
+
+        headerView.setNeedsLayout()
+        headerView.layoutIfNeeded()
+
+        let height = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        var frame = headerView.frame
+        frame.size.height = height
+        headerView.frame = frame
+        tableHeaderView = headerView
+    }
 }

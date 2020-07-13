@@ -13,9 +13,7 @@ class ChatController: BaseController {
     private var messageBarView: MessageBarView!
     private var autoTranslateBarButton: UIBarButtonItem!
     
-    
     private var viewModels: [MessageViewModel] = []
-    
     private var manager: FirestoreManager!
     
     var chatId: String?
@@ -42,7 +40,7 @@ class ChatController: BaseController {
             return
         }
         
-        manager.getQueryData(from: .messages, query: chatId) { (message: Message?, error) in
+        manager.getQueryData(from: .messages, field: "chatId", query: chatId) { (message: Message?, error) in
             if let error = error {
                 print(error)
             } else {
@@ -127,8 +125,9 @@ extension ChatController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeue(MessageReceivedTableViewCell.self, forIndexPath: indexPath)
+            cell.autoTranslate = autoTranslate
             cell.viewModel = viewModel
-            //cell.interaction = UIContextMenuInteraction(delegate: self)
+            // cell.interaction = UIContextMenuInteraction(delegate: self)
             return cell
         }
     }
@@ -172,7 +171,16 @@ extension ChatController: MessageBarViewDelegate {
         refreshTableView()
 
         // 2. Translate message
-        APIClient.translate(textToTranslate, from: "en", to: "de") { result in
+        
+        var from = "en"
+        var to = "de"
+        
+        if chatId == "H0JATW9W7spdXueVGEl5" {
+            from = "ro"
+            to = "en"
+        }
+        
+        APIClient.translate(textToTranslate, from: from, to: to) { result in
             switch result {
             case .success(let response):
                 guard
@@ -189,7 +197,9 @@ extension ChatController: MessageBarViewDelegate {
             }
         }
 
-        // 3. Upload message to Firebase - TODO
+        // 3. Upload message to Firebase
+        
+        
     }
 }
 

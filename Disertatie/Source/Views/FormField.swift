@@ -18,7 +18,8 @@ class FormField: UIView {
 
     convenience init(
         hint: String,
-        fieldHeight: CGFloat
+        fieldHeight: CGFloat,
+        isSecureEntry: Bool = false
     ) {
         self.init(frame: .zero)
        
@@ -29,7 +30,7 @@ class FormField: UIView {
             $0.pin(.top, to: self)
         })
         
-        textField = BorderedTextField()
+        textField = BorderedTextField(isSecureEntry: isSecureEntry)
         self.add(textField, then: {
             $0.pin(.bottom, to: self)
             $0.chain(.vertically, to: titleLabel, offsetBy: 5)

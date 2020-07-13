@@ -32,20 +32,6 @@ class FirestoreService {
         }
     }
     
-    func getAllUsers() {
-        database.collection(FirestoreCollection.users.name)
-            .getDocuments { snapshot, error in
-                
-                if let err = error {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in snapshot!.documents {
-                        print("\(document.documentID) => \(document.data())")
-                    }
-                }
-            }
-    }
-    
     func getDocument(from collection: FirestoreCollection, _ completion: @escaping (JSON?, Error?) -> Void) {
         let docRef = database.collection(collection.name).document("O2pOdqPzh0vQyzdUaMbh")
         
@@ -87,10 +73,11 @@ class FirestoreService {
     }
 
     func getQueryData(from collection: FirestoreCollection,
+                      field: String,
                       query: String,
                       _ completion: @escaping (JSONArray?, Error?) -> Void) {
         database.collection(collection.name)
-            .whereField("chatId", isEqualTo: query)
+            .whereField(field, isEqualTo: query)
             .getDocuments(completion: { snapshot, error in
                 if error != nil {
                     completion(nil, error)
@@ -128,6 +115,14 @@ class FirestoreService {
                     completion(jsonArray, nil)
                 }
             })
+    }
+    
+    func update(from collection: FirestoreCollection) {
+        
+        let messageRef = database.collection(collection.name).document("")
+        
+        
+        
     }
 }
 

@@ -102,7 +102,9 @@ extension ChatsController: Base {
     
     @objc
     func openSearchPage() {
-        
+        let searchVC = SearchController()
+        searchVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(searchVC, animated: true)
     }
 }
 

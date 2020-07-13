@@ -49,6 +49,9 @@
 		BC554905243CCEA900764306 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC554904243CCEA900764306 /* UITableViewCellExtension.swift */; };
 		BC554909243D086000764306 /* TranslationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC554908243D086000764306 /* TranslationEndpoint.swift */; };
 		BC55490B243D0C4F00764306 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC55490A243D0C4F00764306 /* APIClient.swift */; };
+		BC6419602497EEB5004FDA9E /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64195F2497EEB5004FDA9E /* SearchController.swift */; };
+		BC64196224980A45004FDA9E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64196124980A45004FDA9E /* SearchView.swift */; };
+		BC64196424982377004FDA9E /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC64196324982377004FDA9E /* SearchListTableViewCell.swift */; };
 		BC6F382B248EE65200D5152A /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6F382A248EE65200D5152A /* ProfileTableViewCell.swift */; };
 		BC7328442427A575008D05EF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328432427A575008D05EF /* Colors.swift */; };
 		BC7328462427A605008D05EF /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7328452427A605008D05EF /* SettingsController.swift */; };
@@ -129,6 +132,9 @@
 		BC554904243CCEA900764306 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		BC554908243D086000764306 /* TranslationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationEndpoint.swift; sourceTree = "<group>"; };
 		BC55490A243D0C4F00764306 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BC64195F2497EEB5004FDA9E /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = Disertatie/Source/Controllers/SearchController.swift; sourceTree = SOURCE_ROOT; };
+		BC64196124980A45004FDA9E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		BC64196324982377004FDA9E /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
 		BC6F382A248EE65200D5152A /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		BC7328432427A575008D05EF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Disertatie/Source/Controllers/Colors.swift; sourceTree = SOURCE_ROOT; };
 		BC7328452427A605008D05EF /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 				2D18FCF2243121C800939080 /* MessageTableViewCell.swift */,
 				BC77AD322442570E00F9983E /* MessageReceivedTableViewCell.swift */,
 				2D9CD075243A50A700E62FC7 /* ChatsListTableViewCell.swift */,
+				BC64196324982377004FDA9E /* SearchListTableViewCell.swift */,
 				BC7BCD582486966D00B479C2 /* SettingsTableViewCell.swift */,
 				BC6F382A248EE65200D5152A /* ProfileTableViewCell.swift */,
 			);
@@ -201,6 +208,7 @@
 		2D277B73241E56D6004335F2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC64195F2497EEB5004FDA9E /* SearchController.swift */,
 				BC946EC4244DE9CF004708FE /* Auth */,
 				2D277B77241E6082004335F2 /* BaseController.swift */,
 				BC33D81F242C11FC007BF615 /* ChatController.swift */,
@@ -238,6 +246,7 @@
 				BCBB030C2427888A00C082F1 /* TabBar */,
 				2D18FCF1243117E600939080 /* TableViewCells */,
 				BC7BCD5E24882ACA00B479C2 /* ImageButton.swift */,
+				BC64196124980A45004FDA9E /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -625,12 +634,14 @@
 				2D18FCEE2430FC5100939080 /* UITableViewExtension.swift in Sources */,
 				BC7328442427A575008D05EF /* Colors.swift in Sources */,
 				2DC6F8802413D6990097B013 /* ChatsController.swift in Sources */,
+				BC6419602497EEB5004FDA9E /* SearchController.swift in Sources */,
 				BC7BCD5B2486F7EB00B479C2 /* UIImageExtension.swift in Sources */,
 				BC4BDDDC2440F96D00AC47E4 /* ChatViewModel.swift in Sources */,
 				BC55490B243D0C4F00764306 /* APIClient.swift in Sources */,
 				BC7328462427A605008D05EF /* SettingsController.swift in Sources */,
 				BC4BDDDE2440F9A100AC47E4 /* UserViewModel.swift in Sources */,
 				BCC923F6246D21BC0058346F /* Translations.swift in Sources */,
+				BC64196224980A45004FDA9E /* SearchView.swift in Sources */,
 				BC2005C7246DC8DB00D2EDEF /* FirestoreManager.swift in Sources */,
 				BC9FA314245498200042A54D /* UILabelExtension.swift in Sources */,
 				BC9FA31224548EB90042A54D /* FormField.swift in Sources */,
@@ -641,6 +652,7 @@
 				BC52DC422452498200ABB1BB /* LayoutDimension.swift in Sources */,
 				2DA534FD2422D0E00000E9F9 /* APIRequest.swift in Sources */,
 				2D2020BF24350845006BAE99 /* UIImageViewExtension.swift in Sources */,
+				BC64196424982377004FDA9E /* SearchListTableViewCell.swift in Sources */,
 				2D18FCF024310EAF00939080 /* UIViewExtension.swift in Sources */,
 				BC7BCD5F24882ACA00B479C2 /* ImageButton.swift in Sources */,
 				BC52DC2F24522FB400ABB1BB /* Chat.swift in Sources */,

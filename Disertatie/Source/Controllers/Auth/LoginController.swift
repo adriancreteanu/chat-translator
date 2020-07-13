@@ -113,11 +113,12 @@ extension LoginController: Base {
         })
         
         emailField = FormField(hint: Translations.email, fieldHeight: Constants.Design.textFieldHeight)
-        passwordField = FormField(hint: Translations.password, fieldHeight: Constants.Design.textFieldHeight)
+        passwordField = FormField(hint: Translations.password, fieldHeight: Constants.Design.textFieldHeight, isSecureEntry: true)
         
         forgotButton = UIButton(title: Translations.forgotPassword)
         forgotButton.setStyle(font: .primary(ofSize: .small2),
                               color: .primary)
+        forgotButton.isHidden = true
         
         loginButton = RoundedButton(title: Translations.login,
                                         titleColor: .white,

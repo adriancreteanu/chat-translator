@@ -35,6 +35,18 @@ class BorderedTextField: UITextField {
         layer.cornerRadius = Constants.Design.primaryRadius
         layer.borderWidth = 1
         layer.borderColor = UIColor.border.cgColor
+        
+        autocapitalizationType = .none
+        
+        setLeftPaddingPoints(10)
+    }
+    
+    convenience init(isSecureEntry: Bool) {
+        self.init(frame: .zero)
+        
+        initializeUI()
+        
+        isSecureTextEntry = isSecureEntry
     }
     
     

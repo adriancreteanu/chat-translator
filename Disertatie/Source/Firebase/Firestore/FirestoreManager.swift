@@ -37,18 +37,34 @@ class FirestoreManager {
         }
     }
     
+    func getMultipleQueryData<T: BaseMappable>(from collection: FirestoreCollection,
+                                       field: String,
+                                       query: String,
+                                       _ completion: @escaping ([T]?, Error?) -> Void) {
+        service.getQueryData(from: collection, field: field, query: query) { jsonArray, error in
+            if error != nil {
+                completion(nil, error)
+            } else {
+                guard let array = jsonArray else {
+                    return
+                }
+                let data = array.compactMap { Mapper<T>().map(JSONObject: $0) }
+                completion(data, nil)
+            }
+        }
+    }
+    
     func getQueryData<T: BaseMappable>(from collection: FirestoreCollection,
-                                     query: String,
-                                     _ completion: @escaping (T?, Error?) -> Void) {
-        
-        service.getQueryData(from: collection, query: query) { jsonArray, error in
+                                       field: String,
+                                       query: String,
+                                       _ completion: @escaping (T?, Error?) -> Void) {
+        service.getQueryData(from: collection, field: field, query: query) { jsonArray, error in
             if error != nil {
                 completion(nil, error)
             } else {
                 guard
                     let array = jsonArray, array.count == 1,
                     let json = array.first else {
-                    
                     completion(nil, nil)
                     return
                 }

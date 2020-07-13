@@ -11,6 +11,7 @@ import UIKit
 class MessageReceivedTableViewCell: UITableViewCell {
     private var messageText: UILabel!
     private var bubbleView: UIView!
+    var autoTranslate: Bool = false
     
     var interaction: UIContextMenuInteraction? {
         didSet {
@@ -20,10 +21,16 @@ class MessageReceivedTableViewCell: UITableViewCell {
             bubbleView.addInteraction(interaction)
         }
     }
-    
+
     var viewModel: MessageViewModel! {
         didSet {
-            messageText.text = viewModel.translated ?? viewModel.original
+            messageText.text = autoTranslate == true ?
+                viewModel.translated ?? viewModel.original :
+                viewModel.corrected ?? viewModel.original
+            
+            messageText.textColor = messageText.text == viewModel.corrected ?
+                .primary :
+                .black
         }
     }
     
@@ -88,9 +95,28 @@ class MessageReceivedTableViewCell: UITableViewCell {
     
     @objc
     func bubbleTapped(_ selector: UITapGestureRecognizer) {
-        messageText.text = (messageText.text == viewModel.translated) ?
-            viewModel.original :
-            viewModel.translated
+//        messageText.text = (messageText.text == viewModel.translated) ?
+//            viewModel.original :
+//            viewModel.translated
+        
+//        messageText.text = autoTranslate == true ?
+//            viewModel.translated ?? viewModel.original :
+//            viewModel.corrected ?? viewModel.original
+        
+        if autoTranslate == true {
+            messageText.text = (messageText.text == viewModel.translated) ?
+                viewModel.original :
+                viewModel.translated
+        } else {
+            
+            if messageText.text == viewModel.corrected {
+                messageText.text = viewModel.original
+                messageText.textColor = .black
+            } else {
+                messageText.text = viewModel.corrected
+                messageText.textColor = .primary
+            }
+        }
         
         bubbleView.layoutIfNeeded()
     }
